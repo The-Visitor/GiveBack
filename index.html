@@ -10,49 +10,17 @@
     <title>Give Back</title>
     <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
-      <style>
-      body {
-          font-family: 'Roboto';
-      }
-      .contributeOption img{
-        height: 100px;
-        width:100px;
-        border-radius: 100%;
-        cursor: pointer;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.26);
-        }
-      .contributeOption .col-4
-      {
-        text-align: center;
-        margin-bottom: 30px;
-      }
-      .contributeOption p{
-        margin-top: 10px;
-      }
-      .row
-      {
-        margin: 0px;
-      }
-      footer{
-        background:black;
-        color:white;
-        padding:10px;
-        position:absolute;
-        bottom:0;
-        width:100%
-      }
-      a{
-        color:black;
-        text-decoration:none";
-      }
-      </style>
+    <link rel="stylesheet" href="css/index.css">
   </head>
   <body class="headerGradient">
-      <nav class="navbar">
+      <nav class="navbar" style="display:list-item">
             <a class="navbar-brand" href="#">
                     Give Back
             </a>
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="#" style="float:right">
+              <span>Distribution</span>
+            </a>
+            <a class="navbar-brand" href="#" style="float:right">
               <span>Contact Us</span>
             </a>
       </nav>
@@ -115,6 +83,10 @@
               </div>
           </div>
       </div>
+      
+      <button type="button" class="btn btn-primary totalDonation">
+        Total Donation <span class="badge badge-primary">4</span>
+      </button>
         
     </section>
     <footer >
