@@ -24,7 +24,7 @@
               <span>Contact Us</span>
             </a>
       </nav>
-    <section>
+    <section class="LandingPage">
       <h1 style="text-align:center;margin-bottom: 50px">
         Donate as you like
       </h1>
@@ -44,7 +44,7 @@
               <h2 style="text-align:center;margin-bottom:15px;">Select Your Contribution</h2>
               <hr style="width:60%;color:lightgreen;margin-bottom: 35px;">
               <div class="row">
-                <div class="col-4">
+                <div class="col-4" id="clothesDonateButton">
                   <img src="image/clothes.jpg" style="padding:10px;">
                   <p>Clothes</p>
                 </div>
@@ -89,6 +89,62 @@
       </button>
         
     </section>
+
+      <section id="clothesDonate" style="display:none">
+        <h2 style="text-align:center;margin-bottom: 50px">
+          Clothes
+        </h2>
+        <div class="row">
+            <div class="col" style="padding: 10px;">
+              <img src="image/clothes.jpg">
+            </div>
+            <div class="col contributeOption" style="padding:10px;">
+                <h3 style="text-align:center;margin-bottom:15px;">Description</h3>
+                <div class="row">
+                  <form class="form-group" style="width:80%;margin-left:10%;margin-top: 5%">
+                    
+                    <div class="type">
+                        <label for="inputType">Type</label>
+                        <select type="number" id="inputDescription" class="form-control" aria-describedby="typeHelpBlock" required>
+                          <option value="cloth">Clothes</option>
+                          <option value="footwear">footwear</option>
+                          <option value="both">Both</option>
+                          <option value="other">Other</option>
+                        </select>
+                        <small id="passwordHelpBlock" class="form-text text-muted">
+                          Select atleast one type.
+                        </small>
+                    </div>
+                    <div class="quantity" style="margin-top:20px;">
+                        <label for="inputQuantity">Quantity (Total)</label>
+                        <input type="number" id="inputQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                        <small id="passwordHelpBlock" class="form-text text-muted">
+                          Your Quantity must be in number format, and must not contain spaces, special characters, or emoji.
+                        </small>
+                    </div>
+                    <div class="description"  style="margin-top:20px;">
+                        <label for="inputDescription">Description</label>
+                        <textarea type="number" id="inputDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
+                        <small id="passwordHelpBlock" class="form-text text-muted">
+                            Your description must contain letters, numbers, spaces, special characters.
+                        </small>
+                    </div>
+                    <div class="form-group"  style="margin-top:20px;">
+                        <label for="exampleFormControlFile1">Select Images of item</label>
+                        <input type="file" class="form-control-file btn" id="exampleFormControlFile1">
+                      </div>
+                    <center>
+                        <button type="submit" class="btn btn-info" style="margin-top:5%">Donate</button>
+                    </center>
+                  </form>
+                  
+                </div>
+            </div>
+        </div>
+      </section>
+
+
+
     <footer >
       This is just a test site. &copy; Copyright Not Reserved
       <span style="float:right">All the images used here are copied from Google.com , please report if you want these images to be removed. We do not own any images used here.</span>
@@ -98,5 +154,6 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
   </body>
 </html>
