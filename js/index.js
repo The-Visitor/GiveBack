@@ -18,5 +18,10 @@ $(document).ready(function(){
         $("#moneyDonate").show("slow");
     });
 
+    $("#furnitureDonateButton").on("click", function(){
+        $(".LandingPage").hide("slow");
+        $("#furnitureDonate").show("slow");
+    });
+
 
 });
