@@ -23,5 +23,30 @@ $(document).ready(function(){
         $("#furnitureDonate").show("slow");
     });
 
+    $("#electronicsDonateButton").on("click", function(){
+        $(".LandingPage").hide("slow");
+        $("#electronicsDonate").show("slow");
+    });
+
+    $("#volunteerButton").on("click", function(){
+        $(".LandingPage").hide("slow");
+        $("#volunteer").show("slow");
+    });
+
+    $("#bloodDonateButton").on("click", function(){
+        $(".LandingPage").hide("slow");
+        $("#bloodDonate").show("slow");
+    });
+
+    $("#vehicleDonateButton").on("click", function(){
+        $(".LandingPage").hide("slow");
+        $("#vehicleDonate").show("slow");
+    });
+
+    $("#booksDonateButton").on("click", function(){
+        $(".LandingPage").hide("slow");
+        $("#booksDonate").show("slow");
+    });
+    
 
 });
