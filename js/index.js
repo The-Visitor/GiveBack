@@ -13,5 +13,10 @@ $(document).ready(function(){
         $("#foodDonate").show("slow");
     });
 
+    $("#moneyDonateButton").on("click", function(){
+        $(".LandingPage").hide("slow");
+        $("#moneyDonate").show("slow");
+    });
+
 
 });
