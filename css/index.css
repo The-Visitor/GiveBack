@@ -2,8 +2,8 @@ body {
     font-family: 'Roboto';
 }
 .contributeOption img{
-  height: 100px;
-  width:100px;
+  height: 80px;
+  width:80px;
   border-radius: 100%;
   cursor: pointer;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.16), 0 2px 5px rgba(0, 0, 0, 0.26);
@@ -15,16 +15,21 @@ body {
 }
 .contributeOption p{
   margin-top: 10px;
+  font-size: 14px;
 }
 .row
 {
   margin: 0px;
 }
 footer{
+  font-size: 12px;
+  clear: both;
   background:black;
   color:white;
   padding:10px;
-  position:absolute;
+  position: relative;;
+  height: 40px;
+  margin-top: -40px;
   bottom:0;
   width:100%
 }
@@ -34,7 +39,7 @@ a{
 }
 .totalDonation
 {
-    position:absolute;
+    position: relative;;
     bottom:50px;
     left:20px;
     background:transparent;
@@ -47,4 +52,12 @@ a{
   text-align: center;
   margin-bottom: 20px;
   cursor: pointer;
+}
+
+.headerGradient a{
+  font-size: 16px;
+}
+
+select, .form-control-file{
+  font-size: 14px !important;
 }
