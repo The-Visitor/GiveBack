@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
     <link rel="stylesheet" href="css/index.css">
   </head>
-  <body class="headerGradient" style="min-height:100%">
+  <body class="headerGradient">
       <nav class="navbar" style="display:list-item">
             <a class="navbar-brand" id="siteLogo" href="#">
                     Give Back
@@ -28,24 +28,24 @@
             </a>
       </nav>
     <section class="LandingPage">
-      <h1 style="text-align:center;margin-bottom: 50px;font-size: 18px;">
+      <h1 class="mainHeading">
         Donate as you like
       </h1>
       <div class="row">
           <div class="col" style="padding: 10px;">
-            <h2 style="text-align:center;margin-bottom:15px;font-size: 16px;">This is Us</h2>
-            <hr style="width:30%;color:lightgreen;margin-bottom: 35px;">
-            <p style="padding:10px;text-align: center;margin: 100px 100px 0px 100px;font-size:14px;">
+            <h2 class="mainSubHeading">This is Us</h2>
+            <hr class="hrLine">
+            <p class="ourIntroduction">
               We are a non profit, but not an NGO.
               You want to donate something but do not have time for the same , Don't worry .
               We got you covered. Just tell us what you want to donate and we will pick it up from your home.
               <br>
-            <i class="material-icons" style="font-size:60px;margin-top: 100px;">mood</i>
+            <i class="material-icons happyIcon">mood</i>
             </p>
           </div>
           <div class="col contributeOption" style="padding:10px;">
-              <h2 style="text-align:center;margin-bottom:15px;font-size: 16px;">Select Your Contribution</h2>
-              <hr style="width:60%;color:lightgreen;margin-bottom: 35px;">
+              <h2 class="mainSubHeading">Select Your Contribution</h2>
+              <hr class="hrLine">
               <div class="row">
                 <div class="col-4" id="clothesDonateButton">
                   <img src="image/clothes.jpg" style="padding:10px;">
@@ -84,7 +84,7 @@
                     <p>Books</p>
                 </div>
               </div>
-              <div style="text-align:center">
+              <div class="infoSubmitButton">
                   <button type="button" class="btn btn-link">Click here to check status fo your last donation</button>
               </div>
             </div>
@@ -97,7 +97,7 @@
     </section>
 
     <section id="clothesDonate" style="display:none">
-        <h2 style="text-align:center;margin-bottom: 50px;font-size: 18px;">
+        <h2 class="mainHeading">
           Clothes
         </h2>
         <div class="row">
@@ -105,41 +105,44 @@
               <img src="image/clothes.jpg" style="width:inherit">
             </div>
             <div class="col-md-6 col-lg-6 contributeOption" style="padding:10px;">
-                <h3 style="text-align:center;margin-bottom:15px;font-size: 16px;">Description</h3>
+                <h3 class="mainSubHeading">Description</h3>
                 <div class="row">
-                  <form class="form-group" style="width:80%;margin-left:10%;margin-top: 5%;font-size: 14px;">
-                    <div class="type">
-                        <label for="inputType">Type</label>
-                        <select type="number" id="inputDescription" class="form-control" aria-describedby="typeHelpBlock" required>
+                  <form class="form-group formStyle">
+                    <div class="clothesType">
+                        <label for="materialType">Material Type</label>
+                        <select id="materialType" class="form-control" aria-describedby="typeHelpBlock" required>
                           <option value="cloth">Clothes</option>
                           <option value="footwear">footwear</option>
                           <option value="both">Both</option>
                           <option value="other">Other</option>
                         </select>
-                        <small id="passwordHelpBlock" class="form-text text-muted">
+                        <small class="form-text text-muted">
                           Select atleast one type.
                         </small>
                     </div>
-                    <div class="quantity" style="margin-top:20px;">
-                        <label for="inputQuantity">Quantity (Total)</label>
-                        <input type="number" id="inputQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
-                        <small id="passwordHelpBlock" class="form-text text-muted">
+
+                    <div class="clothesQuantity" style="margin-top:20px;">
+                        <label for="clothesQuantity">Quantity (Total)</label>
+                        <input type="number" id="clothesQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                        <small class="form-text text-muted">
                           Your Quantity must be in number format, and must not contain spaces, special characters, or emoji.
                         </small>
                     </div>
-                    <div class="description"  style="margin-top:20px;">
-                        <label for="inputDescription">Description</label>
-                        <textarea type="number" id="inputDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
-                        <small id="passwordHelpBlock" class="form-text text-muted">
+
+                    <div class="clothesDescription"  style="margin-top:20px;">
+                        <label for="clothesDescription">Description</label>
+                        <textarea id="clothesDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
+                        <small class="form-text text-muted">
                             Your description must contain letters, numbers, spaces, special characters.
                         </small>
                     </div>
-                    <div class="form-group"  style="margin-top:20px;">
-                        <label for="exampleFormControlFile1">Select Images of item</label>
-                        <input type="file" class="form-control-file btn" id="exampleFormControlFile1">
+
+                    <div class="form-group clothesImage"  style="margin-top:20px;">
+                        <label for="clothesImage">Select Images of item</label>
+                        <input type="file" class="form-control-file btn" id="clothesImage">
                       </div>
-                    <div style="text-align:center;margin-bottom:20px;">
-                        <button type="button" class="btn btn-info donateButton" style="margin-top:4%">Donate</button>
+                    <div class="infoSubmitButton">
+                        <button type="button" class="btn btn-info donateButton" id="clothesDonateButton">Donate</button>
                     </div>
                   </form>
                   
@@ -149,7 +152,7 @@
       </section>
 
     <section id="foodDonate" style="display:none">
-        <h2 style="text-align:center;margin-bottom: 50px;font-size: 18px;">
+        <h2 class="mainHeading">
           Food
         </h2>
         <div class="row">
@@ -157,55 +160,59 @@
               <img src="image/food.png" style="width:50%;height:50%;margin-top: 15%">
             </div>
             <div class="col-md-6 col-lg-6 contributeOption" style="padding:10px;">
-                <h3 style="text-align:center;margin-bottom:15px;font-size: 16px;">Description</h3>
+                <h3 class="mainSubHeading">Description</h3>
                 <div class="row">
-                  <form class="form-group" style="width:80%;margin-left:10%;margin-top: 5%;font-size: 14px;">
+                  <form class="form-group formStyle">
                     
-                    <div class="type">
-                        <label for="inputType">Type</label>
-                        <select class="form-control" aria-describedby="typeHelpBlock" required>
+                    <div class="foodType">
+                        <label for="foodType">Type</label>
+                        <select class="form-control" id="foodType" aria-describedby="typeHelpBlock" required>
                           <option value="Veg">Vegeterian</option>
                           <option value="nonveg">Non Vegeterian</option>
                           <option value="both">Both</option>
                           <option value="other">Other</option>
                         </select>
-                        <small id="passwordHelpBlock" class="form-text text-muted">
+                        <small class="form-text text-muted">
                           Select atleast one type.
                         </small>
                     </div>
-                    <div class="subType" style="margin-top:20px;">
-                        <label for="inputType">Sub Type</label>
-                        <select class="form-control" aria-describedby="typeHelpBlock" required>
+
+                    <div class="foodSubType" style="margin-top:20px;">
+                        <label for="foodSubType">Sub Type</label>
+                        <select class="form-control" id="foodSubType" aria-describedby="typeHelpBlock" required>
                           <option value="packed">Packed</option>
                           <option value="homeMade">Home Made</option>
                           <option value="both">Both</option>
                           <option value="other">Other</option>
                         </select>
-                        <small id="passwordHelpBlock" class="form-text text-muted">
+                        <small class="form-text text-muted">
                           Select atleast one sub type.
                         </small>
                     </div>
 
-                    <div class="quantity" style="margin-top:20px;">
-                        <label for="inputQuantity">Quantity (Number of people it can serve approx.)</label>
-                        <input type="number" id="inputQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
-                        <small id="passwordHelpBlock" class="form-text text-muted">
+                    <div class="foodQuantity" style="margin-top:20px;">
+                        <label for="foodQuantity">Quantity (Number of people it can serve approx.)</label>
+                        <input type="number" id="foodQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                        <small class="form-text text-muted">
                           Your Quantity must be in number format, and must not contain spaces, special characters, or emoji.
                         </small>
                     </div>
-                    <div class="description"  style="margin-top:20px;">
-                        <label for="inputDescription">Description</label>
-                        <textarea type="number" id="inputDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
-                        <small id="passwordHelpBlock" class="form-text text-muted">
-                            Your description must contain letters, numbers, spaces, special characters.
+
+                    <div class="foodDescription" style="margin-top:20px;">
+                        <label for="foodDescription">Description</label>
+                        <textarea id="foodDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
+                        <small class="form-text text-muted">
+                            Your description can contain letters, numbers, spaces, special characters.
                         </small>
                     </div>
-                    <div class="form-group"  style="margin-top:20px;">
-                        <label for="exampleFormControlFile1">Select Images of item</label>
-                        <input type="file" class="form-control-file btn" id="exampleFormControlFile1">
+
+                    <div class="form-group foodImage"  style="margin-top:20px;">
+                        <label for="foodImage">Select Images of item</label>
+                        <input type="file" class="form-control-file btn" id="foodImage">
                       </div>
-                    <div style="margin-bottom:20px;text-align:center">
-                        <button type="button" class="btn btn-info donateButton" style="margin-top:5%">Donate</button>
+
+                    <div class="infoSubmitButton">
+                        <button type="button" class="btn btn-info donateButton" id="foodDonateButton" style="margin-top:5%">Donate</button>
                     </div>
                   </form>
                   
@@ -215,7 +222,7 @@
       </section>
 
     <section id="moneyDonate" style="display:none" >
-      <h2 style="text-align:center;margin-bottom: 50px;font-size: 18px;">
+      <h2 class="mainHeading">
         Money
       </h2>
       <div class="row">
@@ -223,7 +230,7 @@
             <img src="image/money.jpg" style="width:50%;height:50%;margin-top: 15%">
           </div>
           <div class="col-md-6 col-lg-6" style="padding:10px;">
-              <h3 style="text-align:center;margin-bottom:60px;font-size: 16px;">Pay via</h3>
+              <h3 class="mainSubHeading">Pay via</h3>
               <div class="paymentMethods row">
                 <div class="paytm col-md-6 col-lg-6">
                   <p style="margin-bottom:0px"><img src="image/paytmlogo.svg" style="height:60px;"> </p>
@@ -238,15 +245,15 @@
                   <p style="margin-bottom:0px"><img src="image/cashIcon.png" style="height:60px;"> </p>
                 </div>
               </div>
-              <div style="text-align:center;margin-top:50px;">
-                <button type="button" class="btn btn-primary donateButton">Check your last donation</button>
+              <div class="infoSubmitButton">
+                <button type="button" class="btn btn-primary checkDonation">Check your last donation</button>
               </div>
           </div>
       </div>
     </section>
 
     <section id="furnitureDonate" style="display:none">
-      <h2 style="text-align:center;margin-bottom: 50px;font-size: 18px;">
+      <h2 class="mainHeading">
         Furniture
       </h2>
       <div class="row">
@@ -254,42 +261,45 @@
             <img src="image/furniture.svg" style="width:50%;height:50%;margin-top: 15%">
           </div>
           <div class="col contributeOption" style="padding:10px;">
-              <h3 style="text-align:center;margin-bottom:15px;font-size: 16px;">Description</h3>
+              <h3 class="mainSubHeading">Description</h3>
               <div class="row">
-                <form class="form-group" style="width:80%;margin-left:10%;margin-top: 5%;font-size: 14px;">
+                <form class="form-group formStyle">
                   
-                  <div class="type">
-                      <label for="inputType">Type</label>
-                      <select type="number" id="inputDescription" class="form-control" aria-describedby="typeHelpBlock" required>
-                        <option value="cloth">Wooden</option>
-                        <option value="footwear">Metal</option>
-                        <option value="both">Plastic</option>
+                  <div class="furnitureType">
+                      <label for="furnitureType">Type</label>
+                      <select id="furnitureType" class="form-control" aria-describedby="typeHelpBlock" required>
+                        <option value="wooden">Wooden</option>
+                        <option value="metal">Metal</option>
+                        <option value="plastic">Plastic</option>
                         <option value="other">Other</option>
                       </select>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+                      <small class="form-text text-muted">
                         Select atleast one type.
                       </small>
                   </div>
-                  <div class="quantity" style="margin-top:20px;">
-                      <label for="inputQuantity">Quantity (Total)</label>
-                      <input type="number" id="inputQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+
+                  <div class="furnitureQuantity" style="margin-top:20px;">
+                      <label for="furnitureQuantity">Quantity (Total)</label>
+                      <input type="number" id="furnitureQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                      <small class="form-text text-muted">
                         Your Quantity must be in number format, and must not contain spaces, special characters, or emoji.
                       </small>
                   </div>
-                  <div class="description"  style="margin-top:20px;">
-                      <label for="inputDescription">Description</label>
-                      <textarea type="number" id="inputDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+
+                  <div class="furnitureDescription"  style="margin-top:20px;">
+                      <label for="furnitureDescription">Description</label>
+                      <textarea id="furnitureDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
+                      <small class="form-text text-muted">
                           Your description must contain letters, numbers, spaces, special characters.
                       </small>
                   </div>
-                  <div class="form-group"  style="margin-top:20px;">
-                      <label for="exampleFormControlFile1">Select Images of item</label>
-                      <input type="file" class="form-control-file btn" id="exampleFormControlFile1">
+
+                  <div class="form-group furnitureImage"  style="margin-top:20px;">
+                      <label for="furnitureImage">Select Images of item</label>
+                      <input type="file" class="form-control-file btn" id="furnitureImage">
                     </div>
-                  <div style="text-align:center;margin-bottom:20px;">
-                      <button type="button" class="btn btn-info donateButton" style="margin-top:5%">Donate</button>
+                  <div class="infoSubmitButton">
+                      <button type="button" class="btn btn-info donateButton" id="furnitureDonateButton" style="margin-top:5%">Donate</button>
                   </div>
                 </form>
                 
@@ -299,7 +309,7 @@
     </section>
 
     <section id="electronicsDonate" style="display:none">
-      <h2 style="text-align:center;margin-bottom: 50px;font-size: 18px;">
+      <h2 class="mainHeading">
         Electronics
       </h2>
       <div class="row">
@@ -307,42 +317,42 @@
             <img src="image/electronics.jpg" style="width:50%;height:50%;margin-top: 15%">
           </div>
           <div class="col contributeOption" style="padding:10px;">
-              <h3 style="text-align:center;margin-bottom:15px;font-size: 16px;">Description</h3>
+              <h3 class="mainSubHeading">Description</h3>
               <div class="row">
-                <form class="form-group" style="width:80%;margin-left:10%;margin-top: 5%;font-size: 14px;">
+                <form class="form-group formStyle">
                   
-                  <div class="type">
-                      <label for="inputType">Type</label>
-                      <select type="number" id="inputDescription" class="form-control" aria-describedby="typeHelpBlock" required>
-                        <option value="cloth">Mobile Phone</option>
-                        <option value="footwear">Laptop/ PC</option>
-                        <option value="both">Electrical Appliance</option>
+                  <div class="electronicsType">
+                      <label for="electronicsType">Type</label>
+                      <select id="electronicsType" class="form-control" aria-describedby="typeHelpBlock" required>
+                        <option value="MobilePhone">Mobile Phone</option>
+                        <option value="laptopPC">Laptop/ PC</option>
+                        <option value="ElectricalAppliance">Electrical Appliance</option>
                         <option value="other">Other</option>
                       </select>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+                      <small class="form-text text-muted">
                         Select atleast one type.
                       </small>
                   </div>
-                  <div class="quantity" style="margin-top:20px;">
-                      <label for="inputQuantity">Quantity (Total)</label>
-                      <input type="number" id="inputQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+                  <div class="electronicsQuantity" style="margin-top:20px;">
+                      <label for="electronicsQuantity">Quantity (Total)</label>
+                      <input type="number" id="electronicsQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                      <small class="form-text text-muted">
                         Your Quantity must be in number format, and must not contain spaces, special characters, or emoji.
                       </small>
                   </div>
-                  <div class="description"  style="margin-top:20px;">
-                      <label for="inputDescription">Description</label>
-                      <textarea type="number" id="inputDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+                  <div class="electronicsDescription"  style="margin-top:20px;">
+                      <label for="electronicsDescription">Description</label>
+                      <textarea id="electronicsDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
+                      <small class="form-text text-muted">
                           Your description must contain letters, numbers, spaces, special characters.
                       </small>
                   </div>
-                  <div class="form-group"  style="margin-top:20px;">
-                      <label for="exampleFormControlFile1">Select Images of item</label>
-                      <input type="file" class="form-control-file btn" id="exampleFormControlFile1">
+                  <div class="form-group electronicsImage"  style="margin-top:20px;">
+                      <label for="electronicsImage">Select Images of item</label>
+                      <input type="file" class="form-control-file btn" id="electronicsImage">
                     </div>
-                  <div style="text-align:center;margin-bottom:20px;">
-                      <button type="button" class="btn btn-info donateButton" style="margin-top:5%">Donate</button>
+                  <div class="infoSubmitButton">
+                      <button type="button" class="btn btn-info donateButton" id="furnitureDonateButton" style="margin-top:5%">Donate</button>
                   </div>
                 </form>
                 
@@ -352,7 +362,7 @@
     </section>
 
     <section id="volunteer" style="display:none">
-      <h2 style="text-align:center;margin-bottom: 50px;font-size: 18px;">
+      <h2 class="mainHeading">
         Volunteer with Us
       </h2>
       <div class="row">
@@ -360,55 +370,55 @@
             <img src="image/volunteer.png" style="width:50%;height:50%;margin-top: 15%">
           </div>
           <div class="col contributeOption" style="padding:10px;">
-              <h3 style="text-align:center;margin-bottom:15px;font-size: 16px;">A Little bit about yourself.</h3>
+              <h3 class="mainSubHeading">A Little bit about yourself.</h3>
               <div class="row">
-                <form class="form-group" style="width:80%;margin-left:10%;margin-top: 5%;font-size: 14px;">
+                <form class="form-group formStyle">
                   
                   <div class="volunteerName" style="margin-top:20px;">
                     <label for="volunteerName">Full Name</label>
                     <input type="text" id="volunteerName" class="form-control" aria-describedby="quantityHelpBlock" required>
-                    <small id="passwordHelpBlock" class="form-text text-muted">
+                    <small class="form-text text-muted">
                       Your Name must be in text format, and must not contain spaces,numbers, special characters, or emoji.
                     </small>
                   </div>
-                  <div class="emailID" style="margin-top:20px;">
+                  <div class="volunteerEmail" style="margin-top:20px;">
                     <label for="volunteerEmail">Email ID</label>
                     <input type="email" id="volunteerEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
-                    <small id="passwordHelpBlock" class="form-text text-muted">
+                    <small class="form-text text-muted">
                       Your Email ID must be in text format, and must not contain spaces, or emoji.
                     </small>
                   </div>
                   <div class="row">
-                    <div class="phoneNumber col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
+                    <div class="volunteerPhoneNumber col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
                       <label for="volunteerPhoneNumber">Phone Number</label>
                       <input type="number" id="volunteerPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+                      <small class="form-text text-muted">
                         Your Phone Number ID must be in number format, and must not contain spaces, special characters, or emoji.
                       </small>
                     </div>
-                    <div class="type col-md-6 col-lg-6" style="margin-top:20px;padding-right: 0px;">
-                        <label for="inputType  col-md-6 col-lg-6">Gender</label>
-                        <select type="number" id="inputDescription" class="form-control" aria-describedby="typeHelpBlock" required>
-                          <option value="cloth">Male</option>
-                          <option value="footwear">Female</option>
-                          <option value="both">Prefer not to say</option>
+                    <div class="volunteerGender col-md-6 col-lg-6" style="margin-top:20px;padding-right: 0px;">
+                        <label for="volunteerGender  col-md-6 col-lg-6">Gender</label>
+                        <select id="volunteerGender" class="form-control" aria-describedby="typeHelpBlock" required>
+                          <option value="male">Male</option>
+                          <option value="Female">Female</option>
+                          <option value="notmentioned">Prefer not to say</option>
                           <option value="other">Other</option>
                         </select>
-                        <small id="passwordHelpBlock" class="form-text text-muted">
+                        <small class="form-text text-muted">
                           Select atleast one option.
                         </small>
                     </div>
                   </div>
                   
-                  <div class="description"  style="margin-top:20px;">
-                      <label for="inputDescription">A little bit about yourself. (Optional )</label>
-                      <textarea type="number" id="inputDescription" class="form-control" aria-describedby="descriptionHelpBlock"></textarea>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+                  <div class="volunteerDescription"  style="margin-top:20px;">
+                      <label for="volunteerDescription">A little bit about yourself. (Optional )</label>
+                      <textarea id="volunteerDescription" class="form-control" aria-describedby="descriptionHelpBlock"></textarea>
+                      <small class="form-text text-muted">
                           Your bio can contain letters, numbers, spaces, special characters.
                       </small>
                   </div>
-                  <div style="text-align:center;margin-bottom:20px;">
-                      <button type="button" class="btn btn-info donateButton" style="margin-top:5%">Volunteer </button>
+                  <div class="infoSubmitButton">
+                      <button type="button" class="btn btn-info donateButton" id="volunteerButton" style="margin-top:5%">Volunteer </button>
                   </div>
                 </form>
                 
@@ -418,7 +428,7 @@
     </section>
 
     <section id="bloodDonate" style="display:none">
-      <h2 style="text-align:center;margin-bottom: 50px;font-size: 18px;">
+      <h2 class="mainHeading">
         Save a life with Us
       </h2>
       <div class="row">
@@ -426,61 +436,61 @@
             <img src="image/blood.png" style="width:50%;height:50%;margin-top: 15%">
           </div>
           <div class="col contributeOption" style="padding:10px;">
-              <h3 style="text-align:center;margin-bottom:15px;font-size: 16px;">A Little bit about yourself.</h3>
+              <h3 class="mainSubHeading">A Little bit about yourself.</h3>
               <div class="row">
-                <form class="form-group" style="width:80%;margin-left:10%;margin-top: 5%;font-size: 14px;">
+                <form class="form-group fotmStyle">
                   
-                  <div class="volunteerName" style="margin-top:20px;">
-                    <label for="volunteerName">Full Name</label>
-                    <input type="text" id="volunteerName" class="form-control" aria-describedby="quantityHelpBlock" required>
-                    <small id="passwordHelpBlock" class="form-text text-muted">
+                  <div class="bloodDonarName" style="margin-top:20px;">
+                    <label for="bloodDonarName">Full Name</label>
+                    <input type="text" id="bloodDonarName" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <small class="form-text text-muted">
                       Your Name must be in text format, and must not contain spaces,numbers, special characters, or emoji.
                     </small>
                   </div>
-                  <div class="emailID" style="margin-top:20px;">
-                    <label for="volunteerEmail">Email ID</label>
-                    <input type="email" id="volunteerEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
-                    <small id="passwordHelpBlock" class="form-text text-muted">
+                  <div class="bloodDonarEmail" style="margin-top:20px;">
+                    <label for="bloodDonarEmail">Email ID</label>
+                    <input type="email" id="bloodDonarEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <small class="form-text text-muted">
                       Your Email ID must be in text format, and must not contain spaces, or emoji.
                     </small>
                   </div>
-                  <div class="phoneNumber" style="margin-top:20px;">
-                    <label for="volunteerPhoneNumber">Phone Number</label>
-                    <input type="number" id="volunteerPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
-                    <small id="passwordHelpBlock" class="form-text text-muted">
+                  <div class="bloodDonarPhoneNumber" style="margin-top:20px;">
+                    <label for="bloodDonarPhoneNumber">Phone Number</label>
+                    <input type="number" id="bloodDonarPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <small class="form-text text-muted">
                       Your Phone Number ID must be in number format, and must not contain spaces, special characters, or emoji.
                     </small>
                   </div>
-                  <div class="type">
-                      <label for="inputType">Gender</label>
-                      <select type="number" id="inputDescription" class="form-control" aria-describedby="typeHelpBlock" required>
-                        <option value="cloth">Male</option>
-                        <option value="footwear">Female</option>
-                        <option value="both">Prefer not to say</option>
+                  <div class="bloodDonarGender">
+                      <label for="bloodDonarGender">Gender</label>
+                      <select id="bloodDonarGender" class="form-control" aria-describedby="typeHelpBlock" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="notspecified">Prefer not to say</option>
                         <option value="other">Other</option>
                       </select>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+                      <small class="form-text text-muted">
                         Select atleast one option.
                       </small>
                   </div>
-                  <div class="type">
-                    <label for="bloodGroup">Blood Group</label>
-                    <select type="number" id="bloodGroup" class="form-control" aria-describedby="typeHelpBlock" required>
-                      <option value="cloth">A+</option>
-                      <option value="footwear">A-</option>
-                      <option value="both">B+</option>
-                      <option value="other">B-</option>
-                      <option value="cloth">O+</option>
-                      <option value="footwear">O-</option>
-                      <option value="both">AB+</option>
-                      <option value="other">AB-</option>
+                  <div class="bloodGroupType">
+                    <label for="bloodGroupType">Blood Group</label>
+                    <select id="bloodGroupType" class="form-control" aria-describedby="typeHelpBlock" required>
+                      <option value="a+">A+</option>
+                      <option value="a-">A-</option>
+                      <option value="b+">B+</option>
+                      <option value="b-">B-</option>
+                      <option value="o+">O+</option>
+                      <option value="o-">O-</option>
+                      <option value="ab+">AB+</option>
+                      <option value="ab-">AB-</option>
                     </select>
-                    <small id="passwordHelpBlock" class="form-text text-muted">
+                    <small class="form-text text-muted">
                       Select atleast one option.
                     </small>
                 </div>
-                  <div style="text-align:center;margin-bottom:20px;">
-                      <button type="button" class="btn btn-info donateButton" style="margin-top:5%">Donate </button>
+                  <div class="infoSubmitButton">
+                      <button type="button" class="btn btn-info donateButton" id="bloodDonateButton" style="margin-top:5%">Donate </button>
                   </div>
                 </form>
                 
@@ -490,7 +500,7 @@
     </section>
 
     <section id="vehicleDonate" style="display:none">
-      <h2 style="text-align:center;margin-bottom: 50px;font-size: 18px;">
+      <h2 class="mainHeading">
         Vehicle
       </h2>
       <div class="row">
@@ -498,42 +508,42 @@
             <img src="image/car.png" style="width:50%;height:50%;margin-top: 15%">
           </div>
           <div class="col contributeOption" style="padding:10px;">
-              <h3 style="text-align:center;margin-bottom:15px;font-size: 18px;">Description</h3>
+              <h3 class="mainSubHeading">Description</h3>
               <div class="row">
-                <form class="form-group" style="width:80%;margin-left:10%;margin-top: 5%;font-size: 14px;">
+                <form class="form-group formStyle">
                   
-                  <div class="type">
-                      <label for="inputType">Vehicle Type</label>
-                      <select type="number" id="inputDescription" class="form-control" aria-describedby="typeHelpBlock" required>
-                        <option value="cloth">2 Wheeler</option>
-                        <option value="footwear">3 Wheeler</option>
-                        <option value="both">4 Wheeler</option>
+                  <div class="vehicleType">
+                      <label for="vehicleType">Vehicle Type</label>
+                      <select id="vehicleType" class="form-control" aria-describedby="typeHelpBlock" required>
+                        <option value="2wheeler">2 Wheeler</option>
+                        <option value="3wheeler">3 Wheeler</option>
+                        <option value="4wheeler">4 Wheeler</option>
                         <option value="other">More than 4 wheels or other</option>
                       </select>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+                      <small class="form-text text-muted">
                         Select atleast one type.
                       </small>
                   </div>
-                  <div class="quantity" style="margin-top:20px;">
-                      <label for="inputQuantity">Quantity (Total)</label>
-                      <input type="number" id="inputQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+                  <div class="vehicleQuantity" style="margin-top:20px;">
+                      <label for="vehicleQuantity">Quantity (Total)</label>
+                      <input type="number" id="vehicleQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                      <small class="form-text text-muted">
                         Your Quantity must be in number format, and must not contain spaces, special characters, or emoji.
                       </small>
                   </div>
-                  <div class="description"  style="margin-top:20px;">
-                      <label for="inputDescription">Description</label>
-                      <textarea type="number" id="inputDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+                  <div class="vehicleDescription"  style="margin-top:20px;">
+                      <label for="vehicleDescription">Description</label>
+                      <textarea  id="vehicleDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
+                      <small class="form-text text-muted">
                           Your description must contain letters, numbers, spaces, special characters.
                       </small>
                   </div>
-                  <div class="form-group"  style="margin-top:20px;">
-                      <label for="exampleFormControlFile1">Select Images of item</label>
-                      <input type="file" class="form-control-file btn" id="exampleFormControlFile1">
+                  <div class="form-group vehicleImage"  style="margin-top:20px;">
+                      <label for="vehicleImage">Select Images of item</label>
+                      <input type="file" class="form-control-file btn" id="vehicleImage">
                     </div>
-                  <div style="text-align:center;margin-bottom:20px">
-                      <button type="button" class="btn btn-info donateButton" style="margin-top:5%">Donate</button>
+                  <div class="infoSubmitButton">
+                      <button type="button" class="btn btn-info donateButton" id="vehicleDonateButton" style="margin-top:5%">Donate</button>
                   </div>
                 </form>
                 
@@ -543,7 +553,7 @@
     </section>
 
     <section id="booksDonate" style="display:none">
-      <h2 style="text-align:center;margin-bottom: 50px;font-size: 18px;">
+      <h2 class="mainHeading">
         Books
       </h2>
       <div class="row">
@@ -551,42 +561,42 @@
             <img src="image/books.png" style="width:50%;height:50%;margin-top: 15%">
           </div>
           <div class="col contributeOption" style="padding:10px;">
-              <h3 style="text-align:center;margin-bottom:15px;font-size: 16px">Description</h3>
+              <h3 class="mainSubHeading">Description</h3>
               <div class="row">
-                <form class="form-group" style="width:80%;margin-left:10%;margin-top: 5%;font-size: 14px;">
+                <form class="form-group formStyle">
                   
-                  <div class="type">
-                      <label for="inputType">Book Type</label>
-                      <select type="number" id="inputDescription" class="form-control" aria-describedby="typeHelpBlock" required>
-                        <option value="cloth">Soft Cover (Paperback )</option>
-                        <option value="footwear">Hardcover</option>
-                        <option value="both">Notebook</option>
-                        <option value="both">Stationary</option>
+                  <div class="bookType">
+                      <label for="bookType">Book Type</label>
+                      <select id="bookType" class="form-control" aria-describedby="typeHelpBlock" required>
+                        <option value="softcover">Soft Cover (Paperback )</option>
+                        <option value="hardcover">Hardcover</option>
+                        <option value="notebook">Notebook</option>
+                        <option value="stationary">Stationary</option>
                         <option value="other">Other</option>
                       </select>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+                      <small class="form-text text-muted">
                         Select atleast one type.
                       </small>
                   </div>
-                  <div class="quantity" style="margin-top:20px;">
-                      <label for="inputQuantity">Quantity (Total)</label>
-                      <input type="number" id="inputQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+                  <div class="bookQuantity" style="margin-top:20px;">
+                      <label for="bookQuantity">Quantity (Total)</label>
+                      <input type="number" id="bookQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                      <small class="form-text text-muted">
                         Your Quantity must be in number format, and must not contain spaces, special characters, or emoji.
                       </small>
                   </div>
-                  <div class="description"  style="margin-top:20px;">
-                      <label for="inputDescription">Description</label>
-                      <textarea type="number" id="inputDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+                  <div class="bookDescription"  style="margin-top:20px;">
+                      <label for="bookDescription">Description</label>
+                      <textarea id="bookDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
+                      <small class="form-text text-muted">
                           Your description must contain letters, numbers, spaces, special characters.
                       </small>
                   </div>
-                  <div class="form-group"  style="margin-top:20px;">
-                      <label for="exampleFormControlFile1">Select Images of item</label>
-                      <input type="file" class="form-control-file btn" id="exampleFormControlFile1">
+                  <div class="form-group bookImage"  style="margin-top:20px;">
+                      <label for="bookImage">Select Images of item</label>
+                      <input type="file" class="form-control-file btn" id="bookImage">
                     </div>
-                  <div style="text-align:center;margin-bottom:20px;">
+                  <div class="infoSubmitButton">
                       <button type="button" class="btn btn-info donateButton" style="margin-top:5%">Donate</button>
                   </div>
                 </form>
@@ -597,7 +607,7 @@
     </section>
 
     <section id="donarDetails" style="display:none">
-      <h2 style="text-align:center;margin-bottom: 50px;font-size: 18px;">
+      <h2 class="mainHeading">
         Please fill in your details
       </h2>
       <div class="row">
@@ -605,71 +615,71 @@
             <img src="image/person.png" style="width:45%;height:60%;margin-top: 15%">
           </div>
           <div class="col contributeOption" style="padding:10px;">
-            <h3 style="text-align:center;margin-bottom:15px;font-size: 16px;">A Little bit about yourself.</h3>
+            <h3 class="mainSubHeading">A Little bit about yourself.</h3>
             <div class="row">
-              <form class="form-group" style="width:80%;margin-left:10%;margin-top: 5%;font-size: 14px;">
+              <form class="form-group formStyle">
                 
-                <div class="volunteerName" style="margin-top:20px;">
-                  <label for="volunteerName">Full Name</label>
-                  <input type="text" id="volunteerName" class="form-control" aria-describedby="quantityHelpBlock" required>
-                  <small id="passwordHelpBlock" class="form-text text-muted">
+                <div class="donarName" style="margin-top:20px;">
+                  <label for="donarName">Full Name</label>
+                  <input type="text" id="donarName" class="form-control" aria-describedby="quantityHelpBlock" required>
+                  <small class="form-text text-muted">
                     Only in text format.
                   </small>
                 </div>
-                <div class="emailID" style="margin-top:20px;">
-                  <label for="volunteerEmail">Email ID</label>
-                  <input type="email" id="volunteerEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
-                  <small id="passwordHelpBlock" class="form-text text-muted">
+                <div class="donarEmail" style="margin-top:20px;">
+                  <label for="donarEmail">Email ID</label>
+                  <input type="email" id="donarEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
+                  <small class="form-text text-muted">
                     Your Email ID must be in text format, and must not contain spaces, or emoji.
                   </small>
                 </div>
                 <div class="row">
-                  <div class="phoneNumber col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
-                    <label for="volunteerPhoneNumber">Phone Number</label>
-                    <input type="number" id="volunteerPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
-                    <small id="passwordHelpBlock" class="form-text text-muted">
+                  <div class="donarPhoneNumber col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
+                    <label for="donarPhoneNumber">Phone Number</label>
+                    <input type="number" id="donarPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <small class="form-text text-muted">
                       Only numbers allowed.
                     </small>
                   </div>
-                  <div class="type col-md-6 col-lg-6" style="margin-top:20px;padding-right: 0px;">
-                      <label for="inputType  col-md-6 col-lg-6">Gender</label>
-                      <select type="number" id="inputDescription" class="form-control" aria-describedby="typeHelpBlock" required>
-                        <option value="cloth">Male</option>
-                        <option value="footwear">Female</option>
-                        <option value="both">Prefer not to say</option>
+                  <div class="donarType col-md-6 col-lg-6" style="margin-top:20px;padding-right: 0px;">
+                      <label for="donarType  col-md-6 col-lg-6">Gender</label>
+                      <select id="donarType" class="form-control" aria-describedby="typeHelpBlock" required>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                        <option value="notspecified">Prefer not to say</option>
                         <option value="other">Other</option>
                       </select>
-                      <small id="passwordHelpBlock" class="form-text text-muted">
+                      <small class="form-text text-muted">
                         Select atleast one option.
                       </small>
                   </div>
                 </div>
                 
                 <div class="row">
-                  <div class="phoneNumber col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
+                  <div class="donarPincode col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
                     <label for="donarPincode">Pincode</label>
                     <input type="number" id="donarPincode" class="form-control" aria-describedby="quantityHelpBlock" required>
-                    <small id="passwordHelpBlock" class="form-text text-muted">
+                    <small class="form-text text-muted">
                       Only numbers allowed.
                     </small>
                   </div>
-                  <div class="phoneNumber col-md-6 col-lg-6" style="margin-top:20px;padding-right: 0px;">
+                  <div class="donarCity col-md-6 col-lg-6" style="margin-top:20px;padding-right: 0px;">
                     <label for="donarCity">City</label>
                     <input type="text" id="donarCity" class="form-control" aria-describedby="quantityHelpBlock" required>
-                    <small id="passwordHelpBlock" class="form-text text-muted">
+                    <small class="form-text text-muted">
                       Only text format allowed.
                     </small>
                   </div>
                 </div>
 
-                <div class="description"  style="margin-top:20px;">
-                    <label for="inputDescription">Your Address</label>
-                    <textarea type="number" id="inputDescription" class="form-control" aria-describedby="descriptionHelpBlock"></textarea>
-                    <small id="passwordHelpBlock" class="form-text text-muted">
+                <div class="donarDescription"  style="margin-top:20px;">
+                    <label for="donarDescription">Your Address</label>
+                    <textarea id="donarDescription" class="form-control" aria-describedby="descriptionHelpBlock"></textarea>
+                    <small class="form-text text-muted">
                         Your address can contain letters, numbers, spaces, special characters.
                     </small>
                 </div>
-                <div style="text-align:center;margin-bottom:20px;">
+                <div class="infoSubmitButton">
                     <button type="submit" class="btn btn-info" style="margin-top:5%">Donate </button>
                 </div>
               </form>
@@ -684,10 +694,6 @@
       <span style="float:right">All the images used here are copied from Google.com , please report if you want these images to be removed. We do not own any images used here.</span>
     </footer>
 
-
-
-
-    
     <script>
       // Initialize Firebase
       var config = {
