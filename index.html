@@ -136,7 +136,7 @@
                         <input type="file" class="form-control-file btn" id="exampleFormControlFile1">
                       </div>
                     <div style="text-align:center;margin-bottom:20px;">
-                        <button type="submit" class="btn btn-info" style="margin-top:4%">Donate</button>
+                        <button type="button" class="btn btn-info donateButton" style="margin-top:4%">Donate</button>
                     </div>
                   </form>
                   
@@ -202,7 +202,7 @@
                         <input type="file" class="form-control-file btn" id="exampleFormControlFile1">
                       </div>
                     <div style="margin-bottom:20px;text-align:center">
-                        <button type="submit" class="btn btn-info" style="margin-top:5%">Donate</button>
+                        <button type="button" class="btn btn-info donateButton" style="margin-top:5%">Donate</button>
                     </div>
                   </form>
                   
@@ -236,7 +236,7 @@
                 </div>
               </div>
               <div style="text-align:center;margin-top:50px;">
-                <button class="btn btn-primary">Check your last donation</button>
+                <button type="button" class="btn btn-primary donateButton">Check your last donation</button>
               </div>
           </div>
       </div>
@@ -286,7 +286,7 @@
                       <input type="file" class="form-control-file btn" id="exampleFormControlFile1">
                     </div>
                   <div style="text-align:center;margin-bottom:20px;">
-                      <button type="submit" class="btn btn-info" style="margin-top:5%">Donate</button>
+                      <button type="button" class="btn btn-info donateButton" style="margin-top:5%">Donate</button>
                   </div>
                 </form>
                 
@@ -339,7 +339,7 @@
                       <input type="file" class="form-control-file btn" id="exampleFormControlFile1">
                     </div>
                   <div style="text-align:center;margin-bottom:20px;">
-                      <button type="submit" class="btn btn-info" style="margin-top:5%">Donate</button>
+                      <button type="button" class="btn btn-info donateButton" style="margin-top:5%">Donate</button>
                   </div>
                 </form>
                 
@@ -375,24 +375,26 @@
                       Your Email ID must be in text format, and must not contain spaces, or emoji.
                     </small>
                   </div>
-                  <div class="phoneNumber" style="margin-top:20px;">
-                    <label for="volunteerPhoneNumber">Phone Number</label>
-                    <input type="number" id="volunteerPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
-                    <small id="passwordHelpBlock" class="form-text text-muted">
-                      Your Phone Number ID must be in number format, and must not contain spaces, special characters, or emoji.
-                    </small>
-                  </div>
-                  <div class="type">
-                      <label for="inputType">Gender</label>
-                      <select type="number" id="inputDescription" class="form-control" aria-describedby="typeHelpBlock" required>
-                        <option value="cloth">Male</option>
-                        <option value="footwear">Female</option>
-                        <option value="both">Prefer not to say</option>
-                        <option value="other">Other</option>
-                      </select>
+                  <div class="row">
+                    <div class="phoneNumber col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
+                      <label for="volunteerPhoneNumber">Phone Number</label>
+                      <input type="number" id="volunteerPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
                       <small id="passwordHelpBlock" class="form-text text-muted">
-                        Select atleast one option.
+                        Your Phone Number ID must be in number format, and must not contain spaces, special characters, or emoji.
                       </small>
+                    </div>
+                    <div class="type col-md-6 col-lg-6" style="margin-top:20px;padding-right: 0px;">
+                        <label for="inputType  col-md-6 col-lg-6">Gender</label>
+                        <select type="number" id="inputDescription" class="form-control" aria-describedby="typeHelpBlock" required>
+                          <option value="cloth">Male</option>
+                          <option value="footwear">Female</option>
+                          <option value="both">Prefer not to say</option>
+                          <option value="other">Other</option>
+                        </select>
+                        <small id="passwordHelpBlock" class="form-text text-muted">
+                          Select atleast one option.
+                        </small>
+                    </div>
                   </div>
                   
                   <div class="description"  style="margin-top:20px;">
@@ -403,7 +405,7 @@
                       </small>
                   </div>
                   <div style="text-align:center;margin-bottom:20px;">
-                      <button type="submit" class="btn btn-info" style="margin-top:5%">Volunteer </button>
+                      <button type="button" class="btn btn-info donateButton" style="margin-top:5%">Volunteer </button>
                   </div>
                 </form>
                 
@@ -475,7 +477,7 @@
                     </small>
                 </div>
                   <div style="text-align:center;margin-bottom:20px;">
-                      <button type="submit" class="btn btn-info" style="margin-top:5%">Donate </button>
+                      <button type="button" class="btn btn-info donateButton" style="margin-top:5%">Donate </button>
                   </div>
                 </form>
                 
@@ -528,8 +530,8 @@
                       <input type="file" class="form-control-file btn" id="exampleFormControlFile1">
                     </div>
                   <div style="text-align:center;margin-bottom:20px">
-                      <button type="submit" class="btn btn-info" style="margin-top:5%">Donate</button>
-                  </center>
+                      <button type="button" class="btn btn-info donateButton" style="margin-top:5%">Donate</button>
+                  </div>
                 </form>
                 
               </div>
@@ -582,12 +584,95 @@
                       <input type="file" class="form-control-file btn" id="exampleFormControlFile1">
                     </div>
                   <div style="text-align:center;margin-bottom:20px;">
-                      <button type="submit" class="btn btn-info" style="margin-top:5%">Donate</button>
-                  </center>
+                      <button type="button" class="btn btn-info donateButton" style="margin-top:5%">Donate</button>
+                  </div>
                 </form>
                 
               </div>
           </div>
+      </div>
+    </section>
+
+    <section id="donarDetails" style="display:none">
+      <h2 style="text-align:center;margin-bottom: 50px;font-size: 18px;">
+        Please fill in your details
+      </h2>
+      <div class="row">
+          <div class="col" style="padding: 10px;text-align: center">
+            <img src="image/person.png" style="width:45%;height:60%;margin-top: 15%">
+          </div>
+          <div class="col contributeOption" style="padding:10px;">
+            <h3 style="text-align:center;margin-bottom:15px;font-size: 16px;">A Little bit about yourself.</h3>
+            <div class="row">
+              <form class="form-group" style="width:80%;margin-left:10%;margin-top: 5%;font-size: 14px;">
+                
+                <div class="volunteerName" style="margin-top:20px;">
+                  <label for="volunteerName">Full Name</label>
+                  <input type="text" id="volunteerName" class="form-control" aria-describedby="quantityHelpBlock" required>
+                  <small id="passwordHelpBlock" class="form-text text-muted">
+                    Only in text format.
+                  </small>
+                </div>
+                <div class="emailID" style="margin-top:20px;">
+                  <label for="volunteerEmail">Email ID</label>
+                  <input type="email" id="volunteerEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
+                  <small id="passwordHelpBlock" class="form-text text-muted">
+                    Your Email ID must be in text format, and must not contain spaces, or emoji.
+                  </small>
+                </div>
+                <div class="row">
+                  <div class="phoneNumber col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
+                    <label for="volunteerPhoneNumber">Phone Number</label>
+                    <input type="number" id="volunteerPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                      Only numbers allowed.
+                    </small>
+                  </div>
+                  <div class="type col-md-6 col-lg-6" style="margin-top:20px;padding-right: 0px;">
+                      <label for="inputType  col-md-6 col-lg-6">Gender</label>
+                      <select type="number" id="inputDescription" class="form-control" aria-describedby="typeHelpBlock" required>
+                        <option value="cloth">Male</option>
+                        <option value="footwear">Female</option>
+                        <option value="both">Prefer not to say</option>
+                        <option value="other">Other</option>
+                      </select>
+                      <small id="passwordHelpBlock" class="form-text text-muted">
+                        Select atleast one option.
+                      </small>
+                  </div>
+                </div>
+                
+                <div class="row">
+                  <div class="phoneNumber col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
+                    <label for="donarPincode">Pincode</label>
+                    <input type="number" id="donarPincode" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                      Only numbers allowed.
+                    </small>
+                  </div>
+                  <div class="phoneNumber col-md-6 col-lg-6" style="margin-top:20px;padding-right: 0px;">
+                    <label for="donarCity">City</label>
+                    <input type="text" id="donarCity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                      Only text format allowed.
+                    </small>
+                  </div>
+                </div>
+
+                <div class="description"  style="margin-top:20px;">
+                    <label for="inputDescription">Your Address</label>
+                    <textarea type="number" id="inputDescription" class="form-control" aria-describedby="descriptionHelpBlock"></textarea>
+                    <small id="passwordHelpBlock" class="form-text text-muted">
+                        Your address can contain letters, numbers, spaces, special characters.
+                    </small>
+                </div>
+                <div style="text-align:center;margin-bottom:20px;">
+                    <button type="submit" class="btn btn-info" style="margin-top:5%">Donate </button>
+                </div>
+              </form>
+              
+            </div>
+        </div>
       </div>
     </section>
 

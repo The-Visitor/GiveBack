@@ -47,6 +47,10 @@ $(document).ready(function(){
         $(".LandingPage").hide("slow");
         $("#booksDonate").show("slow");
     });
+
+    $(".donateButton").on("click", function(){
+        $("#donarDetails").show("show");
+    });
     
 
 });
