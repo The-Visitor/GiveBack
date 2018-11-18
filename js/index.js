@@ -72,23 +72,42 @@ $(document).ready(function(){
     $("#signUpForm").submit(function(e){
         e.preventDefault();
         let userName = $("#userName").val();
-        let userEmail = $("#userEmail").val();
+        let userEmail = $("#userEmail").val().toLowerCase();
+        let userPassword = $("#userPassword").val();
         let userPhoneNumber = $("#userPhoneNumber").val();
         let userGender = $("#userGender").val();
-        console.log(userName, userEmail, userPhoneNumber, userGender);
+
         db.collection("usersInformation").add({
             Name: userName,
             Email: userEmail,
+            Password: userPassword,
             PhoneNumber: userPhoneNumber,
             Gender: userGender
         })
         .then(function(document) {
             alert("Document written with ID: ", document.id);
             $("#myModal").modal("hide");
+            $("#signUpForm input").val("");
         })
         .catch(function(error) {
             alert("Error adding document: ", error);
         });
+    });
+
+    $("#loginForm").submit(function(e){
+        e.preventDefault();
+        let userEmail = $("#userEmailValidate").val().toLowerCase();
+        let userPassword = $("#userPasswordValidate").val();
+        db.collection("usersInformation").where("Email","==",userEmail).get().then(function(snapshot){
+            snapshot.forEach(function(doc){
+                if(doc.data().Password == userPassword)
+                {
+                    $("#loginModal").modal("hide");
+                    return;
+                }
+            })
+        })
+
     });
 
 });
