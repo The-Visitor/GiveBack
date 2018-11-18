@@ -1,4 +1,21 @@
 $(document).ready(function(){
+
+    // connect to Database
+    var config = {
+        apiKey: "AIzaSyBP3QkSq5NfwI7rLOCmwKwyb-vtpgkt8nY",
+        authDomain: "give-back-77eae.firebaseapp.com",
+        databaseURL: "https://give-back-77eae.firebaseio.com",
+        projectId: "give-back-77eae",
+        storageBucket: "give-back-77eae.appspot.com",
+        messagingSenderId: "429327911261"
+      };
+      firebase.initializeApp(config);
+      const db = firebase.firestore();
+      db.settings({
+        timestampsInSnapshots: true
+        });
+
+
     $("#siteLogo").on("click", function(){
         $(window).location.reload();
     });
@@ -51,6 +68,46 @@ $(document).ready(function(){
     $(".donateButton").on("click", function(){
         $("#donarDetails").show("show");
     });
-    
+
+    $("#signUpForm").submit(function(e){
+        e.preventDefault();
+        let userName = $("#userName").val();
+        let userEmail = $("#userEmail").val().toLowerCase();
+        let userPassword = $("#userPassword").val();
+        let userPhoneNumber = $("#userPhoneNumber").val();
+        let userGender = $("#userGender").val();
+
+        db.collection("usersInformation").add({
+            Name: userName,
+            Email: userEmail,
+            Password: userPassword,
+            PhoneNumber: userPhoneNumber,
+            Gender: userGender
+        })
+        .then(function(document) {
+            alert("Document written with ID: ", document.id);
+            $("#myModal").modal("hide");
+            $("#signUpForm input").val("");
+        })
+        .catch(function(error) {
+            alert("Error adding document: ", error);
+        });
+    });
+
+    $("#loginForm").submit(function(e){
+        e.preventDefault();
+        let userEmail = $("#userEmailValidate").val().toLowerCase();
+        let userPassword = $("#userPasswordValidate").val();
+        db.collection("usersInformation").where("Email","==",userEmail).get().then(function(snapshot){
+            snapshot.forEach(function(doc){
+                if(doc.data().Password == userPassword)
+                {
+                    $("#loginModal").modal("hide");
+                    return;
+                }
+            })
+        })
+
+    });
 
 });
