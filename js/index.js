@@ -129,4 +129,126 @@ $(document).ready(function(){
         });
     });
 
+    $("#foodDonateForm").submit(function(e){
+        let foodType = $("#foodType").val();
+        let foodSubType = $("#foodSubType").val();
+        let quantity = $("#foodQuantity").val();
+        let description = $("#foodDescription").val();
+        e.preventDefault();
+        db.collection("foodDonate").add({
+            FoodType: foodType,
+            FoodSubType: foodSubType,
+            Quantity: quantity,
+            Description: description,
+            IsActive: true
+        })
+        .then(function(document) {
+            alert("Document written");
+        })
+        .catch(function(error) {
+            alert("Error adding document: ", error);
+        });
+    });
+
+    $("#furnitureDonateForm").submit(function(e){
+        let furnitureType = $("#furnitureType").val();
+        let quantity = $("#furnitureQuantity").val();
+        let description = $("#furnitureDescription").val();
+        e.preventDefault();
+        db.collection("furnitureDonate").add({
+            furnitureType: foodType,
+            Quantity: quantity,
+            Description: description,
+            IsActive: true
+        })
+        .then(function(document) {
+            alert("Document written");
+        })
+        .catch(function(error) {
+            alert("Error adding document: ", error);
+        });
+    });
+
+    $("#electronicsDonateForm").submit(function(e){
+        let electronicsType = $("#electronicsType").val();
+        let quantity = $("#electronicsQuantity").val();
+        let description = $("#electronicsDescription").val();
+        e.preventDefault();
+        db.collection("furnitureDonate").add({
+            ElectronicsType: electronicsType,
+            Quantity: quantity,
+            Description: description,
+            IsActive: true
+        })
+        .then(function(document) {
+            alert("Document written");
+        })
+        .catch(function(error) {
+            alert("Error adding document: ", error);
+        });
+    });
+    
+    $("#bloodDonateForm").submit(function(e){
+        let donarName = $("#bloodDonarName").val();
+        let donarEmail = $("#bloodDonarEmail").val();
+        let donarPhone = $("#bloodDonarPhoneNumber").val();
+        let donarGender = $("#bloodDonarGender").val();
+        let bloodGroupType = $("#bloodGroupType").val();
+        e.preventDefault();
+        db.collection("bloodDonate").add({
+            DonarName: donarName,
+            DonarEmail: donarEmail,
+            DonarPhone: donarPhone,
+            DonarGender: donarGender,
+            BloodGroup: bloodGroupType,
+            IsActive: true
+        })
+        .then(function(document) {
+            alert("Document written");
+        })
+        .catch(function(error) {
+            alert("Error adding document: ", error);
+        });
+    });
+    
+    $("#vehicleDonateForm").submit(function(e){
+        let vehicleType = $("#vehicleType").val();
+        let quantity = $("#vehicleQuantity").val();
+        let description = $("#vehicleDescription").val();
+        e.preventDefault();
+        db.collection("furnitureDonate").add({
+            ElectronicsType: vehicleType,
+            Quantity: quantity,
+            Description: description,
+            IsActive: true
+        })
+        .then(function(document) {
+            alert("Document written");
+        })
+        .catch(function(error) {
+            alert("Error adding document: ", error);
+        });
+    });
+
+    $("#bookDonateForm").submit(function(e){
+        let bookType = $("#bookType").val();
+        let quantity = $("#bookQuantity").val();
+        let description = $("#bookDescription").val();
+        e.preventDefault();
+        db.collection("furnitureDonate").add({
+            bookType: bookType,
+            Quantity: quantity,
+            Description: description,
+            IsActive: true
+        })
+        .then(function(document) {
+            alert("Document written");
+        })
+        .catch(function(error) {
+            alert("Error adding document: ", error);
+        });
+    });
+    
+    
+
 });
