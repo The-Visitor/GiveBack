@@ -110,4 +110,12 @@ $(document).ready(function(){
 
     });
 
+    $(".clothesDonateForm").submit(function(e){
+        e.preventDefault();
+        let materialType = $("#materialType").val();
+        let quantity = $("#clothesQuantity").val();
+        let description = $("#clothesDescription").val();
+        console.log(materialType, quantity, description);
+    });
+
 });
