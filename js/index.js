@@ -110,12 +110,23 @@ $(document).ready(function(){
 
     });
 
-    $(".clothesDonateForm").submit(function(e){
-        e.preventDefault();
+    $("#clothesDonateForm").submit(function(e){
         let materialType = $("#materialType").val();
         let quantity = $("#clothesQuantity").val();
         let description = $("#clothesDescription").val();
-        console.log(materialType, quantity, description);
+        e.preventDefault();
+        db.collection("clothesDonate").add({
+            Material: materialType,
+            Quantity: quantity,
+            Description: description,
+            IsActive: true
+        })
+        .then(function(document) {
+            alert("Document written with ID: ", document.id);
+        })
+        .catch(function(error) {
+            alert("Error adding document: ", error);
+        });
     });
 
 });
