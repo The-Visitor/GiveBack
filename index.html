@@ -221,7 +221,7 @@
                       </div>
 
                     <div class="infoSubmitButton">
-                        <button type="submit" class="btn btn-info donateButton" id="foodDonateButton" style="margin-top:5%">Donate</button>
+                        <button type="submit" class="btn btn-info donateButton foodDonateButton" style="margin-top:5%">Donate</button>
                     </div>
                   </form>
                   
@@ -308,7 +308,7 @@
                       <input type="file" class="form-control-file btn" id="furnitureImage">
                     </div>
                   <div class="infoSubmitButton">
-                      <button type="submit" class="btn btn-info donateButton" id="furnitureDonateButton" style="margin-top:5%">Donate</button>
+                      <button type="submit" class="btn btn-info donateButton furnitureDonateButton" style="margin-top:5%">Donate</button>
                   </div>
                 </form>
                 
@@ -626,7 +626,7 @@
           <div class="col contributeOption" style="padding:10px;">
             <h3 class="mainSubHeading">A Little bit about yourself.</h3>
             <div class="row">
-              <form class="form-group formStyle">
+              <form class="form-group formStyle" id="donarAddressDetails">
                 
                 <div class="donarName" style="margin-top:20px;">
                   <label for="donarName">Full Name</label>
@@ -663,7 +663,6 @@
                       </small>
                   </div>
                 </div>
-                
                 <div class="row">
                   <div class="donarPincode col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
                     <label for="donarPincode">Pincode</label>
@@ -681,15 +680,15 @@
                   </div>
                 </div>
 
-                <div class="donarDescription"  style="margin-top:20px;">
-                    <label for="donarDescription">Your Address</label>
-                    <textarea id="donarDescription" class="form-control" aria-describedby="descriptionHelpBlock"></textarea>
+                <div class="donarAddress"  style="margin-top:20px;">
+                    <label for="donarAddress">Your Address</label>
+                    <textarea id="donarAddress" class="form-control" aria-describedby="descriptionHelpBlock"></textarea>
                     <small class="form-text text-muted">
                         Your address can contain letters, numbers, spaces, special characters.
                     </small>
                 </div>
                 <div class="infoSubmitButton">
-                    <button type="submit" class="btn btn-info" style="margin-top:5%">Donate </button>
+                    <button type="submit" id="submitDonarAddress" class="btn btn-info" style="margin-top:5%">Donate </button>
                 </div>
               </form>
               
@@ -814,5 +813,6 @@
     </footer>
     
     <script src="js/index.js"></script>
+    <script src="js/API.js"></script>
   </body>
 </html>
