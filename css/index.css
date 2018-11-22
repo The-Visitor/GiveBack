@@ -102,3 +102,16 @@ select, .form-control-file{
 {
   margin-top: 4%;
 }
+
+.badge{
+  padding: 10px;
+  font-size: 14px;
+}
+
+.allDonationCard
+{
+  color:white;
+  min-width:10%;
+  float:left;
+  margin:5px;
+}

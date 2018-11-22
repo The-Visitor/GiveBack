@@ -8,6 +8,15 @@ function successMessage(){
       });
 }
 
+function failureMessage(){
+    new PNotify({
+        title: 'Sorry!',
+        text: 'Check Your credentials and try again.',
+        type: 'error',
+        delay: 2000
+      });
+}
+
 $("#signUpForm").submit(function(e){
     e.preventDefault();
     let userName = $("#userName").val();
@@ -46,6 +55,9 @@ $("#loginForm").submit(function(e){
                 $("#loginButton span").text(`Hello ${doc.data().Name}`);
                 successMessage();
                 return;
+            }
+            else{
+                failureMessage();
             }
         })
     })
@@ -159,7 +171,7 @@ $("#vehicleDonateForm").submit(function(e){
     let description = $("#vehicleDescription").val();
     e.preventDefault();
     db.collection("vehicleDonate").add({
-        ElectronicsType: vehicleType,
+        vehicleType: vehicleType,
         Quantity: quantity,
         Description: description,
         IsActive: true
@@ -220,3 +232,83 @@ $("#donarAddressDetails").submit(function(e){
         alert("Error adding document: ", error);
     });
 })
+
+function renderAllCards(){
+
+    // all clothes donation
+    db.collection("clothesDonate").get().then(function(snapshot){
+        snapshot.forEach(function(doc){
+            let card = `<div class='card allDonationCard' style='background:#007bff;'><div class='card-body'>${doc.data().Material} <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+            $("#allDonationsCard").append(card);
+        })
+    })
+
+    //all food donation
+    db.collection("foodDonate").get().then(function(snapshot){
+        snapshot.forEach(function(doc){
+            let card = `<div class='card allDonationCard' style='background:#6c757d;'><div class='card-body'> ${doc.data().FoodType} <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+            $("#allDonationsCard").append(card);
+        })
+    })
+
+    // all money donation
+    db.collection("clothesDonate").get().then(function(snapshot){
+        snapshot.forEach(function(doc){
+            let card = `<div class='card allDonationCard' style='background:#007bff;'><div class='card-body'>Clothes <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+            $("#allDonationsCard").append(card);
+        })
+    })
+
+    //all furniture donation
+    db.collection("furnitureDonate").get().then(function(snapshot){
+        snapshot.forEach(function(doc){
+            let card = `<div class='card allDonationCard' style='background:#f8f9fa;'><div class='card-body'>Furniture <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+            $("#allDonationsCard").append(card);
+        })
+    })
+
+    //all electronics donation
+    db.collection("electronicsDonate").get().then(function(snapshot){
+        snapshot.forEach(function(doc){
+            let card = `<div class='card allDonationCard' style='background:#ffc107;'><div class='card-body'>${doc.data().ElectronicsType} <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+            $("#allDonationsCard").append(card);
+        })
+    })
+
+    //all volunteers
+    // db.collection("clothesDonate").get().then(function(snapshot){
+    //     snapshot.forEach(function(doc){
+    //         let card = `<div class='card allDonationCard' style='background:#007bff;'><div class='card-body'>Clothes <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+    //         $("#allDonationsCard").append(card);
+    //     })
+    // })
+
+    //all blood donation
+    db.collection("bloodDonate").get().then(function(snapshot){
+        snapshot.forEach(function(doc){
+            let card = `<div class='card allDonationCard' style='background:#dc3545;'><div class='card-body'>${doc.data().DonarName}  <br> ${doc.data().BloodGroup} ${doc.data().DonarGender} </div></div>`;
+            $("#allDonationsCard").append(card);
+        })
+    })
+
+    //all vehicles donation
+    db.collection("vehicleDonate").get().then(function(snapshot){
+        snapshot.forEach(function(doc){
+            let card = `<div class='card allDonationCard' style='background:#343a40;'><div class='card-body'>${doc.data().vehicleType} <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+            $("#allDonationsCard").append(card);
+        })
+    })
+
+    //all books donation
+    db.collection("bookDonate").get().then(function(snapshot){
+        snapshot.forEach(function(doc){
+            let card = `<div class='card allDonationCard' style='background:#17a2b8;'><div class='card-body'>${doc.data().bookType}  <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+            $("#allDonationsCard").append(card);
+        })
+    })
+}
+$(".totalDonation").on("click", function(){
+    $("section").hide();
+    $("#allDonations").show();
+    renderAllCards();
+});
