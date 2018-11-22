@@ -32,7 +32,10 @@ $("#loginForm").submit(function(e){
         snapshot.forEach(function(doc){
             if(doc.data().Password == userPassword)
             {
+                //console.log(doc.data());
                 $("#loginModal").modal("hide");
+                sessionStorage.setItem("UserName",doc.data().Name);
+                $("#loginButton").text(`Hello ${sessionStorage.getItem("UserName")}`);
                 return;
             }
         })
