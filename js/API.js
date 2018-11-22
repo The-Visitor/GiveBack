@@ -34,7 +34,7 @@ $("#loginForm").submit(function(e){
             {
                 //console.log(doc.data());
                 $("#loginModal").modal("hide");
-                sessionStorage.setItem("UserName",doc.data().Name);
+                sessionStorage.setItem("UserName ",doc.data().Name);
                 $("#loginButton").text(`Hello ${sessionStorage.getItem("UserName")}`);
                 return;
             }
