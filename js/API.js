@@ -1,5 +1,14 @@
 
- $("#signUpForm").submit(function(e){
+function successMessage(){
+    new PNotify({
+        title: 'Hello!',
+        text: 'You are Logged In',
+        type: 'success',
+        delay: 2000
+      });
+}
+
+$("#signUpForm").submit(function(e){
     e.preventDefault();
     let userName = $("#userName").val();
     let userEmail = $("#userEmail").val().toLowerCase();
@@ -35,6 +44,7 @@ $("#loginForm").submit(function(e){
                 $("#loginModal").modal("hide");
                 $("#signUpButton").hide();
                 $("#loginButton span").text(`Hello ${doc.data().Name}`);
+                successMessage();
                 return;
             }
         })
