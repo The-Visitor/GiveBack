@@ -1,5 +1,5 @@
 
-$("#signUpForm").submit(function(e){
+ $("#signUpForm").submit(function(e){
     e.preventDefault();
     let userName = $("#userName").val();
     let userEmail = $("#userEmail").val().toLowerCase();
@@ -32,10 +32,9 @@ $("#loginForm").submit(function(e){
         snapshot.forEach(function(doc){
             if(doc.data().Password == userPassword)
             {
-                //console.log(doc.data());
                 $("#loginModal").modal("hide");
-                sessionStorage.setItem("UserName ",doc.data().Name);
-                $("#loginButton").text(`Hello ${sessionStorage.getItem("UserName")}`);
+                $("#signUpButton").hide();
+                $("#loginButton span").text(`Hello ${doc.data().Name}`);
                 return;
             }
         })
