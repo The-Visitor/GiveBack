@@ -32,7 +32,7 @@
             <a class="navbar-brand" href="#" style="float:right" data-toggle="modal" data-target="#myModal">
                 <span>Sign Up</span>
             </a>
-            <a class="navbar-brand" href="#" style="float:right" data-toggle="modal" data-target="#loginModal">
+            <a id="loginButton" class="navbar-brand" href="#" style="float:right" data-toggle="modal" data-target="#loginModal">
                 <span>Log In</span>
             </a>
       </nav>
@@ -811,6 +811,21 @@
       This is just a test site. &copy; Copyright Not Reserved
       <span style="float:right">All the images used here are copied from Google.com , please report if you want these images to be removed. We do not own any images used here.</span>
     </footer>
+    <script>
+      var config = {
+        apiKey: "AIzaSyBP3QkSq5NfwI7rLOCmwKwyb-vtpgkt8nY",
+        authDomain: "give-back-77eae.firebaseapp.com",
+        databaseURL: "https://give-back-77eae.firebaseio.com",
+        projectId: "give-back-77eae",
+        storageBucket: "give-back-77eae.appspot.com",
+        messagingSenderId: "429327911261"
+      };
+      firebase.initializeApp(config);
+      const db = firebase.firestore();
+      db.settings({
+        timestampsInSnapshots: true
+        });
+    </script>
     
     <script src="js/index.js"></script>
     <script src="js/API.js"></script>
