@@ -1,4 +1,13 @@
 
+function successMessage(){
+    new PNotify({
+        title: 'Hello!',
+        text: 'You are Logged In',
+        type: 'success',
+        delay: 2000
+      });
+}
+
 $("#signUpForm").submit(function(e){
     e.preventDefault();
     let userName = $("#userName").val();
@@ -32,10 +41,10 @@ $("#loginForm").submit(function(e){
         snapshot.forEach(function(doc){
             if(doc.data().Password == userPassword)
             {
-                //console.log(doc.data());
                 $("#loginModal").modal("hide");
-                sessionStorage.setItem("UserName ",doc.data().Name);
-                $("#loginButton").text(`Hello ${sessionStorage.getItem("UserName")}`);
+                $("#signUpButton").hide();
+                $("#loginButton span").text(`Hello ${doc.data().Name}`);
+                successMessage();
                 return;
             }
         })
