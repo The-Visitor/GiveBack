@@ -1,17 +1,33 @@
 
-function successMessage(){
+if(localStorage.getItem("Userid"))
+{
+    $("#loginButton").text(`Hello ${localStorage.getItem("Username")}`);
+    $("#signUpButton").text("Logout");
+}
+
+$("#signUpButton").on("click", function(e){
+    if(localStorage.getItem("Userid"))
+    {
+        localStorage.clear();
+        location.reload();
+        e.preventDefault();
+        return;
+    }
+})
+
+function successMessage(message){
     new PNotify({
         title: 'Hello!',
-        text: 'You are Logged In',
+        text: message,
         type: 'success',
         delay: 2000
       });
 }
 
-function failureMessage(){
+function failureMessage(message){
     new PNotify({
         title: 'Sorry!',
-        text: 'Check Your credentials and try again.',
+        text: message,
         type: 'error',
         delay: 2000
       });
@@ -25,20 +41,37 @@ $("#signUpForm").submit(function(e){
     let userPhoneNumber = $("#userPhoneNumber").val();
     let userGender = $("#userGender").val();
 
-    db.collection("usersInformation").add({
-        Name: userName,
-        Email: userEmail,
-        Password: userPassword,
-        PhoneNumber: userPhoneNumber,
-        Gender: userGender
-    })
-    .then(function(document) {
-        alert("Document written with ID: ", document.id);
-        $("#myModal").modal("hide");
-        $("#signUpForm input").val("");
-    })
-    .catch(function(error) {
-        alert("Error adding document: ", error);
+    db.collection("usersInformation").where("Email","==",userEmail).get().then(function(snapshot){
+        if(snapshot.size === 0)
+        {
+            let id;
+            db.collection("usersInformation").get().then(function(allDocument){
+                id = allDocument.size +1 ;
+            }).then(function(allDocument){
+                db.collection("usersInformation").add({
+                    UserID: id,
+                    Name: userName,
+                    Email: userEmail,
+                    Password: userPassword,
+                    PhoneNumber: userPhoneNumber,
+                    Gender: userGender
+                })
+                .then(function(document) {
+                    successMessage("Congratulations, Your account is created. Login to verify it.");
+                    $("#myModal").modal("hide");
+                    $("#signUpForm input").val("");
+                    $("#loginModal").modal("show");
+                })
+                .catch(function(error) {
+                    failureMessage("Sorry, There was some error. Please try again in a bit.")
+                    alert("Error adding document: ", error);
+                });
+            })
+        }
+        else
+        {
+            failureMessage("This email is already registered. Try with different Email ID or Login.")
+        }
     });
 });
 
@@ -47,21 +80,31 @@ $("#loginForm").submit(function(e){
     let userEmail = $("#userEmailValidate").val().toLowerCase();
     let userPassword = $("#userPasswordValidate").val();
     db.collection("usersInformation").where("Email","==",userEmail).get().then(function(snapshot){
-        snapshot.forEach(function(doc){
-            if(doc.data().Password == userPassword)
-            {
-                $("#loginModal").modal("hide");
-                $("#signUpButton").hide();
-                $("#loginButton span").text(`Hello ${doc.data().Name}`);
-                successMessage();
-                return;
-            }
-            else{
-                failureMessage();
-            }
-        })
+        if(snapshot.size > 0)
+        {
+            snapshot.forEach(function(doc){
+                if(doc.data().Password == userPassword)
+                {
+                    $("#loginModal").modal("hide");
+                    $("#signUpButton").hide();
+                    $("#loginButton span").text(`Hello ${doc.data().Name}`);
+                    $("#signUpButton").text("Logout");
+                    successMessage("You are Logged In");
+                    localStorage.setItem('Username',doc.data().Name);
+                    localStorage.setItem('Useremail',doc.data().Email);
+                    localStorage.setItem('Userid',doc.data().UserID);
+                    return;
+                }
+                else{
+                    failureMessage("Check Your credentials and try again.");
+                }
+            })
+        }
+        else
+        {
+            failureMessage("Check Your credentials and try again.");
+        }
     })
-
 });
 
 $("#clothesDonateForm").submit(function(e){
