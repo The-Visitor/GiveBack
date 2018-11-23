@@ -108,10 +108,15 @@ select, .form-control-file{
   font-size: 14px;
 }
 
+.card-body{
+  padding: 10px;
+}
+
 .allDonationCard
 {
   color:white;
   min-width:10%;
   float:left;
   margin:5px;
+  border-bottom: 5px solid black;
 }
