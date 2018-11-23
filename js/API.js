@@ -1,4 +1,20 @@
 
+if(localStorage.getItem("Userid"))
+{
+    $("#loginButton").text(`Hello ${localStorage.getItem("Username")}`);
+    $("#signUpButton").text("Logout");
+}
+
+$("#signUpButton").on("click", function(e){
+    if(localStorage.getItem("Userid"))
+    {
+        localStorage.clear();
+        location.reload();
+        e.preventDefault();
+        return;
+    }
+})
+
 function successMessage(message){
     new PNotify({
         title: 'Hello!',
@@ -64,23 +80,31 @@ $("#loginForm").submit(function(e){
     let userEmail = $("#userEmailValidate").val().toLowerCase();
     let userPassword = $("#userPasswordValidate").val();
     db.collection("usersInformation").where("Email","==",userEmail).get().then(function(snapshot){
-        snapshot.forEach(function(doc){
-            if(doc.data().Password == userPassword)
-            {
-                $("#loginModal").modal("hide");
-                $("#signUpButton").hide();
-                $("#loginButton span").text(`Hello ${doc.data().Name}`);
-                successMessage("You are Logged In");
-                localStorage.setItem('Username',doc.data().Name);
-                localStorage.setItem('Useremail',doc.data().Email);
-                return;
-            }
-            else{
-                failureMessage("Check Your credentials and try again.");
-            }
-        })
+        if(snapshot.size > 0)
+        {
+            snapshot.forEach(function(doc){
+                if(doc.data().Password == userPassword)
+                {
+                    $("#loginModal").modal("hide");
+                    $("#signUpButton").hide();
+                    $("#loginButton span").text(`Hello ${doc.data().Name}`);
+                    $("#signUpButton").text("Logout");
+                    successMessage("You are Logged In");
+                    localStorage.setItem('Username',doc.data().Name);
+                    localStorage.setItem('Useremail',doc.data().Email);
+                    localStorage.setItem('Userid',doc.data().UserID);
+                    return;
+                }
+                else{
+                    failureMessage("Check Your credentials and try again.");
+                }
+            })
+        }
+        else
+        {
+            failureMessage("Check Your credentials and try again.");
+        }
     })
-
 });
 
 $("#clothesDonateForm").submit(function(e){
