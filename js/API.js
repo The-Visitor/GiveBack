@@ -1,8 +1,12 @@
-
 if(localStorage.getItem("Userid"))
 {
     $("#loginButton").text(`Hello ${localStorage.getItem("Username")}`);
     $("#signUpButton").text("Logout");
+    
+    $("#donarAddressDetails").find("#donarName").val(localStorage.getItem('Username'));
+    $("#donarAddressDetails").find("#donarEmail").val(localStorage.getItem('Useremail'));
+    $("#donarAddressDetails").find("#donarPhoneNumber").val(localStorage.getItem('Userphone'));
+    $("#donarAddressDetails").find("#donarType").val(localStorage.getItem('Usergender'));
 }
 
 $("#signUpButton").on("click", function(e){
@@ -11,6 +15,8 @@ $("#signUpButton").on("click", function(e){
         localStorage.clear();
         location.reload();
         e.preventDefault();
+        let form = document.getElementById("donarAddressDetails");
+        form.reset();
         return;
     }
 })
@@ -86,14 +92,14 @@ $("#loginForm").submit(function(e){
                 if(doc.data().Password == userPassword)
                 {
                     $("#loginModal").modal("hide");
-                    $("#signUpButton").hide();
                     $("#loginButton span").text(`Hello ${doc.data().Name}`);
                     $("#signUpButton").text("Logout");
                     successMessage("You are Logged In");
                     localStorage.setItem('Username',doc.data().Name);
                     localStorage.setItem('Useremail',doc.data().Email);
                     localStorage.setItem('Userid',doc.data().UserID);
-                    return;
+                    localStorage.setItem('Userphone',doc.data().PhoneNumber);
+                    localStorage.setItem('Usergender', doc.data().Gender);
                 }
                 else{
                     failureMessage("Check Your credentials and try again.");
@@ -107,23 +113,22 @@ $("#loginForm").submit(function(e){
     })
 });
 
+function objectifyForm(formArray) {//serialize data function
+
+    var returnArray = {};
+    for (var i = 0; i < formArray.length; i++){
+      returnArray[formArray[i]['name']] = formArray[i]['value'];
+    }
+    return returnArray;
+  }
+var data = {};
 $("#clothesDonateForm").submit(function(e){
-    let materialType = $("#materialType").val();
-    let quantity = $("#clothesQuantity").val();
-    let description = $("#clothesDescription").val();
+    data = objectifyForm($(this).serializeArray());
+    data["UserID"] = localStorage.getItem("Userid");
+    console.log(data);
     e.preventDefault();
-    db.collection("clothesDonate").add({
-        Material: materialType,
-        Quantity: quantity,
-        Description: description,
-        IsActive: true
-    })
-    .then(function(document) {
-        alert("Document written with ID: ", document.id);
-    })
-    .catch(function(error) {
-        alert("Error adding document: ", error);
-    });
+
+    db.collection("clothesDonate").add(data);
 });
 
 $("#foodDonateForm").submit(function(e){
@@ -138,12 +143,6 @@ $("#foodDonateForm").submit(function(e){
         Quantity: quantity,
         Description: description,
         IsActive: true
-    })
-    .then(function(document) {
-        alert("Document written");
-    })
-    .catch(function(error) {
-        alert("Error adding document: ", error);
     });
 });
 
@@ -157,12 +156,6 @@ $("#furnitureDonateForm").submit(function(e){
         Quantity: quantity,
         Description: description,
         IsActive: true
-    })
-    .then(function(document) {
-        alert("Document written");
-    })
-    .catch(function(error) {
-        alert("Error adding document: ", error);
     });
 });
 
@@ -176,12 +169,6 @@ $("#electronicsDonateForm").submit(function(e){
         Quantity: quantity,
         Description: description,
         IsActive: true
-    })
-    .then(function(document) {
-        alert("Document written");
-    })
-    .catch(function(error) {
-        alert("Error adding document: ", error);
     });
 });
 
@@ -199,12 +186,6 @@ $("#bloodDonateForm").submit(function(e){
         DonarGender: donarGender,
         BloodGroup: bloodGroupType,
         IsActive: true
-    })
-    .then(function(document) {
-        alert("Document written");
-    })
-    .catch(function(error) {
-        alert("Error adding document: ", error);
     });
 });
 
@@ -218,12 +199,6 @@ $("#vehicleDonateForm").submit(function(e){
         Quantity: quantity,
         Description: description,
         IsActive: true
-    })
-    .then(function(document) {
-        alert("Document written");
-    })
-    .catch(function(error) {
-        alert("Error adding document: ", error);
     });
 });
 
@@ -237,12 +212,6 @@ $("#bookDonateForm").submit(function(e){
         Quantity: quantity,
         Description: description,
         IsActive: true
-    })
-    .then(function(document) {
-        alert("Document written");
-    })
-    .catch(function(error) {
-        alert("Error adding document: ", error);
     });
 });
 
@@ -267,12 +236,6 @@ $("#donarAddressDetails").submit(function(e){
             Address: address
         },
         IsActive: true
-    })
-    .then(function(document) {
-        alert("Document written");
-    })
-    .catch(function(error) {
-        alert("Error adding document: ", error);
     });
 })
 

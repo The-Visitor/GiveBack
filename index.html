@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/index.css">
     <script type="text/javascript" src="js/pnotify.custom.min.js"></script>
     <link href="css/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
+
   </head>
   <body class="headerGradient">
       <nav class="navbar" style="display:list-item">
@@ -121,7 +122,7 @@
                   <form class="form-group formStyle" id="clothesDonateForm">
                     <div class="clothesType">
                         <label for="materialType">Material Type</label>
-                        <select id="materialType" class="form-control" aria-describedby="typeHelpBlock" required>
+                        <select name="materialType" id="materialType" class="form-control" aria-describedby="typeHelpBlock" required>
                           <option value="Clothes">Clothes</option>
                           <option value="Footwear">footwear</option>
                           <option value="Clothes">Both</option>
@@ -134,7 +135,7 @@
 
                     <div class="clothesQuantity" style="margin-top:20px;">
                         <label for="clothesQuantity">Quantity (Total)</label>
-                        <input type="number" id="clothesQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                        <input name="clothesQuantity" type="number" id="clothesQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
                         <small class="form-text text-muted">
                           Your Quantity must be in number format, and must not contain spaces, special characters, or emoji.
                         </small>
@@ -142,7 +143,7 @@
 
                     <div class="clothesDescription"  style="margin-top:20px;">
                         <label for="clothesDescription">Description</label>
-                        <textarea id="clothesDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
+                        <textarea name="clothesDescription" id="clothesDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
                         <small class="form-text text-muted">
                             Your description must contain letters, numbers, spaces, special characters.
                         </small>
@@ -818,9 +819,16 @@
                           <input type="submit" class="btn btn-info donateButton" id="userInfoValidate" style="margin-top:5%" value="Login">
                       </div>
                     </form>
+                    <div style="text-align:center">
+
+                      <div class="g-signin2" data-onsuccess="onSignIn"></div>
+                      <!-- <span>Log In with </span>
+                      <img src="image/googleLogo.png" style="height:22px;width:22px;margin-left: 20px;"> -->
+                    </div>
               </div>
               <div class="modal-footer">
                 <label>Not a member ? Sign Up</label>
+                
               </div>
             </div>
             
