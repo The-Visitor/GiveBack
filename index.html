@@ -27,7 +27,7 @@
                     Give Back
             </a>
             <a class="navbar-brand" href="#" style="float:right">
-              <span>Distribution</span>
+              <span id="testButton">Distribution</span>
             </a>
             <a class="navbar-brand" href="#" style="float:right">
               <span>Contact Us</span>
@@ -39,7 +39,7 @@
                 <span>Log In</span>
             </a>
       </nav>
-    <section class="LandingPage" style="display:none">
+    <section class="LandingPage">
       <h1 class="mainHeading">
         Donate as you like
       </h1>
@@ -633,14 +633,14 @@
                 
                 <div class="donarName" style="margin-top:20px;">
                   <label for="donarName">Full Name</label>
-                  <input type="text" id="donarName" class="form-control" aria-describedby="quantityHelpBlock" required>
+                  <input name="DonarName" type="text" id="donarName" class="form-control" aria-describedby="quantityHelpBlock" required>
                   <small class="form-text text-muted">
                     Only in text format.
                   </small>
                 </div>
                 <div class="donarEmail" style="margin-top:20px;">
                   <label for="donarEmail">Email ID</label>
-                  <input type="email" id="donarEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
+                  <input name="donarEmail" type="email" id="donarEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
                   <small class="form-text text-muted">
                     Your Email ID must be in text format, and must not contain spaces, or emoji.
                   </small>
@@ -648,14 +648,14 @@
                 <div class="row">
                   <div class="donarPhoneNumber col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
                     <label for="donarPhoneNumber">Phone Number</label>
-                    <input type="number" id="donarPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <input name="donarPhoneNumber" type="number" id="donarPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
                     <small class="form-text text-muted">
                       Only numbers allowed.
                     </small>
                   </div>
                   <div class="donarType col-md-6 col-lg-6" style="margin-top:20px;padding-right: 0px;">
                       <label for="donarType  col-md-6 col-lg-6">Gender</label>
-                      <select id="donarType" class="form-control" aria-describedby="typeHelpBlock" required>
+                      <select name="donarType" id="donarType" class="form-control" aria-describedby="typeHelpBlock" required>
                         <option value="male">Male</option>
                         <option value="female">Female</option>
                         <option value="notspecified">Prefer not to say</option>
@@ -667,16 +667,16 @@
                   </div>
                 </div>
                 <div class="row">
-                  <div class="donarPincode col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
+                  <div  class="donarPincode col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
                     <label for="donarPincode">Pincode</label>
-                    <input type="number" id="donarPincode" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <input name="Pincode" type="number" id="donarPincode" class="form-control" aria-describedby="quantityHelpBlock" required>
                     <small class="form-text text-muted">
                       Only numbers allowed.
                     </small>
                   </div>
                   <div class="donarCity col-md-6 col-lg-6" style="margin-top:20px;padding-right: 0px;">
                     <label for="donarCity">City</label>
-                    <input type="text" id="donarCity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <input name="city" type="text" id="donarCity" class="form-control" aria-describedby="quantityHelpBlock" required>
                     <small class="form-text text-muted">
                       Only text format allowed.
                     </small>
@@ -685,7 +685,7 @@
 
                 <div class="donarAddress"  style="margin-top:20px;">
                     <label for="donarAddress">Your Address</label>
-                    <textarea id="donarAddress" class="form-control" aria-describedby="descriptionHelpBlock"></textarea>
+                    <textarea name="address" id="donarAddress" class="form-control" aria-describedby="descriptionHelpBlock"></textarea>
                     <small class="form-text text-muted">
                         Your address can contain letters, numbers, spaces, special characters.
                     </small>
@@ -720,7 +720,7 @@
       
     </section>
 
-    <section id="donationSummary">
+    <section id="donationSummary" style="display:none">
       <div class="container">
         <div class="card" style="border:1px solid black;">
           <h1 style="text-align:center;font-size:18px;">Here is the summary of your doantion . Feel free to save it for future references .</h1>

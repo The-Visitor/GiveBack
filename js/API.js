@@ -9,18 +9,6 @@ if(localStorage.getItem("Userid"))
     $("#donarAddressDetails").find("#donarType").val(localStorage.getItem('Usergender'));
 }
 
-$("#signUpButton").on("click", function(e){
-    if(localStorage.getItem("Userid"))
-    {
-        localStorage.clear();
-        location.reload();
-        e.preventDefault();
-        let form = document.getElementById("donarAddressDetails");
-        form.reset();
-        return;
-    }
-})
-
 function successMessage(message){
     new PNotify({
         title: 'Hello!',
@@ -38,6 +26,30 @@ function failureMessage(message){
         delay: 2000
       });
 }
+
+function objectifyForm(formArray) {
+    
+    var returnArray = {};
+    for (var i = 0; i < formArray.length; i++){
+      returnArray[formArray[i]['name']] = formArray[i]['value'];
+    }
+    return returnArray;
+  }
+
+  
+var data = {}; 
+
+$("#signUpButton").on("click", function(e){
+    if(localStorage.getItem("Userid"))
+    {
+        localStorage.clear();
+        location.reload();
+        e.preventDefault();
+        let form = document.getElementById("donarAddressDetails");
+        form.reset();
+        return;
+    }
+})
 
 $("#signUpForm").submit(function(e){
     e.preventDefault();
@@ -113,130 +125,155 @@ $("#loginForm").submit(function(e){
     })
 });
 
-function objectifyForm(formArray) {
 
-    var returnArray = {};
-    for (var i = 0; i < formArray.length; i++){
-      returnArray[formArray[i]['name']] = formArray[i]['value'];
-    }
-    return returnArray;
-  }
-var data = {};
 $("#clothesDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    data["UserID"] = localStorage.getItem("Userid");
-    console.log(data);
+    if(localStorage.getItem("Userid"))
+    {
+        data["UserID"] = localStorage.getItem("Userid");
+    }
+    else{
+    data["UserID"] = 0;
+    }
+    data["DonationType"] = 1;
     e.preventDefault();
 
-    db.collection("clothesDonate").add(data);
+    //db.collection("clothesDonate").add(data);
 });
 
 $("#foodDonateForm").submit(function(e){
-    let foodType = $("#foodType").val();
-    let foodSubType = $("#foodSubType").val();
-    let quantity = $("#foodQuantity").val();
-    let description = $("#foodDescription").val();
+    data = objectifyForm($(this).serializeArray());
+    if(localStorage.getItem("Userid"))
+    {
+        data["UserID"] = localStorage.getItem("Userid");
+    }
+    else{
+        data["UserID"] = 0;
+    }
+    data["DonationType"] = 2;
     e.preventDefault();
-    db.collection("foodDonate").add({
-        FoodType: foodType,
-        FoodSubType: foodSubType,
-        Quantity: quantity,
-        Description: description,
-        IsActive: true
-    });
+    // db.collection("foodDonate").add({
+    //     FoodType: foodType,
+    //     FoodSubType: foodSubType,
+    //     Quantity: quantity,
+    //     Description: description,
+    //     IsActive: true
+    // });
 });
 
 $("#furnitureDonateForm").submit(function(e){
-    let furnitureType = $("#furnitureType").val();
-    let quantity = $("#furnitureQuantity").val();
-    let description = $("#furnitureDescription").val();
+    data = objectifyForm($(this).serializeArray());
+    if(localStorage.getItem("Userid"))
+    {
+        data["UserID"] = localStorage.getItem("Userid");
+    }
+    else{
+    data["UserID"] = 0;
+    }
+    data["DonationType"] = 4;
     e.preventDefault();
-    db.collection("furnitureDonate").add({
-        furnitureType: foodType,
-        Quantity: quantity,
-        Description: description,
-        IsActive: true
-    });
+    // db.collection("furnitureDonate").add({
+    //     furnitureType: foodType,
+    //     Quantity: quantity,
+    //     Description: description,
+    //     IsActive: true
+    // });
 });
 
 $("#electronicsDonateForm").submit(function(e){
-    let electronicsType = $("#electronicsType").val();
-    let quantity = $("#electronicsQuantity").val();
-    let description = $("#electronicsDescription").val();
+    data = objectifyForm($(this).serializeArray());
+    if(localStorage.getItem("Userid"))
+    {
+        data["UserID"] = localStorage.getItem("Userid");
+    }
+    else{
+    data["UserID"] = 0;
+    }
+    data["DonationType"] = 5;
     e.preventDefault();
-    db.collection("electronicsDonate").add({
-        ElectronicsType: electronicsType,
-        Quantity: quantity,
-        Description: description,
-        IsActive: true
-    });
+    // db.collection("electronicsDonate").add({
+    //     ElectronicsType: electronicsType,
+    //     Quantity: quantity,
+    //     Description: description,
+    //     IsActive: true
+    // });
 });
 
 $("#bloodDonateForm").submit(function(e){
-    let donarName = $("#bloodDonarName").val();
-    let donarEmail = $("#bloodDonarEmail").val();
-    let donarPhone = $("#bloodDonarPhoneNumber").val();
-    let donarGender = $("#bloodDonarGender").val();
-    let bloodGroupType = $("#bloodGroupType").val();
+    data = objectifyForm($(this).serializeArray());
+    if(localStorage.getItem("Userid"))
+    {
+        data["UserID"] = localStorage.getItem("Userid");
+    }
+    else{
+    data["UserID"] = 0;
+    }
+    data["DonationType"] = 7;
     e.preventDefault();
-    db.collection("bloodDonate").add({
-        DonarName: donarName,
-        DonarEmail: donarEmail,
-        DonarPhone: donarPhone,
-        DonarGender: donarGender,
-        BloodGroup: bloodGroupType,
-        IsActive: true
-    });
+    // db.collection("bloodDonate").add({
+    //     DonarName: donarName,
+    //     DonarEmail: donarEmail,
+    //     DonarPhone: donarPhone,
+    //     DonarGender: donarGender,
+    //     BloodGroup: bloodGroupType,
+    //     IsActive: true
+    // });
 });
 
 $("#vehicleDonateForm").submit(function(e){
-    let vehicleType = $("#vehicleType").val();
-    let quantity = $("#vehicleQuantity").val();
-    let description = $("#vehicleDescription").val();
+    data = objectifyForm($(this).serializeArray());
+    if(localStorage.getItem("Userid"))
+    {
+        data["UserID"] = localStorage.getItem("Userid");
+    }
+    else{
+    data["UserID"] = 0;
+    }
+    data["DonationType"] = 8;
     e.preventDefault();
-    db.collection("vehicleDonate").add({
-        vehicleType: vehicleType,
-        Quantity: quantity,
-        Description: description,
-        IsActive: true
-    });
+    // db.collection("vehicleDonate").add({
+    //     vehicleType: vehicleType,
+    //     Quantity: quantity,
+    //     Description: description,
+    //     IsActive: true
+    // });
 });
 
 $("#bookDonateForm").submit(function(e){
-    let bookType = $("#bookType").val();
-    let quantity = $("#bookQuantity").val();
-    let description = $("#bookDescription").val();
+    data = objectifyForm($(this).serializeArray());
+    if(localStorage.getItem("Userid"))
+    {
+        data["UserID"] = localStorage.getItem("Userid");
+    }
+    else{
+    data["UserID"] = 0;
+    }
+    data["DonationType"] = 9;
     e.preventDefault();
-    db.collection("bookDonate").add({
-        bookType: bookType,
-        Quantity: quantity,
-        Description: description,
-        IsActive: true
-    });
+    // db.collection("bookDonate").add({
+    //     bookType: bookType,
+    //     Quantity: quantity,
+    //     Description: description,
+    //     IsActive: true
+    // });
 });
 
 $("#donarAddressDetails").submit(function(e){
-    let name = $("#donarName").val();
-    let email = $("#donarEmail").val();
-    let phone = $("#donarPhoneNumber").val();
-    let gender = $("#donarType").val();
-    let pincode = $("#donarPincode").val();
-    let city = $("#donarCity").val();
-    let address = $("#donarAddress").val();
-
+    var address = objectifyForm($(this).serializeArray());
+    data.User = address;
     e.preventDefault();
-    db.collection("donarAddress").add({
-        Name: name,
-        Email: email,
-        PhoneNumber: phone,
-        Gender: gender,
-        address: {
-            PinCode: pincode,
-            City: city,
-            Address: address
-        },
-        IsActive: true
-    });
+    // db.collection("donarAddress").add({
+    //     Name: name,
+    //     Email: email,
+    //     PhoneNumber: phone,
+    //     Gender: gender,
+    //     address: {
+    //         PinCode: pincode,
+    //         City: city,
+    //         Address: address
+    //     },
+    //     IsActive: true
+    // });
 })
 
 var renderDonate = {
@@ -320,11 +357,16 @@ function renderAllCards(){
     renderDonate.booksDonate();
     renderDonate.electronicsDonate();
     renderDonate.foodDonate();
-    renderAllCards.vehicleDonate();
+    renderDonate.vehicleDonate();
     renderDonate.moneyDonate();
     renderDonate.furnitureDonate();
 
 }
+
+$("#testButton").on("click", function(){
+    console.log(data);
+});
+
 $(".totalDonation").on("click", function(){
     $("section").hide();
     $("#allDonations").show();
