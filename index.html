@@ -122,7 +122,7 @@
                   <form class="form-group formStyle" id="clothesDonateForm">
                     <div class="clothesType">
                         <label for="materialType">Material Type</label>
-                        <select name="materialType" id="materialType" class="form-control" aria-describedby="typeHelpBlock" required>
+                        <select name="Type" id="materialType" class="form-control" aria-describedby="typeHelpBlock" required>
                           <option value="Clothes">Clothes</option>
                           <option value="Footwear">footwear</option>
                           <option value="Clothes">Both</option>
@@ -135,7 +135,7 @@
 
                     <div class="clothesQuantity" style="margin-top:20px;">
                         <label for="clothesQuantity">Quantity (Total)</label>
-                        <input name="clothesQuantity" type="number" id="clothesQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                        <input name="Quantity" type="number" id="clothesQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
                         <small class="form-text text-muted">
                           Your Quantity must be in number format, and must not contain spaces, special characters, or emoji.
                         </small>
@@ -143,7 +143,7 @@
 
                     <div class="clothesDescription"  style="margin-top:20px;">
                         <label for="clothesDescription">Description</label>
-                        <textarea name="clothesDescription" id="clothesDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
+                        <textarea name="Description" id="clothesDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
                         <small class="form-text text-muted">
                             Your description must contain letters, numbers, spaces, special characters.
                         </small>
@@ -175,10 +175,9 @@
                 <h3 class="mainSubHeading">Description</h3>
                 <div class="row">
                   <form class="form-group formStyle" id="foodDonateForm">
-                    
                     <div class="foodType">
                         <label for="foodType">Type</label>
-                        <select class="form-control" id="foodType" aria-describedby="typeHelpBlock" required>
+                        <select name="Type" class="form-control" id="foodType" aria-describedby="typeHelpBlock" required>
                           <option value="Vegeterian">Vegeterian</option>
                           <option value="Non Vegeterian">Non Vegeterian</option>
                           <option value="Food">Both</option>
@@ -191,7 +190,7 @@
 
                     <div class="foodSubType" style="margin-top:20px;">
                         <label for="foodSubType">Sub Type</label>
-                        <select class="form-control" id="foodSubType" aria-describedby="typeHelpBlock" required>
+                        <select name="Sub_Type" class="form-control" id="foodSubType" aria-describedby="typeHelpBlock" required>
                           <option value="packed">Packed</option>
                           <option value="homeMade">Home Made</option>
                           <option value="both">Both</option>
@@ -204,7 +203,7 @@
 
                     <div class="foodQuantity" style="margin-top:20px;">
                         <label for="foodQuantity">Quantity (Number of people it can serve approx.)</label>
-                        <input type="number" id="foodQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                        <input name="Quantity" type="number" id="foodQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
                         <small class="form-text text-muted">
                           Your Quantity must be in number format, and must not contain spaces, special characters, or emoji.
                         </small>
@@ -212,7 +211,7 @@
 
                     <div class="foodDescription" style="margin-top:20px;">
                         <label for="foodDescription">Description</label>
-                        <textarea id="foodDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
+                        <textarea name="Description" id="foodDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
                         <small class="form-text text-muted">
                             Your description can contain letters, numbers, spaces, special characters.
                         </small>
@@ -276,10 +275,9 @@
               <h3 class="mainSubHeading">Description</h3>
               <div class="row">
                 <form class="form-group formStyle" id="furnitureDonateForm">
-                  
                   <div class="furnitureType">
                       <label for="furnitureType">Type</label>
-                      <select id="furnitureType" class="form-control" aria-describedby="typeHelpBlock" required>
+                      <select name="Type" id="furnitureType" class="form-control" aria-describedby="typeHelpBlock" required>
                         <option value="Wooden">Wooden</option>
                         <option value="Metal">Metal</option>
                         <option value="Plastic">Plastic</option>
@@ -292,7 +290,7 @@
 
                   <div class="furnitureQuantity" style="margin-top:20px;">
                       <label for="furnitureQuantity">Quantity (Total)</label>
-                      <input type="number" id="furnitureQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                      <input name="Quantity" type="number" id="furnitureQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
                       <small class="form-text text-muted">
                         Your Quantity must be in number format, and must not contain spaces, special characters, or emoji.
                       </small>
@@ -300,7 +298,7 @@
 
                   <div class="furnitureDescription"  style="margin-top:20px;">
                       <label for="furnitureDescription">Description</label>
-                      <textarea id="furnitureDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
+                      <textarea name="Description" id="furnitureDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
                       <small class="form-text text-muted">
                           Your description must contain letters, numbers, spaces, special characters.
                       </small>
@@ -335,7 +333,7 @@
                   
                   <div class="electronicsType">
                       <label for="electronicsType">Type</label>
-                      <select id="electronicsType" class="form-control" aria-describedby="typeHelpBlock" required>
+                      <select name="Type" id="electronicsType" class="form-control" aria-describedby="typeHelpBlock" required>
                         <option value="Mobile Phone">Mobile Phone</option>
                         <option value="Laptop / PC">Laptop/ PC</option>
                         <option value="Electrical Appliance">Electrical Appliance</option>
@@ -347,14 +345,14 @@
                   </div>
                   <div class="electronicsQuantity" style="margin-top:20px;">
                       <label for="electronicsQuantity">Quantity (Total)</label>
-                      <input type="number" id="electronicsQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                      <input name="Quantity" type="number" id="electronicsQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
                       <small class="form-text text-muted">
                         Your Quantity must be in number format, and must not contain spaces, special characters, or emoji.
                       </small>
                   </div>
                   <div class="electronicsDescription"  style="margin-top:20px;">
                       <label for="electronicsDescription">Description</label>
-                      <textarea id="electronicsDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
+                      <textarea name="Description" id="electronicsDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
                       <small class="form-text text-muted">
                           Your description must contain letters, numbers, spaces, special characters.
                       </small>
@@ -388,14 +386,14 @@
                   
                   <div class="volunteerName" style="margin-top:20px;">
                     <label for="volunteerName">Full Name</label>
-                    <input type="text" id="volunteerName" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <input name="Name" type="text" id="volunteerName" class="form-control" aria-describedby="quantityHelpBlock" required>
                     <small class="form-text text-muted">
                       Your Name must be in text format, and must not contain spaces,numbers, special characters, or emoji.
                     </small>
                   </div>
                   <div class="volunteerEmail" style="margin-top:20px;">
                     <label for="volunteerEmail">Email ID</label>
-                    <input type="email" id="volunteerEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <input name="Email" type="email" id="volunteerEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
                     <small class="form-text text-muted">
                       Your Email ID must be in text format, and must not contain spaces, or emoji.
                     </small>
@@ -403,14 +401,14 @@
                   <div class="row">
                     <div class="volunteerPhoneNumber col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
                       <label for="volunteerPhoneNumber">Phone Number</label>
-                      <input type="number" id="volunteerPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
+                      <input name="Phone_Number" type="number" id="volunteerPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
                       <small class="form-text text-muted">
                         Your Phone Number ID must be in number format, and must not contain spaces, special characters, or emoji.
                       </small>
                     </div>
                     <div class="volunteerGender col-md-6 col-lg-6" style="margin-top:20px;padding-right: 0px;">
                         <label for="volunteerGender  col-md-6 col-lg-6">Gender</label>
-                        <select id="volunteerGender" class="form-control" aria-describedby="typeHelpBlock" required>
+                        <select name="Gender" id="volunteerGender" class="form-control" aria-describedby="typeHelpBlock" required>
                           <option value="male">Male</option>
                           <option value="Female">Female</option>
                           <option value="notmentioned">Prefer not to say</option>
@@ -424,7 +422,7 @@
                   
                   <div class="volunteerDescription"  style="margin-top:20px;">
                       <label for="volunteerDescription">A little bit about yourself. (Optional )</label>
-                      <textarea id="volunteerDescription" class="form-control" aria-describedby="descriptionHelpBlock"></textarea>
+                      <textarea name="Description" id="volunteerDescription" class="form-control" aria-describedby="descriptionHelpBlock"></textarea>
                       <small class="form-text text-muted">
                           Your bio can contain letters, numbers, spaces, special characters.
                       </small>
@@ -451,35 +449,34 @@
               <h3 class="mainSubHeading">A Little bit about yourself.</h3>
               <div class="row">
                 <form class="form-group formStyle" id="bloodDonateForm">
-                  
                   <div class="bloodDonarName" style="margin-top:20px;">
                     <label for="bloodDonarName">Full Name</label>
-                    <input type="text" id="bloodDonarName" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <input name="Name" type="text" id="bloodDonarName" class="form-control" aria-describedby="quantityHelpBlock" required>
                     <small class="form-text text-muted">
                       Your Name must be in text format, and must not contain spaces,numbers, special characters, or emoji.
                     </small>
                   </div>
                   <div class="bloodDonarEmail" style="margin-top:20px;">
                     <label for="bloodDonarEmail">Email ID</label>
-                    <input type="email" id="bloodDonarEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <input name="Email" type="email" id="bloodDonarEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
                     <small class="form-text text-muted">
                       Your Email ID must be in text format, and must not contain spaces, or emoji.
                     </small>
                   </div>
                   <div class="bloodDonarPhoneNumber" style="margin-top:20px;">
                     <label for="bloodDonarPhoneNumber">Phone Number</label>
-                    <input type="number" id="bloodDonarPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <input name="Phone_Number" type="number" id="bloodDonarPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
                     <small class="form-text text-muted">
                       Your Phone Number ID must be in number format, and must not contain spaces, special characters, or emoji.
                     </small>
                   </div>
                   <div class="bloodDonarGender">
                       <label for="bloodDonarGender">Gender</label>
-                      <select id="bloodDonarGender" class="form-control" aria-describedby="typeHelpBlock" required>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="notspecified">Prefer not to say</option>
-                        <option value="other">Other</option>
+                      <select name="Gender" id="bloodDonarGender" class="form-control" aria-describedby="typeHelpBlock" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Not Specified">Prefer not to say</option>
+                        <option value="Other">Other</option>
                       </select>
                       <small class="form-text text-muted">
                         Select atleast one option.
@@ -487,7 +484,7 @@
                   </div>
                   <div class="bloodGroupType">
                     <label for="bloodGroupType">Blood Group</label>
-                    <select id="bloodGroupType" class="form-control" aria-describedby="typeHelpBlock" required>
+                    <select name="Blood_Group" id="bloodGroupType" class="form-control" aria-describedby="typeHelpBlock" required>
                       <option value="A+">A+</option>
                       <option value="B+">B+</option>
                       <option value="A-">A-</option>
@@ -526,11 +523,11 @@
                   
                   <div class="vehicleType">
                       <label for="vehicleType">Vehicle Type</label>
-                      <select id="vehicleType" class="form-control" aria-describedby="typeHelpBlock" required>
+                      <select name="Type" id="vehicleType" class="form-control" aria-describedby="typeHelpBlock" required>
                         <option value="2 Wheeler">2 Wheeler</option>
                         <option value="3 Wheeler">3 Wheeler</option>
                         <option value="4 Wheeler">4 Wheeler</option>
-                        <option value="other">More than 4 wheels or other</option>
+                        <option value="Other">More than 4 wheels or other</option>
                       </select>
                       <small class="form-text text-muted">
                         Select atleast one type.
@@ -538,14 +535,14 @@
                   </div>
                   <div class="vehicleQuantity" style="margin-top:20px;">
                       <label for="vehicleQuantity">Quantity (Total)</label>
-                      <input type="number" id="vehicleQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                      <input name="Quantity" type="number" id="vehicleQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
                       <small class="form-text text-muted">
                         Your Quantity must be in number format, and must not contain spaces, special characters, or emoji.
                       </small>
                   </div>
                   <div class="vehicleDescription"  style="margin-top:20px;">
                       <label for="vehicleDescription">Description</label>
-                      <textarea  id="vehicleDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
+                      <textarea name="Description" id="vehicleDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
                       <small class="form-text text-muted">
                           Your description must contain letters, numbers, spaces, special characters.
                       </small>
@@ -579,7 +576,7 @@
                   
                   <div class="bookType">
                       <label for="bookType">Book Type</label>
-                      <select id="bookType" class="form-control" aria-describedby="typeHelpBlock" required>
+                      <select name="Type" id="bookType" class="form-control" aria-describedby="typeHelpBlock" required>
                         <option value="Soft Cover ">Soft Cover (Paperback )</option>
                         <option value="Hardcover">Hardcover</option>
                         <option value="Notebook">Notebook</option>
@@ -592,14 +589,14 @@
                   </div>
                   <div class="bookQuantity" style="margin-top:20px;">
                       <label for="bookQuantity">Quantity (Total)</label>
-                      <input type="number" id="bookQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                      <input name="Quantity" type="number" id="bookQuantity" class="form-control" aria-describedby="quantityHelpBlock" required>
                       <small class="form-text text-muted">
                         Your Quantity must be in number format, and must not contain spaces, special characters, or emoji.
                       </small>
                   </div>
                   <div class="bookDescription"  style="margin-top:20px;">
                       <label for="bookDescription">Description</label>
-                      <textarea id="bookDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
+                      <textarea name="Description" id="bookDescription" class="form-control" aria-describedby="descriptionHelpBlock" required></textarea>
                       <small class="form-text text-muted">
                           Your description must contain letters, numbers, spaces, special characters.
                       </small>
@@ -633,14 +630,14 @@
                 
                 <div class="donarName" style="margin-top:20px;">
                   <label for="donarName">Full Name</label>
-                  <input name="DonarName" type="text" id="donarName" class="form-control" aria-describedby="quantityHelpBlock" required>
+                  <input name="Name" type="text" id="donarName" class="form-control" aria-describedby="quantityHelpBlock" required>
                   <small class="form-text text-muted">
                     Only in text format.
                   </small>
                 </div>
                 <div class="donarEmail" style="margin-top:20px;">
                   <label for="donarEmail">Email ID</label>
-                  <input name="donarEmail" type="email" id="donarEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
+                  <input name="Email" type="email" id="donarEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
                   <small class="form-text text-muted">
                     Your Email ID must be in text format, and must not contain spaces, or emoji.
                   </small>
@@ -648,18 +645,18 @@
                 <div class="row">
                   <div class="donarPhoneNumber col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
                     <label for="donarPhoneNumber">Phone Number</label>
-                    <input name="donarPhoneNumber" type="number" id="donarPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <input name="Phone_Number" type="number" id="donarPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
                     <small class="form-text text-muted">
                       Only numbers allowed.
                     </small>
                   </div>
                   <div class="donarType col-md-6 col-lg-6" style="margin-top:20px;padding-right: 0px;">
                       <label for="donarType  col-md-6 col-lg-6">Gender</label>
-                      <select name="donarType" id="donarType" class="form-control" aria-describedby="typeHelpBlock" required>
-                        <option value="male">Male</option>
-                        <option value="female">Female</option>
-                        <option value="notspecified">Prefer not to say</option>
-                        <option value="other">Other</option>
+                      <select name="Gender" id="donarType" class="form-control" aria-describedby="typeHelpBlock" required>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                        <option value="Not_Specified">Prefer not to say</option>
+                        <option value="Other">Other</option>
                       </select>
                       <small class="form-text text-muted">
                         Select atleast one option.
@@ -676,7 +673,7 @@
                   </div>
                   <div class="donarCity col-md-6 col-lg-6" style="margin-top:20px;padding-right: 0px;">
                     <label for="donarCity">City</label>
-                    <input name="city" type="text" id="donarCity" class="form-control" aria-describedby="quantityHelpBlock" required>
+                    <input name="City" type="text" id="donarCity" class="form-control" aria-describedby="quantityHelpBlock" required>
                     <small class="form-text text-muted">
                       Only text format allowed.
                     </small>
@@ -685,7 +682,7 @@
 
                 <div class="donarAddress"  style="margin-top:20px;">
                     <label for="donarAddress">Your Address</label>
-                    <textarea name="address" id="donarAddress" class="form-control" aria-describedby="descriptionHelpBlock"></textarea>
+                    <textarea name="Address" id="donarAddress" class="form-control" aria-describedby="descriptionHelpBlock"></textarea>
                     <small class="form-text text-muted">
                         Your address can contain letters, numbers, spaces, special characters.
                     </small>
