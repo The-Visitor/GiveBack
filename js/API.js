@@ -113,7 +113,7 @@ $("#loginForm").submit(function(e){
     })
 });
 
-function objectifyForm(formArray) {//serialize data function
+function objectifyForm(formArray) {
 
     var returnArray = {};
     for (var i = 0; i < formArray.length; i++){
