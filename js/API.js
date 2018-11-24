@@ -138,7 +138,7 @@ $("#clothesDonateForm").submit(function(e){
     data["DonationType"] = 1;
     e.preventDefault();
 
-    //db.collection("clothesDonate").add(data);
+    //
 });
 
 $("#foodDonateForm").submit(function(e){
@@ -151,14 +151,8 @@ $("#foodDonateForm").submit(function(e){
         data["UserID"] = 0;
     }
     data["DonationType"] = 2;
+    console.log(data);
     e.preventDefault();
-    // db.collection("foodDonate").add({
-    //     FoodType: foodType,
-    //     FoodSubType: foodSubType,
-    //     Quantity: quantity,
-    //     Description: description,
-    //     IsActive: true
-    // });
 });
 
 $("#furnitureDonateForm").submit(function(e){
@@ -172,12 +166,6 @@ $("#furnitureDonateForm").submit(function(e){
     }
     data["DonationType"] = 4;
     e.preventDefault();
-    // db.collection("furnitureDonate").add({
-    //     furnitureType: foodType,
-    //     Quantity: quantity,
-    //     Description: description,
-    //     IsActive: true
-    // });
 });
 
 $("#electronicsDonateForm").submit(function(e){
@@ -191,12 +179,7 @@ $("#electronicsDonateForm").submit(function(e){
     }
     data["DonationType"] = 5;
     e.preventDefault();
-    // db.collection("electronicsDonate").add({
-    //     ElectronicsType: electronicsType,
-    //     Quantity: quantity,
-    //     Description: description,
-    //     IsActive: true
-    // });
+
 });
 
 $("#bloodDonateForm").submit(function(e){
@@ -210,14 +193,7 @@ $("#bloodDonateForm").submit(function(e){
     }
     data["DonationType"] = 7;
     e.preventDefault();
-    // db.collection("bloodDonate").add({
-    //     DonarName: donarName,
-    //     DonarEmail: donarEmail,
-    //     DonarPhone: donarPhone,
-    //     DonarGender: donarGender,
-    //     BloodGroup: bloodGroupType,
-    //     IsActive: true
-    // });
+
 });
 
 $("#vehicleDonateForm").submit(function(e){
@@ -231,12 +207,7 @@ $("#vehicleDonateForm").submit(function(e){
     }
     data["DonationType"] = 8;
     e.preventDefault();
-    // db.collection("vehicleDonate").add({
-    //     vehicleType: vehicleType,
-    //     Quantity: quantity,
-    //     Description: description,
-    //     IsActive: true
-    // });
+
 });
 
 $("#bookDonateForm").submit(function(e){
@@ -250,65 +221,80 @@ $("#bookDonateForm").submit(function(e){
     }
     data["DonationType"] = 9;
     e.preventDefault();
-    // db.collection("bookDonate").add({
-    //     bookType: bookType,
-    //     Quantity: quantity,
-    //     Description: description,
-    //     IsActive: true
-    // });
+
 });
 
 $("#donarAddressDetails").submit(function(e){
     var address = objectifyForm($(this).serializeArray());
     data.User = address;
+    switch (data.DonationType) {
+        case 1:
+            db.collection("Clothes").add(data);
+            break;
+        case 2:
+            db.collection("Food").add(data);
+            break;
+        case 3:
+            db.collection("Money").add(data);
+            break;
+        case 4:
+            db.collection("Furniture").add(data);
+            break;
+        case 5:
+            db.collection("Electronics").add(data);
+            break;
+        case 6:
+            db.collection("Volunteer").add(data);
+            break;
+        case 7:
+            db.collection("Blood").add(data);
+            break;
+        case 8:
+            db.collection("Vehicle").add(data);
+            break;
+        case 9:
+            db.collection("Books").add(data);
+            break;
+        case 10:
+            db.collection("Other").add(data);
+            break;
+    }
     e.preventDefault();
-    // db.collection("donarAddress").add({
-    //     Name: name,
-    //     Email: email,
-    //     PhoneNumber: phone,
-    //     Gender: gender,
-    //     address: {
-    //         PinCode: pincode,
-    //         City: city,
-    //         Address: address
-    //     },
-    //     IsActive: true
-    // });
 })
 
 var renderDonate = {
 
     clothesDonate : function(){
-        db.collection("clothesDonate").get().then(function(snapshot){
+        db.collection("Clothes").get().then(function(snapshot){
             snapshot.forEach(function(doc){
-                let card = `<div class='card allDonationCard' style='background:#007bff;'><div class='card-body'>${doc.data().Material} <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+                let card = `<div class='card allDonationCard' style='background:#007bff;'><div class='card-body'>${doc.data().Type} <br> ${doc.data().Description} ${doc.data().Quantity} by ${doc.data().User.Name} </div></div>`;
                 $("#allDonationsCard").append(card);
             })
         })
     },
 
     foodDonate : function(){
-        db.collection("foodDonate").get().then(function(snapshot){
+        db.collection("Food").get().then(function(snapshot){
             snapshot.forEach(function(doc){
-                let card = `<div class='card allDonationCard' style='background:#6c757d;'><div class='card-body'> ${doc.data().FoodType} <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+                let card = `<div class='card allDonationCard' style='background:#6c757d;'><div class='card-body'> ${doc.data().Type} <br> ${doc.data().Description} ${doc.data().Quantity} by ${doc.data().User.Name} </div></div>`;
                 $("#allDonationsCard").append(card);
             })
         })
     },
 
     moneyDonate : function(){
-        db.collection("clothesDonate").get().then(function(snapshot){
+        db.collection("Money").get().then(function(snapshot){
             snapshot.forEach(function(doc){
-                let card = `<div class='card allDonationCard' style='background:#007bff;'><div class='card-body'>Clothes <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+                let card = `<div class='card allDonationCard' style='background:#007bff;'><div class='card-body'>Clothes <br> ${doc.data().Type} <br> ${doc.data().Description} ${doc.data().Quantity} by ${doc.data().User.Name} </div></div>`;
                 $("#allDonationsCard").append(card);
             })
         })
     },
 
     furnitureDonate : function(){
-        db.collection("furnitureDonate").get().then(function(snapshot){
+        db.collection("Furniture").get().then(function(snapshot){
             snapshot.forEach(function(doc){
-                let card = `<div class='card allDonationCard' style='background:#f8f9fa;color:black'><div class='card-body'>Furniture <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+                let card = `<div class='card allDonationCard' style='background:#f8f9fa;color:black'><div class='card-body'>${doc.data().Type} <br> ${doc.data().Description} ${doc.data().Quantity} by ${doc.data().User.Name} </div></div>`;
                 $("#allDonationsCard").append(card);
             })
         })
@@ -316,43 +302,52 @@ var renderDonate = {
     },
 
     electronicsDonate : function(){
-        db.collection("electronicsDonate").get().then(function(snapshot){
+        db.collection("Electronics").get().then(function(snapshot){
             snapshot.forEach(function(doc){
-                let card = `<div class='card allDonationCard' style='background:#ffc107;color:black'><div class='card-body'>${doc.data().ElectronicsType} <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+                let card = `<div class='card allDonationCard' style='background:#ffc107;color:black'><div class='card-body'>${doc.data().Type} <br> ${doc.data().Description} ${doc.data().Quantity} by ${doc.data().User.Name} </div></div>`;
                 $("#allDonationsCard").append(card);
             })
         })
     },
 
-    bloodDonation : function(){
-        db.collection("bloodDonate").get().then(function(snapshot){
-            snapshot.forEach(function(doc){
-                let card = `<div class='card allDonationCard' style='background:#dc3545;'><div class='card-body'>${doc.data().DonarName}  <br> ${doc.data().BloodGroup} ${doc.data().DonarGender} </div></div>`;
-                $("#allDonationsCard").append(card);
-            })
-        })
-    },
+    // electronicsDonate : function(){
+    //     db.collection("Volunteer").get().then(function(snapshot){
+    //         snapshot.forEach(function(doc){
+    //             let card = `<div class='card allDonationCard' style='background:#ffc107;color:black'><div class='card-body'>${doc.data().ElectronicsType} <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+    //             $("#allDonationsCard").append(card);
+    //         })
+    //     })
+    // },
+
+    // bloodDonation : function(){
+    //     db.collection("Blood").get().then(function(snapshot){
+    //         snapshot.forEach(function(doc){
+    //             let card = `<div class='card allDonationCard' style='background:#dc3545;'><div class='card-body'>${doc.data().Type} <br> ${doc.data().Description} ${doc.data().Quantity} by ${doc.data().User.Name} </div></div>`;
+    //             $("#allDonationsCard").append(card);
+    //         })
+    //     })
+    // },
 
     vehicleDonate : function(){
-        db.collection("vehicleDonate").get().then(function(snapshot){
+        db.collection("Vehicle").get().then(function(snapshot){
             snapshot.forEach(function(doc){
-                let card = `<div class='card allDonationCard' style='background:#343a40;'><div class='card-body'>${doc.data().vehicleType} <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+                let card = `<div class='card allDonationCard' style='background:#343a40;'><div class='card-body'>${doc.data().Type} <br> ${doc.data().Description} ${doc.data().Quantity} by ${doc.data().User.Name} </div></div>`;
                 $("#allDonationsCard").append(card);
             })
         })
     },
 
     booksDonate : function(){
-        db.collection("bookDonate").get().then(function(snapshot){
+        db.collection("Book").get().then(function(snapshot){
             snapshot.forEach(function(doc){
-                let card = `<div class='card allDonationCard' style='background:#17a2b8;'><div class='card-body'>${doc.data().bookType}  <br> ${doc.data().Description} ${doc.data().Quantity} </div></div>`;
+                let card = `<div class='card allDonationCard' style='background:#17a2b8;'><div class='card-body'>${doc.data().Type} <br> ${doc.data().Description} ${doc.data().Quantity} by ${doc.data().User.Name} </div></div>`;
                 $("#allDonationsCard").append(card);
             })
         })
     }
 }
 function renderAllCards(){
-    renderDonate.bloodDonation();
+    //renderDonate.bloodDonation();
     renderDonate.clothesDonate();
     renderDonate.booksDonate();
     renderDonate.electronicsDonate();
