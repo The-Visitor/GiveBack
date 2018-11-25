@@ -81,7 +81,8 @@ select, .form-control-file{
 }
 .ourIntroduction
 {
-  padding:10px;text-align: center;margin: 100px 100px 0px 100px;font-size:14px;
+  padding:10px;font-size:16px;font-style: italic;
+  width: 70%
 }
 .happyIcon
 {
