@@ -134,8 +134,22 @@ select, .form-control-file{
   border-radius: 25px;
   cursor: pointer;
 }
+
 .getStartedButton:hover
 {
   background: #800080;
   color: white;
+}
+
+.sideImage
+{
+  background: #fff;
+  border-radius: 2px;
+  display: inline-block;
+  height: 260px;
+  margin: 6rem;
+  position: relative;
+  width: 322px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  transition: all 0.3s cubic-bezier(.25,.8,.25,1);
 }
