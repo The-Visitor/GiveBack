@@ -120,3 +120,22 @@ select, .form-control-file{
   margin:5px;
   border-bottom: 5px solid black;
 }
+
+.getStartedButton
+{
+  margin-top: 15%;
+  margin-left:25%;
+  color: #800080;
+  font-size: 20px;
+  border: 1px solid #800080;
+  background: transparent;
+  padding: 6px;
+  width: 125px;
+  border-radius: 25px;
+  cursor: pointer;
+}
+.getStartedButton:hover
+{
+  background: #800080;
+  color: white;
+}
