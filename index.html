@@ -23,20 +23,20 @@
   </head>
   <body class="headerGradient">
       
-    <nav class="navbar" style="display:list-item;margin-left: 10%;list-style-type: none;">
+    <nav class="navbar">
       <a class="navbar-brand" id="siteLogo" href="#" style="padding:0px;">
-              <img src="image/logo.svg" style="height:40px; width:100px;">
+        <img src="image/logo.svg" style="height:40px; width:100px;">
       </a>
-      <a class="navbar-brand" href="#" style="vertical-align:bottom;color: #707070;font-size: 14px;padding: 0px;">
+      <a class="navbar-brand textNavbar" href="#">
         <span id="testButton">Distribution</span>
       </a>
-      <a style="vertical-align:bottom;color: #707070;font-size: 14px;padding: 0px;" class="navbar-brand" href="#">
+      <a class="navbar-brand textNavbar" href="#">
         <span>Contact Us</span>
       </a>    
-      <a id="signUpButton" class="navbar-brand" href="#" style="text-align: center;float:right;margin-top: 5px;font-size: 14px;border: 1px solid #800080;background: #800080;width: 100px;border-radius: 25px;color:white" data-toggle="modal" data-target="#myModal">
+      <a id="signUpButton" class="navbar-brand" href="#" data-toggle="modal" data-target="#myModal">
           <span>Sign Up</span>
       </a>
-      <a id="loginButton" class="navbar-brand" href="#" style="float:right;font-size: 14px;margin-top:5px;" data-toggle="modal" data-target="#loginModal">
+      <a id="loginButton" class="navbar-brand" href="#" data-toggle="modal" data-target="#loginModal">
           <span>Log In</span>
       </a>
     </nav>
@@ -44,8 +44,8 @@
     <section class="LandingPage">
         <hr style="margin:0px;">
         <div class="row">
-            <div class="col-md-6 col-lg-6" style="padding: 10px;margin: 40px 0px 30px 0px;padding-left: 100px;">
-              <h2 class="mainSubHeading" style="font-size:61px;text-align: left;margin-left: 10%;font-weight: 300">This is Us</h2>
+            <div class="col-md-6 col-lg-6 mainPageLeftDivision">
+              <h2 class="mainSubHeading textStyle">This is Us</h2>
               <div class="row">
                 <div class="col-md-1 col-lg-1" style="padding:0px;text-align: right">
                     <img src="image/rakhi.svg" style="height:125px;margin-top: 25px">
@@ -62,10 +62,10 @@
               </div>
               <div class="row" style="margin-top:50px;">
                 <div class="col-md-2 col-lg-2">
-                  <img src="image/footer_left_2.svg" style="height:200px;position:fixed;left:-5px;bottom:-5px">
+                  <img src="image/footer_left_2.svg" class="leftBottomImage">
                 </div>
                 <div class="col-md-8 col-lg-8" style="padding:0px;">
-                  <p style="font-size:40px;color:#3d3838;font-style: italic;font-weight: 200;text-align: right">...Donate as you like</p>
+                  <p class="tagLine">...Donate as you like</p>
                 </div>
                 <div class="col-md-2 col-lg-2" style="padding:0px;">
                     <img src="image/donate_side.svg" style="height: 60px;margin-top: -20px;">
@@ -74,8 +74,12 @@
             </div>
             <div class="col-md-6 col-lg-6 contributeOption" style="padding:10px;position: relative;">
               <img src="image/right_2.png" style="height:100%;width:43%">
-              <div style="margin-top: 5%;min-height:80%;width:75%; position: absolute;top: 10px;left:130px;padding: 5px;background-color: white;">
-                  <h2 class="mainSubHeading" style="font-size:23px;font-weight:200"><img src="image/select_dot.png" style="height:15px;"> Select Your Contribution <img src="image/select_dot.png" style="height:15px;"></h2>
+              <div class="rightDivisionMainPAge">
+                  <h2 class="mainSubHeading" style="font-size:23px;font-weight:200">
+                    <img src="image/select_dot.png" style="height:15px;">
+                    Select Your Contribution
+                    <img src="image/select_dot.png" style="height:15px;">
+                  </h2>
                   <div class="row">
                       <div class="col-4" id="clothesDonateButton">
                         <img src="image/clothes.jpg" class="iconImage" style="padding:10px;">
@@ -116,7 +120,8 @@
                     </div>
                     <div style="text-align:center;font-size: 16px;">
                         <p>
-                          <img src="image/arrow.png" style="height:15px;width:15px;margin-right:5px;"><span style="color:#0f50b1;font-style: italic">Click here</span> to check the status of your last donation.
+                          <img src="image/arrow.png" style="height:15px;width:15px;margin-right:5px;">
+                            <span style="color:#0f50b1;font-style: italic">Click here</span> to check the status of your last donation.
                         </p>
                         <p>
                           <img src="image/arrow.png" style="height:15px;width:15px;margin-right:5px;"><span style="color:#0f50b1;font-style: italic">Total Donation</span>
@@ -128,14 +133,14 @@
     </section>
 
     <section id="clothesDonate" style="display:none">
-      <img src="image/header_blue.png" style="height: 25px;width:700px;position: absolute;top:0;">
-      <h2 class="mainHeading" style="font-size:26px;margin-top:15px;margin-bottom:10px;font-weight:300">
+      <img class="secondPageTopImage" src="image/header_blue.png">
+      <h2 class="mainHeading donateTitleText">
         Clothes
       </h2>
       <div class="row" >
           <div class="col-md-6 col-lg-6" >
             <img class="sideImage" src="image/clothes.jpg">
-            <img src="image/footer.png" height="100px" width="700px" style="left:0%; bottom: 0%; position: fixed;">
+            <img src="image/footer.png" class="secondPageBottomLeftImage">
           </div>
           <div class="col-md-6 col-lg-6 contributeOption" style="padding:10px;">
               <div class="row" style="border-left: 1px solid #bdbdbd;">
@@ -173,8 +178,8 @@
                       <label for="clothesImage">Select Images of item</label>
                       <input type="file" class="form-control-file btn" id="clothesImage">
                     </div>
-                  <div class="infoSubmitButton" style="text-align:right;margin-bottom: 0px;">
-                      <button id="clothesTypeButton" class="getStartedButton" style="margin-right:0px;margin-top:0px;" >Next</button>
+                  <div class="infoSubmitButton">
+                      <button id="clothesTypeButton" class="getStartedButton" >Next</button>
                       <img src="image/donate_side.svg" style="height: 60px;margin-top: -60px;">
                   </div>
                 </form>
@@ -185,14 +190,14 @@
     </section>
 
     <section id="foodDonate" style="display:none">
-        <img src="image/header_blue.png" style="height: 25px;width:700px;position: absolute;top:0;">
-        <h2 class="mainHeading" style="font-size:26px;margin-top:15px;margin-bottom:10px;font-weight:300">
+        <img src="image/header_blue.png" class="secondPageTopImage">
+        <h2 class="mainHeading donateTitleText">
           Food
         </h2>
         <div class="row">
             <div class="col-md-6 col-lg-6" >
                 <img class="sideImage" src="image/food.png">
-                <img src="image/footer.png" height="100px" width="700px" style="left:0%; bottom: 0%; position: fixed;">
+                <img src="image/footer.png" class="secondPageBottomLeftImage">
               </div>
             <div class="col-md-6 col-lg-6 contributeOption" style="padding:10px;">
                 <div class="row" style="border-left:1px solid #bdbdbd">
@@ -243,8 +248,8 @@
                         <label for="foodImage">Select Images of item</label>
                         <input type="file" class="form-control-file btn" id="foodImage">
                     </div>
-                    <div class="infoSubmitButton" style="text-align:right;margin-bottom: 0px;">
-                        <button class="getStartedButton foodDonateButton" style="margin-right:0px;margin-top:0px;" >Next</button>
+                    <div class="infoSubmitButton">
+                        <button class="getStartedButton foodDonateButton">Next</button>
                         <img src="image/donate_side.svg" style="height: 60px;margin-top: -60px;">
                     </div>
                   </form>
@@ -288,14 +293,14 @@
     </section>
 
     <section id="furnitureDonate" style="display:none">
-        <img src="image/header_blue.png" style="height: 25px;width:700px;position: absolute;top:0;">
-        <h2 class="mainHeading" style="font-size:26px;margin-top:15px;margin-bottom:10px;font-weight:300">
+        <img src="image/header_blue.png" class="secondPageTopImage">
+        <h2 class="mainHeading donateTitleText">
           Furniture
         </h2>
       <div class="row">
           <div class="col-md-6 col-lg-6" >
               <img class="sideImage" src="image/furniture.svg">
-              <img src="image/footer.png" height="100px" width="700px" style="left:0%; bottom: 0%; position: fixed;">
+              <img src="image/footer.png" class="secondPageBottomLeftImage">
             </div>
           <div class="col contributeOption" style="padding:10px;">
               <div class="row" style="border-left:1px solid #bdbdbd">
@@ -333,8 +338,8 @@
                       <label for="furnitureImage">Select Images of item</label>
                       <input type="file" class="form-control-file btn" id="furnitureImage">
                     </div>
-                  <div class="infoSubmitButton" style="text-align:right;margin-bottom: 0px;">
-                      <button class="getStartedButton donateButton furnitureDonateButton" style="margin-right:0px;margin-top:0px;" >Next</button>
+                  <div class="infoSubmitButton">
+                      <button class="getStartedButton donateButton furnitureDonateButton">Next</button>
                       <img src="image/donate_side.svg" style="height: 60px;margin-top: -60px;">
                   </div>
                 </form>
@@ -345,14 +350,14 @@
     </section>
 
     <section id="electronicsDonate" style="display:none">
-        <img src="image/header_blue.png" style="height: 25px;width:700px;position: absolute;top:0;">
-        <h2 class="mainHeading" style="font-size:26px;margin-top:15px;margin-bottom:10px;font-weight:300">
+        <img src="image/header_blue.png" class="secondPageTopImage">
+        <h2 class="mainHeading" class="donateTitleText">
           Electronics
         </h2>
       <div class="row">
           <div class="col-md-6 col-lg-6" >
               <img class="sideImage" src="image/electronics.jpg">
-              <img src="image/footer.png" height="100px" width="700px" style="left:0%; bottom: 0%; position: fixed;">
+              <img src="image/footer.png" class="secondPageBottomLeftImage">
           </div>
           <div class="col contributeOption" style="padding:10px;">
               <div class="row" style="border-left:1px solid #bdbdbd">
@@ -387,8 +392,8 @@
                       <label for="electronicsImage">Select Images of item</label>
                       <input type="file" class="form-control-file btn" id="electronicsImage">
                     </div>
-                  <div class="infoSubmitButton" style="text-align:right;margin-bottom: 0px;">
-                      <button class="getStartedButton donateButton " id="furnitureDonateButton" style="margin-right:0px;margin-top:0px;" >Next</button>
+                  <div class="infoSubmitButton">
+                      <button class="getStartedButton donateButton " id="furnitureDonateButton" >Next</button>
                       <img src="image/donate_side.svg" style="height: 60px;margin-top: -60px;">
                   </div>
                 </form>
@@ -467,14 +472,14 @@
     </section>
 
     <section id="bloodDonate" style="display:none">
-        <img src="image/header_blue.png" style="height: 25px;width:700px;position: absolute;top:0;">
-        <h2 class="mainHeading" style="font-size:26px;margin-top:15px;margin-bottom:10px;font-weight:300">
+        <img src="image/header_blue.png" class="secondPageTopImage">
+        <h2 class="mainHeading" class="donateTitleText">
           Save a life
         </h2>
       <div class="row">
           <div class="col-md-6 col-lg-6" >
               <img class="sideImage" src="image/blood.png">
-              <img src="image/footer.png" height="100px" width="700px" style="left:0%; bottom: 0%; position: fixed;">
+              <img src="image/footer.png" class="secondPageBottomLeftImage">
           </div>
           <div class="col contributeOption" style="padding:10px;">
               <div class="row" style="border-left:1px solid #bdbdbd">
@@ -528,8 +533,8 @@
                       Select atleast one option.
                     </small>
                 </div>
-                <div class="infoSubmitButton" style="text-align:right;margin-bottom: 0px;">
-                    <button class="getStartedButton donateButton " id="bloodDonateButton" style="margin-right:0px;margin-top:0px;" >Next</button>
+                <div class="infoSubmitButton">
+                    <button class="getStartedButton donateButton " id="bloodDonateButton" >Next</button>
                     <img src="image/donate_side.svg" style="height: 60px;margin-top: -60px;">
                 </div>
                 </form>
@@ -539,14 +544,14 @@
     </section>
 
     <section id="vehicleDonate" style="display:none">
-        <img src="image/header_blue.png" style="height: 25px;width:700px;position: absolute;top:0;">
-        <h2 class="mainHeading" style="font-size:26px;margin-top:15px;margin-bottom:10px;font-weight:300">
+        <img src="image/header_blue.png" class="secondPageTopImage">
+        <h2 class="mainHeading" class="donateTitleText">
          Vehicle
         </h2>
       <div class="row">
           <div class="col-md-6 col-lg-6" >
               <img class="sideImage" src="image/car.png">
-              <img src="image/footer.png" height="100px" width="700px" style="left:0%; bottom: 0%; position: fixed;">
+              <img src="image/footer.png" class="secondPageBottomLeftImage">
           </div>
           <div class="col contributeOption" style="padding:10px;">
               <div class="row" style="border-left:1px solid #bdbdbd">
@@ -582,8 +587,8 @@
                       <label for="vehicleImage">Select Images of item</label>
                       <input type="file" class="form-control-file btn" id="vehicleImage">
                     </div>
-                    <div class="infoSubmitButton" style="text-align:right;margin-bottom: 0px;">
-                        <button class="getStartedButton donateButton " id="vehicleDonateButton" style="margin-right:0px;margin-top:0px;" >Next</button>
+                    <div class="infoSubmitButton">
+                        <button class="getStartedButton donateButton " id="vehicleDonateButton">Next</button>
                         <img src="image/donate_side.svg" style="height: 60px;margin-top: -60px;">
                     </div>
                 </form>
@@ -594,14 +599,14 @@
     </section>
 
     <section id="booksDonate" style="display:none">
-        <img src="image/header_blue.png" style="height: 25px;width:700px;position: absolute;top:0;">
-        <h2 class="mainHeading" style="font-size:26px;margin-top:15px;margin-bottom:10px;font-weight:300">
+        <img src="image/header_blue.png" class="secondPageTopImage">
+        <h2 class="mainHeading" class="donateTitleText">
          Books
         </h2>
       <div class="row">
           <div class="col-md-6 col-lg-6" >
               <img class="sideImage" src="image/books.png">
-              <img src="image/footer.png" height="100px" width="700px" style="left:0%; bottom: 0%; position: fixed;">
+              <img src="image/footer.png" class="secondPageBottomLeftImage">
           </div>
           <div class="col contributeOption" style="padding:10px;">
               <div class="row" style="border-left:1px solid #bdbdbd">
@@ -638,8 +643,8 @@
                       <label for="bookImage">Select Images of item</label>
                       <input type="file" class="form-control-file btn" id="bookImage">
                     </div>
-                    <div class="infoSubmitButton" style="text-align:right;margin-bottom: 0px;">
-                        <button class="getStartedButton donateButton" style="margin-right:0px;margin-top:0px;" >Next</button>
+                    <div class="infoSubmitButton">
+                        <button class="getStartedButton donateButton" >Next</button>
                         <img src="image/donate_side.svg" style="height: 60px;margin-top: -60px;">
                     </div>
                 </form>
