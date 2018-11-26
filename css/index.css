@@ -1,6 +1,70 @@
 body {
     min-height: 100%;
 }
+
+.navbar
+{
+  display:list-item;margin-left: 10%;list-style-type: none;
+}
+
+.textNavbar
+{
+  vertical-align:bottom;color: #707070;font-size: 14px;padding: 0px;
+}
+
+#signUpButton
+{
+  text-align: center;float:right;margin-top: 5px;font-size: 14px;border: 1px solid #800080;background: #800080;width: 100px;border-radius: 25px;color:white
+} 
+#loginButton
+{
+  float:right;font-size: 14px;margin-top:5px;
+}
+
+.mainPageLeftDivision
+{
+  padding: 10px;margin: 40px 0px 30px 0px;padding-left: 100px;
+}
+
+.textStyle
+{
+  font-size:61px !important;
+  text-align: left !important;
+  margin-left: 10% !important;
+  font-weight: 300 !important;
+}
+
+.leftBottomImage
+{
+  height:200px;position:fixed;left:-5px;bottom:-5px
+}
+
+.tagLine
+{
+  font-size:40px;color:#3d3838;font-style: italic;font-weight: 200;text-align: right
+}
+
+.rightDivisionMainPAge
+{
+  margin-top: 5%;min-height:80%;width:75%; position: absolute;top: 10px;left:130px;padding: 5px;background-color: white;
+}
+
+.secondPageTopImage
+{
+  height: 25px;width:700px;position: absolute;top:0;
+}
+
+.donateTitleText
+{
+  font-size:26px;margin-top:15px;margin-bottom:10px;font-weight:300
+}
+
+.secondPageBottomLeftImage
+{
+  left:0%; bottom: 0%; position: fixed;
+  height:100px;width: 700px;
+}
+
 .contributeOption .iconImage{
   height: 80px;
   width:80px;
@@ -89,8 +153,14 @@ select, .form-control-file{
 }
 .infoSubmitButton
 {
-  text-align:center;margin-bottom:20px;
+  text-align:right;margin-bottom: 0px;
 }
+.infoSubmitButton button
+{
+  margin-right:0px;margin-top:0px;
+}
+
+
 .formStyle
 {
   width:80% !important;
