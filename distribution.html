@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      
+      <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-firestore.js"></script>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <title>Give Back</title>
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
+        <link rel="stylesheet" href="css/index.css">
+        <script type="text/javascript" src="js/pnotify.custom.min.js"></script>
+        <link href="css/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
+
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        
+  </head>
+  <body class="headerGradient">
+    <nav class="navbar">
+        <a class="navbar-brand" id="siteLogo" href="#" style="padding:0px;">
+          <img src="image/logo.svg" style="height:40px; width:100px;">
+        </a>
+        <a class="navbar-brand textNavbar" href="distribution.html">
+          <span id="testButton">Distribution</span>
+        </a>
+        <a class="navbar-brand textNavbar" href="#">
+          <span>Contact Us</span>
+        </a>    
+        <a id="signUpButton" class="navbar-brand" href="#" data-toggle="modal" data-target="#myModal">
+            <span>Sign Up</span>
+        </a>
+        <a id="loginButton" class="navbar-brand" href="#" data-toggle="modal" data-target="#loginModal">
+            <span>Log In</span>
+        </a>
+      </nav>
+      <section>
+          <div class="row">
+                <div class="col-lg-6 col-md-6" style="width:100%;min-height:450px;" id="distributionChart1"></div>
+                <div class="col-lg-6 col-md-6" style="width:100%;min-height:450px;"  id="distributionChart2"></div>
+          </div>
+       
+      </section>
+      <script type="text/javascript">
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart1);
+        function drawChart1() {
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Topping');
+          data.addColumn('number', 'Slices');
+          data.addRows([
+            ['Clothes', 3],
+            ['Food', 1],
+            ['Money', 1],
+            ['Furniture', 1],
+            ['Electronics', 2],
+            ['Volunteer',5],
+            ['Blood', 2],
+            ['Vehicle',5],
+            ['Books',5]
+          ]);
+          var options = {'title':'Ratio of donations we received.'};
+          var chart = new google.visualization.PieChart(document.getElementById('distributionChart1'));
+          chart.draw(data, options);
+        }
+        
+
+        //second chart
+        google.charts.load('current', {'packages':['corechart']});
+        google.charts.setOnLoadCallback(drawChart2);
+        function drawChart2() {
+          var data = new google.visualization.DataTable();
+          data.addColumn('string', 'Topping');
+          data.addColumn('number', 'Slices');
+          data.addRows([
+            ['Clothes', 3],
+            ['Food', 1],
+            ['Money', 1],
+            ['Furniture', 1],
+            ['Electronics', 2],
+            ['Volunteer',5],
+            ['Blood', 2],
+            ['Vehicle',5],
+            ['Books',5]
+          ]);
+          var options = {'title':'Ratio of donations we received.'};
+
+          // Instantiate and draw our chart, passing in some options.
+          var chart = new google.visualization.PieChart(document.getElementById('distributionChart2'));
+          chart.draw(data, options);
+        }
+        
+        //responisve chart options
+        $(window).resize(function(){
+          drawChart1();
+          drawChart2();
+        });
+      </script>
+
+
+  </body>
+  </html>
