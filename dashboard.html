@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+      
+      <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-app.js"></script>
+      <script src="https://www.gstatic.com/firebasejs/5.5.8/firebase-firestore.js"></script>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Give Back</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <script type="text/javascript" src="js/pnotify.custom.min.js"></script>
+    <link href="css/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+  </head>
+    <body class="headerGradient" style="background-image: url(../Image/svg/dash.svg);" >
+        <nav class="navbar">
+        <a class="navbar-brand" id="siteLogo" href="#" style="padding:0px;">
+            <img src="image/svg/give_logo_white.svg" style="height:40px; width:100px;">
+        </a>
+        <a class="navbar-brand textNavbar" href="distribution.html">
+            <span id="testButton" style="color:white !important;">Distribution</span>
+        </a>
+        <a class="navbar-brand textNavbar" href="#">
+            <span style="color:white !important;">Contact Us</span>
+        </a>    
+        <a class="navbar-brand" style="float:right;"  href="#">
+            <i class="material-icons" style="font-size:40px;color:white">person</i>
+        </a>
+        <a class="navbar-brand" href="#" style="float:right">
+            <i class="material-icons" style="font-size:24px;color:white;vertical-align: -webkit-baseline-middle">notification_important</i>
+        </a>
+        <a class="navbar-brand" href="#" style="float:right;">
+            <i class="material-icons" style="font-size:24px;color:white;vertical-align: -webkit-baseline-middle">textsms</i>
+        </a>
+        </nav>
+        <hr style="border: 0.3px solid white;margin: 0px">
+        <section>
+            <div style="width:100%;text-align:center">
+                <img src="image/svg/give_logo_white.svg" style="height:60px;width:60px">
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card card-2 userDetails" style="float:right;padding:20px;height:350px;">
+                        <p style="text-align:center">Your Details</p>
+                        <hr>
+                        <div>
+                            <p>
+                                Name : <label>Lenovo</label>
+                            </p>
+                            <p>
+                                Gender : <label>Male</label>
+                            </p>
+                            <p>
+                                Email : <label>Leno@vo.com</label>
+                            </p>
+                            <p>
+                                Phone : <label>1234567890</label>
+                            </p>
+                            <p>
+                                Address : <label>Excluding merges, 2  additions and 226 deletions.</label>
+                            </p>
+                        </div>
+                        <div class="changePassword" style="text-align:center">
+                            <button class="btn btn-primary">Edit profile</button>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div class="col-md-6">
+                        <div class="card card-2" style="padding:20px;height: 350px;">
+                            <p style="text-align:center">Past Donationas</p>
+                            <hr>
+                            <div class="row">
+                                <div class="card col-md-3" style="margin:10px;box-shadow: 0 1px 2px rgba(0,0,0,0.23);padding:9px;text-align: center;cursor:pointer"><img src="image/wedding-suit.png" style="height:30px;width:30px;"></div>
+                                <div class="card col-md-3" style="margin:10px;box-shadow: 0 1px 2px rgba(0,0,0,0.23);padding:9px;text-align: center;cursor:pointer"><img src="image/car.png" style="height:30px;width:30px;"></div>
+                                <div class="card col-md-3" style="margin:10px;box-shadow: 0 1px 2px rgba(0,0,0,0.23);padding:9px;text-align: center;cursor:pointer"><img src="image/blood.png" style="height:30px;width:30px;"></div>
+                                <div class="card col-md-3" style="margin:10px;box-shadow: 0 1px 2px rgba(0,0,0,0.23);padding:9px;text-align: center;cursor:pointer"><img src="image/books.png" style="height:30px;width:30px;"></div>
+                                <div class="card col-md-3" style="margin:10px;box-shadow: 0 1px 2px rgba(0,0,0,0.23);padding:9px;text-align: center;cursor:pointer"><img src="image/volunteer.png" style="height:30px;width:30px;"></div>
+                                <div class="card col-md-3" style="margin:10px;box-shadow: 0 1px 2px rgba(0,0,0,0.23);padding:9px;text-align: center;cursor:pointer"><img src="image/electronics.jpg" style="height:30px;width:30px;"></div>
+                                <div class="card col-md-3" style="margin:10px;box-shadow: 0 1px 2px rgba(0,0,0,0.23);padding:9px;text-align: center;cursor:pointer"><img src="image/food.png" style="height:30px;width:30px;"></div>
+                                <div class="card col-md-3" style="margin:10px;box-shadow: 0 1px 2px rgba(0,0,0,0.23);padding:9px;text-align: center;cursor:pointer"><img src="image/money.jpg" style="height:30px;width:30px;"></div>
+                                <div class="card col-md-3" style="margin:10px;box-shadow: 0 1px 2px rgba(0,0,0,0.23);padding:9px;text-align: center;cursor:pointer"><img src="image/furniture.svg" style="height:30px;width:30px;"></div>
+                            </div>
+                            <div class="seeAllDonation" style="text-align:center">
+                                <button class="btn btn-primary">See All</button>
+                            </div>
+                        </div>
+                </div>
+
+            </div>
+        </section>
+    </body>
+</html>
