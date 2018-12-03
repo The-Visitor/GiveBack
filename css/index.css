@@ -1,11 +1,11 @@
 body {
     min-height: 100%;
-    background-image: url("../Image/svg/dash.svg");
 }
 
 .navbar
 {
-  display:list-item;margin-left: 10%;list-style-type: none;
+  display:list-item;
+  list-style-type: none;
 }
 
 .textNavbar
