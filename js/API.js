@@ -36,7 +36,6 @@ function objectifyForm(formArray) {
     return returnArray;
   }
 
-  
 var data = {}; 
 
 $("#signUpButton").on("click", function(e){
