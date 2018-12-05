@@ -85,7 +85,7 @@
                             </p>
                         </div>
                         <div class="changePassword" style="text-align:center">
-                            <button class="btn btn-primary">Edit profile</button>
+                            <button class="btn btn-primary">Change Password</button>
                         </div>
                         
                     </div>
@@ -115,6 +115,7 @@
         </section>
     </body>
     <script>
+        
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
                 console.log(user);
@@ -126,6 +127,17 @@
             $("#logout").on("click", function(){
                 firebase.auth().signOut();
                 location.href = "index.html";
+            });
+
+            $(".changePassword").on("click", function(){
+                var user = firebase.auth().currentUser;
+                var auth = firebase.auth();
+                auth.sendPasswordResetEmail(user.email).then(function() {
+                    alert("Check your email.");
+                    // Email sent.
+                    }).catch(function(error) {
+                    // An error happened.
+                    });
             });
     </script>
 </html>
