@@ -26,6 +26,7 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
 
+
       <!-- PNotify scripts CDN -->
       <script type="text/javascript" src="js/pnotify.custom.min.js"></script>
       <link href="css/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
@@ -58,7 +59,10 @@
         </a>
         <a class="navbar-brand textNavbar" href="#">
             <span style="color:white !important;">Contact Us</span>
-        </a>    
+        </a>
+        <button class="btn btn-primary" id="logout" style="float:right;background: transparent;border-color: white">
+            Logout
+        </button>
         <a class="navbar-brand" style="float:right;"  href="#">
             <i class="material-icons" style="font-size:40px;color:white">person</i>
         </a>
@@ -126,4 +130,33 @@
             </div>
         </section>
     </body>
+    <script>
+            var config = {
+              apiKey: "AIzaSyBP3QkSq5NfwI7rLOCmwKwyb-vtpgkt8nY",
+              authDomain: "give-back-77eae.firebaseapp.com",
+              databaseURL: "https://give-back-77eae.firebaseio.com",
+              projectId: "give-back-77eae",
+              storageBucket: "give-back-77eae.appspot.com",
+              messagingSenderId: "429327911261"
+            };
+            firebase.initializeApp(config);
+            const db = firebase.firestore();
+            db.settings({
+              timestampsInSnapshots: true
+              });
+          </script>
+    <script>
+        firebase.auth().onAuthStateChanged(function(user) {
+            if (user) {
+                console.log(user);
+            } else {
+                console.log("Logged Out");
+            }
+            });
+
+            $("#logout").on("click", function(){
+                firebase.auth().signOut();
+                location.href = "index.html";
+            });
+    </script>
 </html>
