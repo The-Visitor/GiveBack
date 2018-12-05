@@ -16,6 +16,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="stylesheet" href="css/index.css">
+      <script src="js/dbConnect.js"></script>
       <title>Dashboard</title>
       
       <!-- Google CDN from fonts and Icons -->
@@ -30,23 +31,6 @@
       <!-- PNotify scripts CDN -->
       <script type="text/javascript" src="js/pnotify.custom.min.js"></script>
       <link href="css/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
-
-      
-      <script>
-        var config = {
-          apiKey: "AIzaSyBP3QkSq5NfwI7rLOCmwKwyb-vtpgkt8nY",
-          authDomain: "give-back-77eae.firebaseapp.com",
-          databaseURL: "https://give-back-77eae.firebaseio.com",
-          projectId: "give-back-77eae",
-          storageBucket: "give-back-77eae.appspot.com",
-          messagingSenderId: "429327911261"
-        };
-        firebase.initializeApp(config);
-        const db = firebase.firestore();
-        db.settings({
-          timestampsInSnapshots: true
-          });
-      </script>
 
   </head>
     <body class="headerGradient" style="background-image: url(../Image/svg/dash.svg);background-size: cover;background-repeat: no-repeat;background-position: center center;" >
@@ -130,21 +114,6 @@
             </div>
         </section>
     </body>
-    <script>
-            var config = {
-              apiKey: "AIzaSyBP3QkSq5NfwI7rLOCmwKwyb-vtpgkt8nY",
-              authDomain: "give-back-77eae.firebaseapp.com",
-              databaseURL: "https://give-back-77eae.firebaseio.com",
-              projectId: "give-back-77eae",
-              storageBucket: "give-back-77eae.appspot.com",
-              messagingSenderId: "429327911261"
-            };
-            firebase.initializeApp(config);
-            const db = firebase.firestore();
-            db.settings({
-              timestampsInSnapshots: true
-              });
-          </script>
     <script>
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
