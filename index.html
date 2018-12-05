@@ -16,6 +16,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="stylesheet" href="css/index.css">
+      <script src="js/dbConnect.js"></script>
       <title>Give Back</title>
       
       <!-- Google CDN from fonts and Icons -->
@@ -29,23 +30,6 @@
       <!-- PNotify scripts CDN -->
       <script type="text/javascript" src="js/pnotify.custom.min.js"></script>
       <link href="css/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
-
-      
-      <script>
-        var config = {
-          apiKey: "AIzaSyBP3QkSq5NfwI7rLOCmwKwyb-vtpgkt8nY",
-          authDomain: "give-back-77eae.firebaseapp.com",
-          databaseURL: "https://give-back-77eae.firebaseio.com",
-          projectId: "give-back-77eae",
-          storageBucket: "give-back-77eae.appspot.com",
-          messagingSenderId: "429327911261"
-        };
-        firebase.initializeApp(config);
-        const db = firebase.firestore();
-        db.settings({
-          timestampsInSnapshots: true
-          });
-      </script>
 
   </head>
   <body class="headerGradient">
@@ -845,7 +829,6 @@
     </section>
 
     <div class="container">
-        <!-- Modal -->
         <script type="text/javascript">
           // FirebaseUI config.
           var uiConfig = {
@@ -853,12 +836,13 @@
             signInOptions: [
               firebase.auth.EmailAuthProvider.PROVIDER_ID,
               firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+              //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
               firebase.auth.PhoneAuthProvider.PROVIDER_ID
-            ],
-            tosUrl: '<your-tos-url>'};
+            ]};
           var ui = new firebaseui.auth.AuthUI(firebase.auth());
           ui.start('#firebaseui-auth-container', uiConfig);
         </script>
+
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
             <!-- Modal content-->
@@ -878,11 +862,6 @@
         </div>
         
     </div>
-
-    <!-- <footer >
-      This is just a test site. &copy; Copyright Not Reserved
-      <span style="float:right">All the images used here are copied from Google.com , please report if you want these images to be removed. We do not own any images used here.</span>
-    </footer> -->
 
     <script src="js/index.js"></script>
     <script src="js/API.js"></script>
