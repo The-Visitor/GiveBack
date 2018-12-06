@@ -16,6 +16,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <link rel="stylesheet" href="css/index.css">
+      <script src="js/dbConnect.js"></script>
       <title>Dashboard</title>
       
       <!-- Google CDN from fonts and Icons -->
@@ -31,47 +32,30 @@
       <script type="text/javascript" src="js/pnotify.custom.min.js"></script>
       <link href="css/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
 
-      
-      <script>
-        var config = {
-          apiKey: "AIzaSyBP3QkSq5NfwI7rLOCmwKwyb-vtpgkt8nY",
-          authDomain: "give-back-77eae.firebaseapp.com",
-          databaseURL: "https://give-back-77eae.firebaseio.com",
-          projectId: "give-back-77eae",
-          storageBuc`ket: "give-back-77eae.appspot.com",
-          messagingSenderId: "429327911261"
-        };
-        firebase.initializeApp(config);
-        const db = firebase.firestore();
-        db.settings({
-          timestampsInSnapshots: true
-          });
-      </script>
-
   </head>
-    <body class="headerGradient" style="background-image: url(../Image/svg/dash.svg);background-size: cover;background-repeat: no-repeat;background-position: center center;" >
+    <body class="headerGradient" style="background-image: url(../Image/svg/dash.svg);background-size: cover;background-repeat: no-repeat;background-position: center center;">
         <nav class="navbar">
-        <a class="navbar-brand" id="siteLogo" href="#" style="padding:0px;">
-            <img src="image/svg/give_logo_white2.svg" style="height:40px; width:100px;">
-        </a>
-        <a class="navbar-brand textNavbar" href="distribution.html">
-            <span id="testButton" style="color:white !important;">Distribution</span>
-        </a>
-        <a class="navbar-brand textNavbar" href="#">
-            <span style="color:white !important;">Contact Us</span>
-        </a>
-        <button class="btn btn-primary" id="logout" style="float:right;background: transparent;border-color: white">
-            Logout
-        </button>
-        <a class="navbar-brand" style="float:right;"  href="#">
-            <i class="material-icons" style="font-size:40px;color:white">person</i>
-        </a>
-        <a class="navbar-brand" href="#" style="float:right">
-            <i class="material-icons" style="font-size:24px;color:white;vertical-align: -webkit-baseline-middle">notification_important</i>
-        </a>
-        <a class="navbar-brand" href="#" style="float:right;">
-            <i class="material-icons" style="font-size:24px;color:white;vertical-align: -webkit-baseline-middle">textsms</i>
-        </a>
+            <a class="navbar-brand" id="siteLogo" href="#" style="padding:0px;">
+                <img src="image/svg/give_logo_white2.svg" style="height:40px; width:100px;">
+            </a>
+            <a class="navbar-brand textNavbar" href="distribution.html">
+                <span id="testButton" style="color:white !important;">Distribution</span>
+            </a>
+            <a class="navbar-brand textNavbar" href="#">
+                <span style="color:white !important;">Contact Us</span>
+            </a>
+            <button class="btn btn-primary" id="logout" style="float:right;background: transparent;border-color: white">
+                Logout
+            </button>
+            <a class="navbar-brand" style="float:right;"  href="#">
+                <i class="material-icons" style="font-size:40px;color:white">person</i>
+            </a>
+            <a class="navbar-brand" href="#" style="float:right">
+                <i class="material-icons" style="font-size:24px;color:white;vertical-align: -webkit-baseline-middle">notification_important</i>
+            </a>
+            <a class="navbar-brand" href="#" style="float:right;">
+                <i class="material-icons" style="font-size:24px;color:white;vertical-align: -webkit-baseline-middle">textsms</i>
+            </a>
         </nav>
         <hr style="border: 0.3px solid white;margin: 0px">
         <section>
@@ -130,21 +114,6 @@
             </div>
         </section>
     </body>
-    <script>
-            var config = {
-              apiKey: "AIzaSyBP3QkSq5NfwI7rLOCmwKwyb-vtpgkt8nY",
-              authDomain: "give-back-77eae.firebaseapp.com",
-              databaseURL: "https://give-back-77eae.firebaseio.com",
-              projectId: "give-back-77eae",
-              storageBucket: "give-back-77eae.appspot.com",
-              messagingSenderId: "429327911261"
-            };
-            firebase.initializeApp(config);
-            const db = firebase.firestore();
-            db.settings({
-              timestampsInSnapshots: true
-              });
-          </script>
     <script>
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
