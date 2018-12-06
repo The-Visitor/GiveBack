@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1108.296 957.015">
+  <defs>
+    <style>
+      .cls-1 {
+        opacity: 0.2;
+        fill: url(#linear-gradient);
+      }
+
+      .cls-2 {
+        opacity: 0.4;
+      }
+
+      .cls-2, .cls-3 {
+        fill: url(#linear-gradient-2);
+      }
+
+      .cls-3, .cls-4 {
+        opacity: 0.7;
+      }
+
+      .cls-4 {
+        fill: url(#linear-gradient-4);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6c18a4"/>
+      <stop offset="1" stop-color="#3827b4"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#6c18a4"/>
+      <stop offset="1" stop-color="#6c18a4"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-4" y1="0.148" x2="1" y2="0.14" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#3827b4"/>
+      <stop offset="1" stop-color="#909"/>
+    </linearGradient>
+  </defs>
+  <g id="Background" transform="translate(97.801 -389.348) rotate(-1)">
+    <path id="Path_5" data-name="Path 5" class="cls-1" d="M233.065,1183.986h0Z" transform="translate(-158.832 35)"/>
+    <path id="Path_4" data-name="Path 4" class="cls-2" d="M1122.4,389.476s-142.109-26.824-372.733,61.145-516.6-45.928-516.6-45.928v757.8H1122.4Z" transform="translate(4.288 -38.754) rotate(14)"/>
+    <path id="Path_1" data-name="Path 1" class="cls-3" d="M158.465,428.259s132.462-93.8,398.783-17.7,506.243,49.022,506.243,49.022l2.009,675.192H310.209Z" transform="translate(-137.088 16.359) rotate(7)"/>
+    <path id="Path_2" data-name="Path 2" class="cls-4" d="M215,449.834s117.048-86.628,382.718-10.406,370.727,73.081,370.727,73.081l-2,656.251H213Z" transform="matrix(0.995, 0.105, -0.105, 0.995, -53.25, -6.119)"/>
+  </g>
+</svg>
