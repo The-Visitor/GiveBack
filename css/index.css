@@ -240,3 +240,19 @@ select, .form-control-file{
 .userDetails p{
   margin: 0px;
 }
+
+.donarQuickInfo
+{
+  margin: 0px;
+  font-size: 12px;
+  color: #6C18A4;
+}
+
+.donarQuickInfoRight
+{
+  text-align: right;
+}
+.donarQuickInfo label
+{
+  margin: 0px;
+}
