@@ -256,3 +256,7 @@ select, .form-control-file{
 {
   margin: 0px;
 }
+.breadcrumb-item.active
+{
+  color:#6C18A4 !important;
+}

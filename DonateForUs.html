@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Bootstrap and Jquery CDN -->
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+        <!-- Firebase CDN -->
+        <script src="https://www.gstatic.com/firebasejs/5.6.0/firebase.js"></script>
+        <script src="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.js"></script>
+        <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/3.4.1/firebaseui.css" />
+            
+        <!-- Custom Css tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="css/index.css">
+        <script src="js/dbConnect.js"></script>
+        <title>Give Back</title>
+        
+        <!-- Google CDN from fonts and Icons -->
+        <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"  rel="stylesheet">
+
+        <!-- Google Charts CDN -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js"></script>
+
+        <!-- PNotify scripts CDN -->
+        <script type="text/javascript" src="js/pnotify.custom.min.js"></script>
+        <link href="css/pnotify.custom.min.css" media="all" rel="stylesheet" type="text/css" />
+
+    </head>
+    <body class="headerGradient">
+        <nav class="navbar" style="z-index: 1;">
+            <a class="navbar-brand" id="siteLogo" href="index.html" style="padding:0px;">
+                <img src="image/logo.svg" style="height:40px; width:100px;">
+            </a>
+            <a class="navbar-brand textNavbar" href="distribution.html">
+                <span id="testButton">Distribution</span>
+            </a>
+            <a class="navbar-brand textNavbar" href="contact.html">
+                <span>Contact Us</span>
+            </a>
+            <a class="navbar-brand textNavbar" href="donations.html">
+                <span>Donators</span>
+            </a>
+            <a id="signUpButton" class="navbar-brand" href="#" data-toggle="modal" data-target="#myModal">
+                <span>Sign Up</span>
+            </a>
+        </nav>
+        <img class="secondPageTopImage" src="image/header_blue.png">
+        <nav aria-label="breadcrumb" style="margin-left:5%">
+            <ol class="breadcrumb" style="background:transparent;margin:0px;">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Donation</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Donate for Us</li>
+            </ol>
+        </nav>
+        <hr style="margin:0px;width:90%;margin-left:5%">
+        <section class="container">
+            <div class="introduction" style="margin-top:30px;">
+                <h1 style="font-size: 26px;font-weight:300;">Fuel Us</h1>
+                <div style="border:1px solid #bdbdbd;padding:20px;">
+                    <p style="color:#6C18A4;font-size:22px;">Show your Support</p>
+                    <p>
+                        <Lorem> Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                             Quam soluta vero iure ipsam praesentium reprehenderit, 
+                             ad necessitatibus aperiam, eius esse nulla amet corrupti
+                              dolorem quibusdam. Quasi illo voluptates modi doloremque.
+                        </Lorem>
+                    </p>
+                    <p>
+                        <Lorem> Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+                                Quam soluta vero iure ipsam praesentium reprehenderit, 
+                                ad necessitatibus aperiam, eius esse nulla amet corrupti
+                                dolorem quibusdam. Quasi illo voluptates modi doloremque.
+                        </Lorem>
+                    </p>
+                    <button class="btn" style="background: #6C18A4;color:white;border: none;float: right;border-radius: 25px;">Donate Now</button>
+                </div>
+            </div>
+            <div class="">
+
+            </div>
+
+        </section>
+
+    </body>
+  </html>
