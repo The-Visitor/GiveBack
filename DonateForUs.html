@@ -81,8 +81,68 @@
                     <button class="btn" style="background: #6C18A4;color:white;border: none;float: right;border-radius: 25px;">Donate Now</button>
                 </div>
             </div>
-            <div class="">
+            <div class="donateForUs" style="margin-top:30px;">
+                <div class="input-group mb-3" style="margin:15px;">
+                    <input type="number" class="form-control" placeholder="Amount" aria-describedby="donationAmount">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="donationAmount">&#x20b9</span>
+                    </div>
+                </div>
+                <div class="paymentThrough card card-2" style="width:100%">
+                    <div class="row"  style="padding:10px;">
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 donarDetails">
+                            <p style="text-align:center; font-size:20px;font-weight:300">Your Details</p>
+                            <form class="form-group formStyle">
+                                <div class="donarName" style="margin-top:20px;">
+                                    <label for="donarName">Full Name</label>
+                                    <input name="Name" type="text" id="donarName" class="form-control" aria-describedby="quantityHelpBlock" required>
+                                    <small class="form-text text-muted">
+                                    Your Name must be in text format, and must not contain spaces,numbers, special characters, or emoji.
+                                    </small>
+                                </div>
+                                <div class="donarEmail" style="margin-top:20px;">
+                                    <label for="donarEmail">Email ID</label>
+                                    <input name="Email" type="email" id="donarEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
+                                    <small class="form-text text-muted">
+                                    Your Email ID must be in text format, and must not contain spaces, or emoji.
+                                    </small>
+                                </div>
+                                <div class="donarPhoneNumber" style="margin-top:20px;padding-left: 0px;">
+                                    <label for="donarPhoneNumber">Phone Number</label>
+                                    <input name="Phone_Number" type="number" id="donarPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
+                                    <small class="form-text text-muted">
+                                        Your Phone Number ID must be in number format, and must not contain spaces, special characters, or emoji.
+                                    </small>
+                                </div>
+                            </form>  
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-12 paymentMethod">
+                            <p style="text-align:center; font-size:20px;font-weight:300">Pay Through</p>
+                            <div class="row">
+                                <div class="col-md-5 col-sm-5 col-lg-5 col-xs-5 card card-2" style="text-align:center;margin:4.1%;padding:5px;cursor: pointer;">
+                                    <img src="image/paypalLogo.png" style="width:125px;">
+                                </div>
+                                <div class="col-md-5 col-sm-5 col-lg-5 col-xs-5 card card-2" style="text-align:center;margin:4.1%;padding:5px;cursor: pointer;">
+                                    <img src="image/paytmLogo.png" style="width:125px;">
+                                </div>
+                                <div class="col-md-5 col-sm-5 col-lg-5 col-xs-5 card card-2" style="text-align:center;margin:4.1%;padding:5px;cursor: pointer;background: aliceblue">
+                                    <img src="image/upi.png" style="width:125px;">
+                                </div>
+                                <div class="col-md-5 col-sm-5 col-lg-5 col-xs-5 card card-2" style="text-align:center;margin:4.1%;padding:5px;cursor: pointer;">
+                                    <img src="image/googlePay.png" style="width:125px;">
+                                </div>
+                                <div class="col-md-5 col-sm-5 col-lg-5 col-xs-5 card card-2" style="text-align:center;margin:4.1%;padding:5px;cursor: pointer;">
+                                    <img src="image/phonepe.png" style="width:125px;">
+                                </div>
+                                <div class="col-md-5 col-sm-5 col-lg-5 col-xs-5 card card-2" style="text-align:center;margin:4.1%;padding:5px;cursor: pointer;">
+                                    <img src="image/card.png" style="width:125px;">
+                                </div>
+                            </div>
+                            <button class="btn" style="background: #6C18A4;color:white;border: none;float: right;border-radius: 25px;width: 100px;">Proceed</button>
+                        </div>
+                    </div>
 
+                </div>
             </div>
 
         </section>
