@@ -53,4 +53,23 @@ $(document).ready(function(){
         $("#donarDetails").show("show");
     });
 
+    
+    $("#clothesImage").on("change", function(e){
+        // get file 
+        var file  = e.target.files[0];
+
+        //upload file 
+       var storageRef =  firebase.storage().ref('clothes' + file.name)
+        
+       var task = storageRef.put(file);
+        //update progress bar 
+        task.on('state_changed', 
+        function progress(snapshot) {
+            console.log(snapshot);
+            var percentage  = (snapshot.bytesTransferred / snapshot.totalBytes) * 100 ;
+            $("#clothImageUpload").val(percentage);
+        }
+        )
+    })
+
 });
