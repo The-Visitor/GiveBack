@@ -164,6 +164,7 @@ $("#furnitureDonateForm").submit(function(e){
     data["UserID"] = 0;
     }
     data["DonationType"] = 4;
+    window.scrollTo(0, 570);
     e.preventDefault();
 });
 
