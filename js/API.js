@@ -238,7 +238,10 @@ $("#donarAddressDetails").submit(function(e){
             db.collection("Money").add(data);
             break;
         case 4:
-            db.collection("Furniture").add(data);
+            db.collection("Furniture").add(data).then(function(res){
+                successMessage("Donation Submitted, We will get back to you shortly");
+                $("#donationSummary").show();
+            });
             break;
         case 5:
             db.collection("Electronics").add(data);
