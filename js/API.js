@@ -135,6 +135,7 @@ $("#clothesDonateForm").submit(function(e){
     data["UserID"] = 0;
     }
     data["DonationType"] = 1;
+    window.scrollTo(0, 570);
     e.preventDefault();
 
     //
@@ -150,6 +151,7 @@ $("#foodDonateForm").submit(function(e){
         data["UserID"] = 0;
     }
     data["DonationType"] = 2;
+    window.scrollTo(0, 570);
     console.log(data);
     e.preventDefault();
 });
@@ -178,6 +180,7 @@ $("#electronicsDonateForm").submit(function(e){
     data["UserID"] = 0;
     }
     data["DonationType"] = 5;
+    window.scrollTo(0, 570);
     e.preventDefault();
 
 });
@@ -192,6 +195,7 @@ $("#bloodDonateForm").submit(function(e){
     data["UserID"] = 0;
     }
     data["DonationType"] = 7;
+    window.scrollTo(0, 570);
     e.preventDefault();
 
 });
@@ -206,6 +210,7 @@ $("#vehicleDonateForm").submit(function(e){
     data["UserID"] = 0;
     }
     data["DonationType"] = 8;
+    window.scrollTo(0, 570);
     e.preventDefault();
 
 });
@@ -220,6 +225,7 @@ $("#bookDonateForm").submit(function(e){
     data["UserID"] = 0;
     }
     data["DonationType"] = 9;
+    window.scrollTo(0, 570);
     e.preventDefault();
 
 });
@@ -229,13 +235,22 @@ $("#donarAddressDetails").submit(function(e){
     data.User = address;
     switch (data.DonationType) {
         case 1:
-            db.collection("Clothes").add(data);
+            db.collection("Clothes").add(data).then(function(res){
+                successMessage("Donation Submitted, We will get back to you shortly");
+                $("#donationSummary").show();
+            });
             break;
         case 2:
-            db.collection("Food").add(data);
+            db.collection("Food").add(data).then(function(res){
+                successMessage("Donation Submitted, We will get back to you shortly");
+                $("#donationSummary").show();
+            });
             break;
         case 3:
-            db.collection("Money").add(data);
+            db.collection("Money").add(data).then(function(res){
+                successMessage("Donation Submitted, We will get back to you shortly");
+                $("#donationSummary").show();
+            });
             break;
         case 4:
             db.collection("Furniture").add(data).then(function(res){
@@ -244,19 +259,34 @@ $("#donarAddressDetails").submit(function(e){
             });
             break;
         case 5:
-            db.collection("Electronics").add(data);
+            db.collection("Electronics").add(data).then(function(res){
+                successMessage("Donation Submitted, We will get back to you shortly");
+                $("#donationSummary").show();
+            });
             break;
         case 6:
-            db.collection("Volunteer").add(data);
+            db.collection("Volunteer").add(data).then(function(res){
+                successMessage("Details Submitted, We will get back to you shortly");
+                $("#donationSummary").show();
+            });
             break;
         case 7:
-            db.collection("Blood").add(data);
+            db.collection("Blood").add(data).then(function(res){
+                successMessage("Donation Submitted, We will get back to you shortly");
+                $("#donationSummary").show();
+            });
             break;
         case 8:
-            db.collection("Vehicle").add(data);
+            db.collection("Vehicle").add(data).then(function(res){
+                successMessage("Donation Submitted, We will get back to you shortly");
+                $("#donationSummary").show();
+            });
             break;
         case 9:
-            db.collection("Books").add(data);
+            db.collection("Books").add(data).then(function(res){
+                successMessage("Donation Submitted, We will get back to you shortly");
+                $("#donationSummary").show();
+            });
             break;
         case 10:
             db.collection("Other").add(data);
