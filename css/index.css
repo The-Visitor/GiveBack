@@ -13,7 +13,7 @@ body {
   vertical-align:bottom;color: #707070;font-size: 14px;padding: 0px;
 }
 
-#signUpButton, #helpUs
+#signUpButton, #helpUs , #NGOLogin
 {
   text-align: center;float:right;margin-top: 5px;font-size: 14px;border: 1px solid #800080;background: #800080;width: 100px;border-radius: 25px;color:white
 } 

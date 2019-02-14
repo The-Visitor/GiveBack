@@ -1,0 +1,14 @@
+
+.submitNGOData , .loginButton
+{
+  text-align: center;float:right;margin-top: 5px;font-size: 14px;border: 1px solid #800080;background: #800080;width: 100px;border-radius: 25px;color:white
+} 
+
+.NGOsignUp label{
+  margin-top: 20px;
+}
+
+.loginText
+{
+  width:200px;float:unset;border:none;margin-top:35px;color: #800080;cursor: pointer;
+}
