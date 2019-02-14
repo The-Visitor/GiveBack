@@ -67,12 +67,16 @@
               <form class="form-group NGOsignUp" style="text-align:left">
                 <label for="NGOName">Name Of the Organization</label>
                 <input type="text" placeholder="Name" id="NGOName" class="form-control" required>
+
                 <label for="NGOEmail">Official Email Id</label>
                 <input type="email" placeholder="email" id="NGOEmail" class="form-control" required>
+
                 <label for="NGOPassword">Password</label>
                 <input type="password" placeholder="password" id="NGOPassword" class="form-control" required>
+
                 <label for="NGOLocation">Location</label>
                 <textarea placeholder="Location" id="NGOLocation" class="form-control"></textarea>
+
                 <label for="NGOType">How do you help ( You can select multiple )</label>
                 <select id="NGOType" class="form-control select2" multiple required>
                   <option>Clothes</option>
@@ -85,6 +89,10 @@
                   <option>Books</option>
                   <option>Volunteers</option>
                 </select>
+
+                <label for="NGOPhone">Phone Number</label>
+                <input type="phone" placeholder="Phone Number" id="NGOPhone" class="form-control" required>
+
                 <button type="submit" style="margin-top: 30px;" class="btn btn-primary submitNGOData">Submit</button>
                 <p data-toggle="modal" data-target="#myModal" class="loginText">Already have an account?</p>
               </form>
