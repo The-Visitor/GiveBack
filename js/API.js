@@ -237,55 +237,55 @@ $("#donarAddressDetails").submit(function(e){
         case 1:
             db.collection("Clothes").add(data).then(function(res){
                 successMessage("Donation Submitted, We will get back to you shortly");
-                $("#donationSummary").show();
+                document.location.href=`/summary.html?id=${res.id}&type=Clothes`; 
             });
             break;
         case 2:
             db.collection("Food").add(data).then(function(res){
                 successMessage("Donation Submitted, We will get back to you shortly");
-                $("#donationSummary").show();
+                document.location.href=`/summary.html?id=${res.id}&type=Food`; 
             });
             break;
         case 3:
             db.collection("Money").add(data).then(function(res){
                 successMessage("Donation Submitted, We will get back to you shortly");
-                $("#donationSummary").show();
+                document.location.href=`/summary.html?id=${res.id}&type=Money`; 
             });
             break;
         case 4:
             db.collection("Furniture").add(data).then(function(res){
                 successMessage("Donation Submitted, We will get back to you shortly");
-                $("#donationSummary").show();
+                document.location.href=`/summary.html?id=${res.id}&type=Furniture`; 
             });
             break;
         case 5:
             db.collection("Electronics").add(data).then(function(res){
                 successMessage("Donation Submitted, We will get back to you shortly");
-                $("#donationSummary").show();
+                document.location.href=`/summary.html?id=${res.id}&type=Electronics`; 
             });
             break;
         case 6:
             db.collection("Volunteer").add(data).then(function(res){
                 successMessage("Details Submitted, We will get back to you shortly");
-                $("#donationSummary").show();
+                document.location.href=`/summary.html?id=${res.id}&type=Volunteer`; 
             });
             break;
         case 7:
             db.collection("Blood").add(data).then(function(res){
                 successMessage("Donation Submitted, We will get back to you shortly");
-                $("#donationSummary").show();
+                document.location.href=`/summary.html?id=${res.id}&type=Blood`; 
             });
             break;
         case 8:
             db.collection("Vehicle").add(data).then(function(res){
                 successMessage("Donation Submitted, We will get back to you shortly");
-                $("#donationSummary").show();
+                document.location.href=`/summary.html?id=${res.id}&type=Vehicle`; 
             });
             break;
         case 9:
             db.collection("Books").add(data).then(function(res){
                 successMessage("Donation Submitted, We will get back to you shortly");
-                $("#donationSummary").show();
+                document.location.href=`/summary.html?id=${res.id}&type=Books`; 
             });
             break;
         case 10:
