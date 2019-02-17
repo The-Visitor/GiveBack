@@ -24,13 +24,23 @@ $(document).ready(function(){
         let name = $("#NGOName").val();
         let address = $("#NGOLocation").val();
         let type = $("#NGOType").val();
+        let phone = $("#NGOPhone").val();
         e.preventDefault();
         firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
             var user = firebase.auth().currentUser;
+            var data = {
+              UID : user.uid,
+              Address : address,
+              Type : type,
+              Phone : phone
+            };
             user.updateProfile({
                 displayName: name
               }).then(function() {
-                successMessage("Account Created Successfully");
+                console.log(data);
+                db.collection("Organization").add(data).then(function(res){
+                   successMessage("Account Created Successfully");
+                });
                 setTimeout(function(){
                     window.location = "../NGO/dashboard.html";
                 },3000)
