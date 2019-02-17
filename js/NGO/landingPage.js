@@ -25,6 +25,7 @@ $(document).ready(function(){
         let address = $("#NGOLocation").val();
         let type = $("#NGOType").val();
         let phone = $("#NGOPhone").val();
+        let pincode = $("#NGOPincode").val();
         e.preventDefault();
         firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
             var user = firebase.auth().currentUser;
@@ -32,7 +33,9 @@ $(document).ready(function(){
               UID : user.uid,
               Address : address,
               Type : type,
-              Phone : phone
+              Phone : phone,
+              Pincode: pincode,
+              Active : true
             };
             user.updateProfile({
                 displayName: name
