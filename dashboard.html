@@ -118,17 +118,16 @@
         </section>
     </body>
     <script>
-        firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
-                console.log(user);
-            } else {
-                console.log("Logged Out");
+        firebase.auth().onAuthStateChanged(function(user)
+        {
+            if(!user)
+            {
+                window.location.href = "../403error.html";
             }
-            });
-
-            $("#logout").on("click", function(){
-                firebase.auth().signOut();
-                location.href = "index.html";
-            });
+        });
+        $("#logout").on("click", function(){
+            firebase.auth().signOut();
+            location.href = "index.html";
+        });
     </script>
 </html>

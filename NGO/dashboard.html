@@ -120,8 +120,6 @@
     </body>
     <script>
     $(document).ready(function(){
-        
-        
         db.collection("Furniture").get().then(function(snapshot){
             snapshot.forEach(function(doc) {
                 let data = doc.data();
@@ -145,18 +143,14 @@
 
         $("#logout").on("click", function(){
             firebase.auth().signOut();
-            location.href = "index.html";
+            location.href = "../index.html";
         });
 
         firebase.auth().onAuthStateChanged(function(user)
         {
-            if (user)
+            if(!user)
             {
-                console.log(user);
-            } 
-            else 
-            {
-
+                window.location.href = "../403error.html";
             }
         });
     

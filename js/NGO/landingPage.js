@@ -26,6 +26,7 @@ $(document).ready(function(){
         let type = $("#NGOType").val();
         let phone = $("#NGOPhone").val();
         let pincode = $("#NGOPincode").val();
+        let typeOfuser = 2;
         e.preventDefault();
         firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
             var user = firebase.auth().currentUser;
@@ -35,12 +36,12 @@ $(document).ready(function(){
               Type : type,
               Phone : phone,
               Pincode: pincode,
-              Active : true
+              Active : true,
+              typeOfuser : typeOfuser
             };
             user.updateProfile({
                 displayName: name
               }).then(function() {
-                console.log(data);
                 db.collection("Organization").add(data).then(function(res){
                    successMessage("Account Created Successfully");
                 });
