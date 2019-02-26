@@ -43,11 +43,8 @@ $(document).ready(function(){
                 displayName: name
               }).then(function() {
                 db.collection("Organization").add(data).then(function(res){
-                   successMessage("Account Created Successfully");
+                   successMessage("Account Created Successfully. Login Again to see dashboard");
                 });
-                setTimeout(function(){
-                    window.location = "../NGO/dashboard.html";
-                },3000)
               }).catch(function(error) {
                 failureMessage("Your details were not saved. Update it from your dashboard");
               });
