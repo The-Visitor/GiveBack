@@ -11,3 +11,15 @@ var config = {
   db.settings({
     timestampsInSnapshots: true
     });
+
+  function authUI(redirectPage, renderElement){
+    var uiConfig = {
+      signInSuccessUrl: redirectPage,
+      signInOptions: [
+        firebase.auth.EmailAuthProvider.PROVIDER_ID,
+        firebase.auth.GoogleAuthProvider.PROVIDER_ID,
+        firebase.auth.PhoneAuthProvider.PROVIDER_ID
+      ]};
+    var ui = new firebaseui.auth.AuthUI(firebase.auth());
+    ui.start(renderElement, uiConfig);
+  }

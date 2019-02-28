@@ -47,38 +47,24 @@
         </nav>
   <body class="headerGradient" style="background-image: url(../Image/403.png);background-size: cover;background-repeat: no-repeat;">
     <div class="container">
-            <script type="text/javascript">
-              // FirebaseUI config.
-              var uiConfig = {
-                signInSuccessUrl: 'dashboard.html',
-                signInOptions: [
-                  firebase.auth.EmailAuthProvider.PROVIDER_ID,
-                  firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-                  //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-                  firebase.auth.PhoneAuthProvider.PROVIDER_ID
-                ]};
-              var ui = new firebaseui.auth.AuthUI(firebase.auth());
-              ui.start('#firebaseui-auth-container', uiConfig);
-            </script>
-            <div class="modal fade" id="myModal" role="dialog">
-              <div class="modal-dialog">
-                <!-- Modal content-->
-                <div class="modal-content">
-                  <div class="modal-header" style="display:block">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title" style="text-align:center">Sign In  Here</h4>
-                  </div>
-                  <div class="modal-body" id="firebaseui-auth-container">
-                  </div>
-                  <div class="modal-footer">
-                    <button class="btn btn-primary">Some Button</button>
-                  </div>
-                </div>
-                
+        <div class="modal fade" id="myModal" role="dialog">
+          <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+              <div class="modal-header" style="display:block">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" style="text-align:center">Sign In  Here</h4>
+              </div>
+              <div class="modal-body" id="firebaseui-auth-container">
               </div>
             </div>
             
+          </div>
         </div>
-    </body>
+      </div>
+  </body>
+  <script type="text/javascript">
+    authUI('dashboard.html','#firebaseui-auth-container');
+  </script>
 
-  </html>
+</html>

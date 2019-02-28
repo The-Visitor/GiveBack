@@ -67,34 +67,34 @@
             </div>
             <div class="row">
                 <div class="col-md-6" style="text-align:center;min-height: 400px;">
-                    <div class="card card-2 userDetails" style="padding:20px;height:350px;text-align:left">
+                    <div class="card card-2 userDetails" style="padding:20px;height:350px;text-align:left;width:350px;">
                         <p style="text-align:center">Your Details</p>
                         <hr>
                         <div>
                             <p>
-                                Name : <label>Lenovo</label>
+                                Name : <label id="user-name"></label>
                             </p>
                             <p>
-                                Gender : <label>Male</label>
+                                Gender : <label id="user-gender">Go to profile section and fill in</label>
                             </p>
                             <p>
-                                Email : <label>Leno@vo.com</label>
+                                Email : <label id="user-email"></label>
                             </p>
                             <p>
-                                Phone : <label>1234567890</label>
+                                Phone : <label id="user-phone">Go to profile section and fill in</label>
                             </p>
                             <p>
-                                Address : <label>Excluding merges, 2  additions and 226 deletions.</label>
+                                Address : <label id="user-phone">Go to profile section and fill in</label>
                             </p>
                         </div>
-                        <div class="changePassword" style="text-align:center">
+                        <div class="changePassword" style="text-align:center;margin: 25px;">
                             <button class="btn btn-primary">Edit profile</button>
                         </div>
                         
                     </div>
                 </div>
                 <div class="col-md-6" style="text-align:center;min-height: 400px;">
-                        <div class="card card-2" style="padding:20px;height: 350px;text-align:center">
+                        <div class="card card-2" style="padding:20px;height: 350px;text-align:center;width:350px;">
                             <p style="text-align:center">Past Donationas</p>
                             <hr>
                             <div class="row">
@@ -113,7 +113,6 @@
                             </div>
                         </div>
                 </div>
-
             </div>
         </section>
     </body>
@@ -123,6 +122,11 @@
             if(!user)
             {
                 window.location.href = "../403error.html";
+            }
+            else
+            {
+                $("#user-name").text(user.displayName);
+                $("#user-email").text(user.email);
             }
         });
         $("#logout").on("click", function(){
