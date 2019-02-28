@@ -1,14 +1,3 @@
-if(localStorage.getItem("Userid"))
-{
-    $("#loginButton").text(`Hello ${localStorage.getItem("Username")}`);
-    $("#signUpButton").text("Logout");
-    
-    $("#donarAddressDetails").find("#donarName").val(localStorage.getItem('Username'));
-    $("#donarAddressDetails").find("#donarEmail").val(localStorage.getItem('Useremail'));
-    $("#donarAddressDetails").find("#donarPhoneNumber").val(localStorage.getItem('Userphone'));
-    $("#donarAddressDetails").find("#donarType").val(localStorage.getItem('Usergender'));
-}
-
 function successMessage(message){
     new PNotify({
         title: 'Hello!',
@@ -37,93 +26,6 @@ function objectifyForm(formArray) {
   }
 
 var data = {}; 
-
-$("#signUpButton").on("click", function(e){
-    if(localStorage.getItem("Userid"))
-    {
-        localStorage.clear();
-        location.reload();
-        e.preventDefault();
-        let form = document.getElementById("donarAddressDetails");
-        form.reset();
-        return;
-    }
-})
-
-$("#signUpForm").submit(function(e){
-    e.preventDefault();
-    let userName = $("#userName").val();
-    let userEmail = $("#userEmail").val().toLowerCase();
-    let userPassword = $("#userPassword").val();
-    let userPhoneNumber = $("#userPhoneNumber").val();
-    let userGender = $("#userGender").val();
-
-    db.collection("usersInformation").where("Email","==",userEmail).get().then(function(snapshot){
-        if(snapshot.size === 0)
-        {
-            let id;
-            db.collection("usersInformation").get().then(function(allDocument){
-                id = allDocument.size +1 ;
-            }).then(function(allDocument){
-                db.collection("usersInformation").add({
-                    UserID: id,
-                    Name: userName,
-                    Email: userEmail,
-                    Password: userPassword,
-                    PhoneNumber: userPhoneNumber,
-                    Gender: userGender
-                })
-                .then(function(document) {
-                    successMessage("Congratulations, Your account is created. Login to verify it.");
-                    $("#myModal").modal("hide");
-                    $("#signUpForm input").val("");
-                    $("#loginModal").modal("show");
-                })
-                .catch(function(error) {
-                    failureMessage("Sorry, There was some error. Please try again in a bit.")
-                    alert("Error adding document: ", error);
-                });
-            })
-        }
-        else
-        {
-            failureMessage("This email is already registered. Try with different Email ID or Login.")
-        }
-    });
-});
-
-$("#loginForm").submit(function(e){
-    e.preventDefault();
-    let userEmail = $("#userEmailValidate").val().toLowerCase();
-    let userPassword = $("#userPasswordValidate").val();
-    db.collection("usersInformation").where("Email","==",userEmail).get().then(function(snapshot){
-        if(snapshot.size > 0)
-        {
-            snapshot.forEach(function(doc){
-                if(doc.data().Password == userPassword)
-                {
-                    $("#loginModal").modal("hide");
-                    $("#loginButton span").text(`Hello ${doc.data().Name}`);
-                    $("#signUpButton").text("Logout");
-                    successMessage("You are Logged In");
-                    localStorage.setItem('Username',doc.data().Name);
-                    localStorage.setItem('Useremail',doc.data().Email);
-                    localStorage.setItem('Userid',doc.data().UserID);
-                    localStorage.setItem('Userphone',doc.data().PhoneNumber);
-                    localStorage.setItem('Usergender', doc.data().Gender);
-                }
-                else{
-                    failureMessage("Check Your credentials and try again.");
-                }
-            })
-        }
-        else
-        {
-            failureMessage("Check Your credentials and try again.");
-        }
-    })
-});
-
 
 $("#clothesDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
