@@ -57,4 +57,27 @@ $(document).ready(function(){
             // ...
           });
     });
+
+    $('.select2').select2({
+      placeholder: "Select Type",
+      allowClear: true
+        }); 
+
+      $(".loginText").on("click", function(){
+      var ui;
+      let uiConfig = {
+        signInSuccessUrl: '../NGO/dashboard.html',
+        signInOptions: [
+          firebase.auth.EmailAuthProvider.PROVIDER_ID
+        ]};
+      if(ui)
+      {
+        ui.reset();
+      }
+      else
+      {
+        var ui = new firebaseui.auth.AuthUI(firebase.auth());
+      }
+        ui.start('#firebaseui-auth', uiConfig);
+      });
 });
