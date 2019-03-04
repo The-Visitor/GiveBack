@@ -53,7 +53,6 @@ $(document).ready(function(){
         $("#donarDetails").show("show");
     });
 
-    
     $("#clothesImage").on("change", function(e){
         // get file 
         var file  = e.target.files[0];

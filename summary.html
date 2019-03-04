@@ -95,7 +95,7 @@
                     <div style="color:#00c12d;margin:80px 0px 0px 40px" class="donarInfo">
                     </div>
                     <div style="background:#fee994;margin:0px 40px 0px 40px;border-radius: 10px;">
-                        <p style="font-size:14px;padding:10px;">Your donation will be picked up on  20th Dec 2018 at 10.30 AM </p>
+                        <p style="font-size:14px;padding:10px;">Your donation will be picked up on <span id="pick-up-date"></span> (Coming Sunday).Thank you for your patience.</p>
                     </div>
                     <div>
                         <p style="margin:190px 40px 0px 40px;text-align:center;opacity: 0.7;">
@@ -120,24 +120,62 @@
 </body>
 <script>
     $(document).ready(function(){
+
+        function comingSunday(){
+            let date = new Date();
+            let day = date.getDay();
+            date.setDate(date.getDate() + (7-day)); 
+            let dd = date.getDate();
+            let mm = date.getMonth() + 1;
+            let y = date.getFullYear();
+            let completeDate = dd + '/'+ mm + '/'+ y;
+            return completeDate;
+        }
+        
+
         let searchParams =  new URLSearchParams(window.location.search);
         let donationID = searchParams.get("id");
         let collection = searchParams.get("type");
+        let date = comingSunday();
+        $("#pick-up-date").text(date);
+
         db.collection(collection).doc(donationID).get().then(function(res){
             var data = res.data();
             console.log(data);
-            let name = `<p style="font-size:16px;margin:0px;" class="donarName">${data.User.Name}</p>`;
-            let address = `<p style="font-size:14px;" class="donarAddress">${data.User.Address}</p>`;
-            let type = `${data.Type}`;
-            let quantity = `${data.Quantity}`;
-            let description = `${data.Description}`;
-            let ID = donationID;
-            $(".donarInfo").append(name);
-            $(".donarInfo").append(address);
-            $(".contributionType").append(type);
-            $(".contributionQuantity").append(quantity);
-            $(".contributionDescription").append(description);
-            $(".contributionID").append(ID);
+            if(data.user)
+            {
+                let name = `<p style="font-size:16px;margin:0px;" class="donarName">${data.User.Name}</p>`;
+                let address = `<p style="font-size:14px;" class="donarAddress">${data.User.Address}</p>`;
+                let type = `${data.Type}`;
+                let quantity = `${data.Quantity}`;
+                let description = `${data.Description}`;
+                let ID = donationID;
+                $(".donarInfo").append(name);
+                $(".donarInfo").append(address);
+                $(".contributionType").append(type);
+                $(".contributionQuantity").append(quantity);
+                $(".contributionDescription").append(description);
+                $(".contributionID").append(ID);
+            }
+            else
+            {
+                let name = `<p style="font-size:16px;margin:0px;" class="donarName">${data.Name}</p>`;
+                let address = `<p style="font-size:14px;" class="donarAddress">You will have to come at the location for it .</p>`;
+                if(data.DonationType == 7)
+                {
+                    var type = "Blood";
+                    var description = `${data.Blood_Group}`;
+                    var quantity = "Not more than 400ml";
+                }
+                let ID = donationID;
+                $(".donarInfo").append(name);
+                $(".contributionType").append(type);
+                $(".contributionQuantity").append(quantity);
+                $(".contributionDescription").append(description);
+                $(".contributionID").append(ID);
+            }
+            
+            
         });
     });
 </script>

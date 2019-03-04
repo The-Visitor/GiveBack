@@ -23,7 +23,7 @@ function objectifyForm(formArray) {
       returnArray[formArray[i]['name']] = formArray[i]['value'];
     }
     return returnArray;
-  }
+}
 
 var data = {}; 
 
@@ -97,7 +97,10 @@ $("#bloodDonateForm").submit(function(e){
     data["UserID"] = 0;
     }
     data["DonationType"] = 7;
-    window.scrollTo(0, 570);
+    db.collection("Blood").add(data).then(function(res){
+        successMessage("Donation Submitted, We will get back to you shortly");
+        document.location.href=`/summary.html?id=${res.id}&type=Blood`; 
+    });
     e.preventDefault();
 
 });
@@ -172,12 +175,12 @@ $("#donarAddressDetails").submit(function(e){
                 document.location.href=`/summary.html?id=${res.id}&type=Volunteer`; 
             });
             break;
-        case 7:
-            db.collection("Blood").add(data).then(function(res){
-                successMessage("Donation Submitted, We will get back to you shortly");
-                document.location.href=`/summary.html?id=${res.id}&type=Blood`; 
-            });
-            break;
+        // case 7:
+        //     db.collection("Blood").add(data).then(function(res){
+        //         successMessage("Donation Submitted, We will get back to you shortly");
+        //         document.location.href=`/summary.html?id=${res.id}&type=Blood`; 
+        //     });
+        //     break;
         case 8:
             db.collection("Vehicle").add(data).then(function(res){
                 successMessage("Donation Submitted, We will get back to you shortly");
@@ -254,14 +257,14 @@ var renderDonate = {
     //     })
     // },
 
-    // bloodDonation : function(){
-    //     db.collection("Blood").get().then(function(snapshot){
-    //         snapshot.forEach(function(doc){
-    //             let card = `<div class='card allDonationCard' style='background:#dc3545;'><div class='card-body'>${doc.data().Type} <br> ${doc.data().Description} ${doc.data().Quantity} by ${doc.data().User.Name} </div></div>`;
-    //             $("#allDonationsCard").append(card);
-    //         })
-    //     })
-    // },
+    bloodDonation : function(){
+        db.collection("Blood").get().then(function(snapshot){
+            snapshot.forEach(function(doc){
+                let card = `<div class='card allDonationCard' style='background:#dc3545;'><div class='card-body'>${doc.data().Type} <br> ${doc.data().Description} ${doc.data().Quantity} by ${doc.data().User.Name} </div></div>`;
+                $("#allDonationsCard").append(card);
+            })
+        })
+    },
 
     vehicleDonate : function(){
         db.collection("Vehicle").get().then(function(snapshot){
@@ -293,23 +296,8 @@ function renderAllCards(){
 
 }
 
-$("#testButton").on("click", function(){
-    console.log(data);
-});
-
 $(".totalDonation").on("click", function(){
     $("section").hide();
     $("#allDonations").show();
     renderAllCards();
-});
-
-
-$("#NGOLogin").on("click",function(){
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.log(error);
-        // ...
-      });
 });
