@@ -148,7 +148,7 @@
 
         firebase.auth().onAuthStateChanged(function(user)
         {
-            if(!user || user.typeOfuser != 2)
+            if(!user)
             {
                 window.location.href = "../403error.html";
             }
