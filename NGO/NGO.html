@@ -60,75 +60,64 @@
 
     <section class="NGOLandingPage">
       <div class="row" style="margin-top:50px;">
-        <div class="col-6" style="padding: 10px;">
+        <div class="col-12" style="padding: 10px;">
           <div style="text-align: center">
             <h3>Sign Up</h3>
-            <div class="card card-2" style="padding:50px;width: 60%" >
+            <div class="card card-2" style="padding:50px;width: 90%" >
               <form class="form-group NGOsignUp" style="text-align:left">
-                <label for="NGOName">Name Of the Organization</label>
-                <input type="text" placeholder="Name" id="NGOName" class="form-control" required>
-
-                <label for="NGOEmail">Official Email Id</label>
-                <input type="email" placeholder="email" id="NGOEmail" class="form-control" required>
-
-                <label for="NGOPassword">Password</label>
-                <input type="password" placeholder="password" id="NGOPassword" class="form-control" required>
-
-                <label for="NGOLocation">Location</label>
-                <textarea placeholder="Location" id="NGOLocation" class="form-control"></textarea>
-
-                <label for="NGOType">How do you help ( You can select multiple )</label>
-                <select id="NGOType" class="form-control select2" multiple required>
-                  <option>Clothes</option>
-                  <option>Food</option>
-                  <option>Money</option>
-                  <option>Furniture</option>
-                  <option>Electronics</option>
-                  <option>Blood</option>
-                  <option>Vehicle</option>
-                  <option>Books</option>
-                  <option>Volunteers</option>
-                </select>
-
-                <label for="NGOPhone">Phone Number</label>
-                <input type="number" placeholder="Phone Number" id="NGOPhone" class="form-control" required>
-
-                <label for="NGOPincode">Pincode</label>
-                <input type="number" placeholder="Phone Number" id="NGOPincode" class="form-control" required>
-
-                <button type="submit" style="margin-top: 30px;" class="btn btn-primary submitNGOData">Submit</button>
-                <p data-toggle="modal" data-target="#myModal" class="loginText">Already have an account?</p>
+                <div class="row">
+                  <div class="col-4">
+                      <label for="NGOName">Name Of the Organization</label>
+                      <input type="text" placeholder="Name" id="NGOName" class="form-control" required>
+                  </div>
+                  <div class="col-4">
+                      <label for="NGOEmail">Official Email Id</label>
+                      <input type="email" placeholder="email" id="NGOEmail" class="form-control" required>
+                  </div>
+                  <div class="col-4">
+                      <label for="NGOPassword">Password</label>
+                      <input type="password" placeholder="password" id="NGOPassword" class="form-control" required>
+                  </div>
+                  <div class="col-4">
+                      <label for="NGOPincode">Pincode</label>
+                      <input type="number" placeholder="Phone Number" id="NGOPincode" class="form-control" required>
+                  </div>
+                  <div class="col-4">
+                      <label for="NGOType">How do you help ( You can select multiple )</label>
+                      <select id="NGOType" class="form-control select2" multiple required>
+                        <option>Clothes</option>
+                        <option>Food</option>
+                        <option>Money</option>
+                        <option>Furniture</option>
+                        <option>Electronics</option>
+                        <option>Blood</option>
+                        <option>Vehicle</option>
+                        <option>Books</option>
+                        <option>Volunteers</option>
+                      </select>
+                  </div>
+                  <div class="col-4">
+                      <label for="NGOPhone">Phone Number</label>
+                      <input type="number" placeholder="Phone Number" id="NGOPhone" class="form-control" required>
+                  </div>
+                  <div class="col-4">
+                      <label for="NGOLocation">Location</label>
+                      <textarea placeholder="Location" id="NGOLocation" class="form-control"></textarea>
+                  </div>
+                  <div class="col-8">
+                      <button type="submit" class="btn btn-primary submitNGOData">Submit</button>
+                      <p data-toggle="modal" data-target="#myModal" class="loginText">Already have an account?</p>
+                  </div>
+                </div>
               </form>
             </div>
           </div>
-        </div>
-        <div class="col-6" style="padding: 10px;">
-          
         </div>
       </div>
     </section>
 
     
-    <section class="container" id="allDonations" style="display:none">
-
-      <h1 style="font-size:18px;text-align:center">Here is the list of all your donation.</h1>
-      <div style="text-align:center;margin-top: 20px;">
-        <span class="badge badge-primary">Clothes</span>
-        <span class="badge badge-secondary">Food</span>
-        <span class="badge badge-success">Money</span>
-        <span class="badge badge-danger">Blood</span>
-        <span class="badge badge-warning">Electronics</span>
-        <span class="badge badge-info">Books</span>
-        <span class="badge badge-light">Furniture</span>
-        <span class="badge badge-dark">Vehicles</span>
-      </div>
-
-      <div id="allDonationsCard" style="margin-top:20px;font-size: 14px;">
-
-      </div>
-      
-    </section>
-
+  
     <div class="container">
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
