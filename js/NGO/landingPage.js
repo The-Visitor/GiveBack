@@ -65,6 +65,7 @@ $(document).ready(function(){
 
       $(".loginText").on("click", function(){
       var ui;
+      alert(ui);
       let uiConfig = {
         signInSuccessUrl: '../NGO/dashboard.html',
         signInOptions: [
@@ -73,11 +74,13 @@ $(document).ready(function(){
       if(ui)
       {
         ui.reset();
+        
       }
       else
       {
         var ui = new firebaseui.auth.AuthUI(firebase.auth());
       }
-        ui.start('#firebaseui-auth', uiConfig);
+      ui.start('#firebaseui-auth', uiConfig);
+        
       });
 });
