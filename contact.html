@@ -61,20 +61,20 @@
 
     <p style="text-align: center; font-size: 50px;font-style: italic;color: #716571  ">Lets talk....</p><br>
     <div class="container">
-      <form style="margin: auto; width: 60%;padding: 10px;">
+      <form id="contact-form" style="margin: auto; width: 60%;padding: 10px;">
         <div class="form-group">
           <div class="col-sm-12">
-            <input style="border-radius: 1rem;" type="text" class="form-control form-rounded" placeholder="Name">
+            <input style="border-radius: 1rem;" type="text" class="form-control form-rounded user-name" placeholder="Name" required>
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-12">          
-            <input style="border-radius: 1rem;" type="text" class="form-control form-rounded" placeholder="Email">
+            <input style="border-radius: 1rem;" type="text" class="form-control form-rounded user-email" placeholder="Email" required>
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-12">          
-              <textarea style="border-radius: 1rem;" class="form-control form-rounded" rows="10"></textarea>
+              <textarea style="border-radius: 1rem;" class="form-control form-rounded user-query" rows="10" required></textarea>
           </div>
         </div>
         <div class="form-group">        
@@ -86,19 +86,6 @@
     </div>
 
     <div class="container">
-      <script type="text/javascript">
-        // FirebaseUI config.
-        var uiConfig = {
-          signInSuccessUrl: 'dashboard.html',
-          signInOptions: [
-            firebase.auth.EmailAuthProvider.PROVIDER_ID,
-            firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-            //firebase.auth.FacebookAuthProvider.PROVIDER_ID,
-            firebase.auth.PhoneAuthProvider.PROVIDER_ID
-          ]};
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());
-        ui.start('#firebaseui-auth-container', uiConfig);
-      </script>
       <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
           <!-- Modal content-->
@@ -122,5 +109,28 @@
   </body>
       <script type="text/javascript">
       authUI('dashboard.html','#firebaseui-auth-container');
+    </script>
+    <script>
+      $(document).ready(function(){
+        $("#contact-form").on("submit", function(e){
+          let name = $(".user-name").val();
+          let email = $(".user-email").val();
+          let question = $(".user-query").val();
+          let isActive = true;
+          let replied = false;
+          let query = {
+            Name: name,
+            Email: email,
+            Question: question,
+            isActive: isActive,
+            Replied: replied
+          }
+          db.collection("Support").add(query).then(function(res){
+              successMessage("We will get back to you shortly");
+              $("#contact-form").trigger("reset");
+          });
+          e.preventDefault();
+        });
+      });
     </script>
 </html>

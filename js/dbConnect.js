@@ -23,3 +23,12 @@ var config = {
     var ui = new firebaseui.auth.AuthUI(firebase.auth());
     ui.start(renderElement, uiConfig);
   }
+
+  function successMessage(message){
+    new PNotify({
+        title: 'Hi!',
+        text: message,
+        type: 'success',
+        delay: 2000
+      });
+}
