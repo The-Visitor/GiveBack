@@ -71,4 +71,28 @@ $(document).ready(function(){
         )
     })
 
+    $("#checkStatus").on("click", function(){
+        let id = $("#donationId").val().replace(/\s/g,'');// removes white spaces
+        if(id)
+        {
+            var data;
+            let collection = ["Blood","Books","Clothes","Electronics","Food","Furniture","Vehicle"];
+            for(let i = 0;i<collection.length;i++)
+            {
+                db.collection(collection[i]).doc(id).get().then(function(res){
+                    if(res.data())
+                    {
+                        data=res.data();
+                        let template = `<p class="lead" style="padding:20px;">This is the status of your order: ${res.data().status}</p>`;
+                        $(".donationStatus").append(template);
+                    }
+                });
+            }
+        }
+        else
+        {
+            failureMessage("Value cannot be empty");
+        }
+    });
+
 });
