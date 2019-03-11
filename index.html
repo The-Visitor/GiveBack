@@ -137,7 +137,7 @@
                     <div style="text-align:center;font-size: 16px;">
                         <p>
                           <img src="image/arrow.png" style="height:15px;width:15px;margin-right:5px;">
-                            <span style="color:#0f50b1;font-style: italic">Click here</span> to check the status of your last donation.
+                            <span style="color:#0f50b1;font-style: italic;cursor: pointer;" data-toggle="modal" data-target="#donationStatus">Click here</span> to check the status of your last donation.
                         </p>
                         <p>
                           <img src="image/arrow.png" style="height:15px;width:15px;margin-right:5px;"><span style="color:#0f50b1;font-style: italic">Total Donation</span>
@@ -773,8 +773,6 @@
       
     </section>
 
-    
-
     <div class="container">
         <div class="modal fade" id="myModal" role="dialog">
           <div class="modal-dialog">
@@ -795,6 +793,26 @@
         </div>
         
     </div>
+
+    <div class="modal fade" id="donationStatus" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header" style="display:block">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title" style="text-align:center">Donation Status</h4>
+          </div>
+          <div class="modal-body donationStatus">
+            <input type="text" placeholder="Donation Id" id="donationId" value="" autofocus class="form-control">
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-primary" id="checkStatus">Check Status</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 
     <script src="js/index.js"></script>
     <script src="js/API.js"></script>
