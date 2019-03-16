@@ -441,12 +441,23 @@
                       Your Name must be in text format, and must not contain spaces,numbers, special characters, or emoji.
                     </small>
                   </div>
-                  <div class="volunteerEmail" style="margin-top:20px;">
-                    <label for="volunteerEmail">Email ID</label>
-                    <input name="Email" type="email" id="volunteerEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
-                    <small class="form-text text-muted">
-                      Your Email ID must be in text format, and must not contain spaces, or emoji.
-                    </small>
+                  <div class="row">
+                    <div class="volunteerEmail col-md-6 col-lg-6" style="margin-top:20px;">
+                      <label for="volunteerEmail">Email ID</label>
+                      <input name="Email" type="email" id="volunteerEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
+                      <small class="form-text text-muted">
+                        Your Email ID must be in text format, and must not contain spaces, or emoji.
+                      </small>
+                    </div>
+                    <div class="serviceType col-md-6 col-lg-6" style="margin-top:20px;">
+                      <label for="serviceType">Where would you like to help</label>
+                      <select name="Type" id="serviceType" class="form-control" aria-describedby="typeHelpBlock" required>
+                        <option value="1">Type 1</option>
+                        <option value="2">Type 2</option>
+                        <option value="3">Type 3</option>
+                        <option value="4">Type 4</option>
+                      </select>
+                    </div>
                   </div>
                   <div class="row">
                     <div class="volunteerPhoneNumber col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
