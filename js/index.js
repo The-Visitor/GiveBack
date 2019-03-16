@@ -1,20 +1,5 @@
 $(document).ready(function(){
-    console.log(document.cookie.userid);
-    if(document.cookie == 'userid=0' )
-    {
-        $("#helpUs").before(`<a id="NGOLogin" class="navbar-brand" href="./ngo/ngo.html" style="width:130px;" >
-        <span>We are an NGO</span>
-      </a>
-      <a id="signUpButton" class="navbar-brand" href="#" data-toggle="modal" data-target="#myModal">
-          <span>Sign Up</span>
-      </a>`);
-    }
-    else
-    {
-        $("#helpUs").before(`<button class="navbar-brand logoutButton" style="cursor:pointer" id="logout">Logout</button>`);
-    }
-
-
+    
     $("#siteLogo").on("click", function(){
         location.reload();
     });
