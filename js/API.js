@@ -101,6 +101,7 @@ $("#volunteerData").submit(function(e){
     data["UserID"] = 0;
     data["DonationType"] = 6;
     submitDonation(data);
+    this.reset();
     e.preventDefault();
 });
 
