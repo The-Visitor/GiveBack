@@ -45,7 +45,7 @@
                 <span style="color:white !important;">Contact Us</span>
             </a>
             <a class="navbar-brand textNavbar" href="donations.html">
-                <span>Donators</span>
+                <span style="color:white !important;">Donators</span>
             </a>
             <button class="btn btn-primary" id="logout" style="float:right;background: transparent;border-color: white">
                 Logout
@@ -117,21 +117,23 @@
         </section>
     </body>
     <script>
-        firebase.auth().onAuthStateChanged(function(user)
-        {
-            if(!user)
+        $(document).ready(function(){
+            firebase.auth().onAuthStateChanged(function(user)
             {
-                window.location.href = "../403error.html";
-            }
-            else
-            {
-                $("#user-name").text(user.displayName);
-                $("#user-email").text(user.email);
-            }
-        });
-        $("#logout").on("click", function(){
-            firebase.auth().signOut();
-            location.href = "index.html";
+                if(!user)
+                {
+                    window.location.href = "../403error.html";
+                }
+                else
+                {
+                    $("#user-name").text(user.displayName);
+                    $("#user-email").text(user.email);
+                }
+            });
+            $("#logout").on("click", function(){
+                firebase.auth().signOut();
+                location.href = "index.html";
+            });
         });
     </script>
 </html>

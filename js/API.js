@@ -26,7 +26,6 @@ function objectifyForm(formArray) {
 }
 
 var data = {};
-
 function getUserID()
 {
     firebase.auth().onAuthStateChanged(function(user) {
