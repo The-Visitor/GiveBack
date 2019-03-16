@@ -75,7 +75,7 @@ $(document).ready(function(){
         let id = $("#donationId").val().replace(/\s/g,'');// removes white spaces
         if(id)
         {
-            var data;
+            let data;
             let collection = ["Blood","Books","Clothes","Electronics","Food","Furniture","Vehicle"];
             for(let i = 0;i<collection.length;i++)
             {

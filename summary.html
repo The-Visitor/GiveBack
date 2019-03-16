@@ -131,18 +131,23 @@
             let completeDate = dd + '/'+ mm + '/'+ y;
             return completeDate;
         }
-        
-
         let searchParams =  new URLSearchParams(window.location.search);
         let donationID = searchParams.get("id");
         let collection = searchParams.get("type");
         let date = comingSunday();
         $("#pick-up-date").text(date);
 
+        function dataAppend(name,type,quantity,description,ID){
+            $(".donarInfo").append(name);
+            $(".contributionType").append(type);
+            $(".contributionQuantity").append(quantity);
+            $(".contributionDescription").append(description);
+            $(".contributionID").append(ID);
+        }
+
         db.collection(collection).doc(donationID).get().then(function(res){
             var data = res.data();
-            console.log(data);
-            if(data.user)
+            if(data.User)
             {
                 let name = `<p style="font-size:16px;margin:0px;" class="donarName">${data.User.Name}</p>`;
                 let address = `<p style="font-size:14px;" class="donarAddress">${data.User.Address}</p>`;
@@ -150,12 +155,8 @@
                 let quantity = `${data.Quantity}`;
                 let description = `${data.Description}`;
                 let ID = donationID;
-                $(".donarInfo").append(name);
+                dataAppend(name,type,quantity,description,ID);
                 $(".donarInfo").append(address);
-                $(".contributionType").append(type);
-                $(".contributionQuantity").append(quantity);
-                $(".contributionDescription").append(description);
-                $(".contributionID").append(ID);
             }
             else
             {
@@ -168,11 +169,7 @@
                     var quantity = "Not more than 400ml";
                 }
                 let ID = donationID;
-                $(".donarInfo").append(name);
-                $(".contributionType").append(type);
-                $(".contributionQuantity").append(quantity);
-                $(".contributionDescription").append(description);
-                $(".contributionID").append(ID);
+                dataAppend(name,type,quantity,description,ID);
             }
             
             
