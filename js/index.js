@@ -49,10 +49,6 @@ $(document).ready(function(){
         $("#booksDonate").show("slow");
     });
 
-    $(".donateButton").on("click", function(){
-        $("#donarDetails").show("show");
-    });
-
     $("#clothesImage").on("change", function(e){
         // get file 
         var file  = e.target.files[0];
@@ -64,7 +60,6 @@ $(document).ready(function(){
         //update progress bar 
         task.on('state_changed', 
         function progress(snapshot) {
-            console.log(snapshot);
             var percentage  = (snapshot.bytesTransferred / snapshot.totalBytes) * 100 ;
             $("#clothImageUpload").val(percentage);
         }

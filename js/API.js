@@ -29,59 +29,36 @@ var data = {};
 
 $("#clothesDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    if(localStorage.getItem("Userid"))
-    {
-        data["UserID"] = localStorage.getItem("Userid");
-    }
-    else{
     data["UserID"] = 0;
-    }
     data["DonationType"] = 1;
+    $("#donarDetails").show("show");
     window.scrollTo(0, 570);
     e.preventDefault();
-
-    //
 });
 
 $("#foodDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    if(localStorage.getItem("Userid"))
-    {
-        data["UserID"] = localStorage.getItem("Userid");
-    }
-    else{
-        data["UserID"] = 0;
-    }
+    data["UserID"] = 0;
     data["DonationType"] = 2;
+    $("#donarDetails").show("show");
     window.scrollTo(0, 570);
-    console.log(data);
     e.preventDefault();
 });
 
 $("#furnitureDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    if(localStorage.getItem("Userid"))
-    {
-        data["UserID"] = localStorage.getItem("Userid");
-    }
-    else{
     data["UserID"] = 0;
-    }
     data["DonationType"] = 4;
+    $("#donarDetails").show("show");
     window.scrollTo(0, 570);
     e.preventDefault();
 });
 
 $("#electronicsDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    if(localStorage.getItem("Userid"))
-    {
-        data["UserID"] = localStorage.getItem("Userid");
-    }
-    else{
     data["UserID"] = 0;
-    }
     data["DonationType"] = 5;
+    $("#donarDetails").show("show");
     window.scrollTo(0, 570);
     e.preventDefault();
 
@@ -89,13 +66,7 @@ $("#electronicsDonateForm").submit(function(e){
 
 $("#bloodDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    if(localStorage.getItem("Userid"))
-    {
-        data["UserID"] = localStorage.getItem("Userid");
-    }
-    else{
     data["UserID"] = 0;
-    }
     data["DonationType"] = 7;
     db.collection("Blood").add(data).then(function(res){
         successMessage("Donation Submitted, We will get back to you shortly");
@@ -107,14 +78,9 @@ $("#bloodDonateForm").submit(function(e){
 
 $("#vehicleDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    if(localStorage.getItem("Userid"))
-    {
-        data["UserID"] = localStorage.getItem("Userid");
-    }
-    else{
     data["UserID"] = 0;
-    }
     data["DonationType"] = 8;
+    $("#donarDetails").show("show");
     window.scrollTo(0, 570);
     e.preventDefault();
 
@@ -122,22 +88,24 @@ $("#vehicleDonateForm").submit(function(e){
 
 $("#bookDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    if(localStorage.getItem("Userid"))
-    {
-        data["UserID"] = localStorage.getItem("Userid");
-    }
-    else{
     data["UserID"] = 0;
-    }
     data["DonationType"] = 9;
+    $("#donarDetails").show("show");
     window.scrollTo(0, 570);
     e.preventDefault();
 
 });
 
-$("#donarAddressDetails").submit(function(e){
-    var address = objectifyForm($(this).serializeArray());
-    data.User = address;
+$("#volunteerData").submit(function(e){
+    data = objectifyForm($(this).serializeArray());
+    data["UserID"] = 0;
+    data["DonationType"] = 6;
+    submitDonation(data);
+    e.preventDefault();
+});
+
+function submitDonation(data){
+
     switch (data.DonationType) {
         case 1:
             db.collection("Clothes").add(data).then(function(res){
@@ -171,8 +139,7 @@ $("#donarAddressDetails").submit(function(e){
             break;
         case 6:
             db.collection("Volunteer").add(data).then(function(res){
-                successMessage("Details Submitted, We will get back to you shortly");
-                document.location.href=`/summary.html?id=${res.id}&type=Volunteer`; 
+                successMessage("Thank you for your interest.We will get back to you shortly !");
             });
             break;
         // case 7:
@@ -197,6 +164,12 @@ $("#donarAddressDetails").submit(function(e){
             db.collection("Other").add(data);
             break;
     }
+}
+
+$("#donarAddressDetails").submit(function(e){
+    var address = objectifyForm($(this).serializeArray());
+    data.User = address;
+    submitDonation(data);
     e.preventDefault();
 })
 
