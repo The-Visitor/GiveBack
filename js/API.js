@@ -68,12 +68,9 @@ $("#bloodDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
     data["UserID"] = 0;
     data["DonationType"] = 7;
-    db.collection("Blood").add(data).then(function(res){
-        successMessage("Donation Submitted, We will get back to you shortly");
-        document.location.href=`/summary.html?id=${res.id}&type=Blood`; 
-    });
+    submitDonation(data);
+    this.reset();
     e.preventDefault();
-
 });
 
 $("#vehicleDonateForm").submit(function(e){
@@ -101,6 +98,7 @@ $("#volunteerData").submit(function(e){
     data["UserID"] = 0;
     data["DonationType"] = 6;
     submitDonation(data);
+    this.reset();
     e.preventDefault();
 });
 
@@ -142,12 +140,11 @@ function submitDonation(data){
                 successMessage("Thank you for your interest.We will get back to you shortly !");
             });
             break;
-        // case 7:
-        //     db.collection("Blood").add(data).then(function(res){
-        //         successMessage("Donation Submitted, We will get back to you shortly");
-        //         document.location.href=`/summary.html?id=${res.id}&type=Blood`; 
-        //     });
-        //     break;
+        case 7:
+            db.collection("Blood").add(data).then(function(res){
+                successMessage("Thank you for your contribution. We will get back to you shortly!");
+            });
+            break;
         case 8:
             db.collection("Vehicle").add(data).then(function(res){
                 successMessage("Donation Submitted, We will get back to you shortly");
