@@ -25,11 +25,21 @@ function objectifyForm(formArray) {
     return returnArray;
 }
 
-var data = {}; 
+var data = {};
+
+function getUserID()
+{
+    firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+        data["UserID"] =  user.uid;
+    } else {
+        data["UserID"] =  0;
+    }
+    });
+}
 
 $("#clothesDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    data["UserID"] = 0;
     data["DonationType"] = 1;
     $("#donarDetails").show("show");
     window.scrollTo(0, 570);
@@ -38,7 +48,6 @@ $("#clothesDonateForm").submit(function(e){
 
 $("#foodDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    data["UserID"] = 0;
     data["DonationType"] = 2;
     $("#donarDetails").show("show");
     window.scrollTo(0, 570);
@@ -47,7 +56,7 @@ $("#foodDonateForm").submit(function(e){
 
 $("#furnitureDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    data["UserID"] = 0;
+    
     data["DonationType"] = 4;
     $("#donarDetails").show("show");
     window.scrollTo(0, 570);
@@ -56,7 +65,7 @@ $("#furnitureDonateForm").submit(function(e){
 
 $("#electronicsDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    data["UserID"] = 0;
+    
     data["DonationType"] = 5;
     $("#donarDetails").show("show");
     window.scrollTo(0, 570);
@@ -66,7 +75,7 @@ $("#electronicsDonateForm").submit(function(e){
 
 $("#bloodDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    data["UserID"] = 0;
+    
     data["DonationType"] = 7;
     submitDonation(data);
     this.reset();
@@ -75,7 +84,7 @@ $("#bloodDonateForm").submit(function(e){
 
 $("#vehicleDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    data["UserID"] = 0;
+    
     data["DonationType"] = 8;
     $("#donarDetails").show("show");
     window.scrollTo(0, 570);
@@ -85,7 +94,7 @@ $("#vehicleDonateForm").submit(function(e){
 
 $("#bookDonateForm").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    data["UserID"] = 0;
+    
     data["DonationType"] = 9;
     $("#donarDetails").show("show");
     window.scrollTo(0, 570);
@@ -95,7 +104,7 @@ $("#bookDonateForm").submit(function(e){
 
 $("#volunteerData").submit(function(e){
     data = objectifyForm($(this).serializeArray());
-    data["UserID"] = 0;
+    
     data["DonationType"] = 6;
     submitDonation(data);
     this.reset();
@@ -103,7 +112,6 @@ $("#volunteerData").submit(function(e){
 });
 
 function submitDonation(data){
-
     switch (data.DonationType) {
         case 1:
             db.collection("Clothes").add(data).then(function(res){
@@ -170,6 +178,7 @@ function submitDonation(data){
 $("#donarAddressDetails").submit(function(e){
     var address = objectifyForm($(this).serializeArray());
     data.User = address;
+    console.log(data);
     submitDonation(data);
     e.preventDefault();
 })
