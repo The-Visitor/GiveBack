@@ -137,12 +137,16 @@ function submitDonation(data){
             break;
         case 6:
             db.collection("Volunteer").add(data).then(function(res){
-                successMessage("Thank you for your interest.We will get back to you shortly !");
+                swal("Thank you!", "We will get back to you shortly!!", "success").then(function(){
+                    location.reload();
+                });
             });
             break;
         case 7:
             db.collection("Blood").add(data).then(function(res){
-                successMessage("Thank you for your contribution. We will get back to you shortly!");
+                swal("Thank you!", "We will get back to you shortly!!", "success").then(function(){
+                    location.reload();
+                });
             });
             break;
         case 8:
