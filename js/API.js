@@ -37,10 +37,9 @@ $("#clothesDonateForm").submit(function(e){
     data["UserID"] = 0;
     }
     data["DonationType"] = 1;
+    $("#donarDetails").show("show");
     window.scrollTo(0, 570);
     e.preventDefault();
-
-    //
 });
 
 $("#foodDonateForm").submit(function(e){
@@ -53,8 +52,8 @@ $("#foodDonateForm").submit(function(e){
         data["UserID"] = 0;
     }
     data["DonationType"] = 2;
+    $("#donarDetails").show("show");
     window.scrollTo(0, 570);
-    console.log(data);
     e.preventDefault();
 });
 
@@ -68,6 +67,7 @@ $("#furnitureDonateForm").submit(function(e){
     data["UserID"] = 0;
     }
     data["DonationType"] = 4;
+    $("#donarDetails").show("show");
     window.scrollTo(0, 570);
     e.preventDefault();
 });
@@ -82,6 +82,7 @@ $("#electronicsDonateForm").submit(function(e){
     data["UserID"] = 0;
     }
     data["DonationType"] = 5;
+    $("#donarDetails").show("show");
     window.scrollTo(0, 570);
     e.preventDefault();
 
@@ -115,6 +116,7 @@ $("#vehicleDonateForm").submit(function(e){
     data["UserID"] = 0;
     }
     data["DonationType"] = 8;
+    $("#donarDetails").show("show");
     window.scrollTo(0, 570);
     e.preventDefault();
 
@@ -130,9 +132,14 @@ $("#bookDonateForm").submit(function(e){
     data["UserID"] = 0;
     }
     data["DonationType"] = 9;
+    $("#donarDetails").show("show");
     window.scrollTo(0, 570);
     e.preventDefault();
 
+});
+
+$("#volunteerData").submit(function(e){
+    e.preventDefault();
 });
 
 $("#donarAddressDetails").submit(function(e){
