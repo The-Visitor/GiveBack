@@ -48,12 +48,44 @@
       </nav>
       <section>
           <div class="row">
-                <div class="col-lg-6 col-md-6" style="width:100%;min-height:450px;" id="distributionChart1"></div>
-                <div class="col-lg-6 col-md-6" style="width:100%;min-height:450px;"  id="distributionChart2"></div>
+                <div class="col-lg-12 col-md-12" style="width:100%;min-height:450px;" id="distributionChart1"></div>
           </div>
        
       </section>
+      
       <script type="text/javascript">
+      $(document).ready(function(){
+        async function getdata()
+        {
+          var Clothes;
+          var Food = 0;
+          var Money = 0;
+          var Furniture = 0;
+          var Electronics = 0;
+          var Volunteer = 0;
+          var Blood = 0;
+          var Vehicle = 0;
+          var Books = 0;
+          var collectio = ["Clothes","Food","Money","Furniture","Electronics","Volunteer","Blood","Vehicle","Books"];
+          
+          async function get(collectio)
+          {
+            
+            for(let i = 0;i<collectio.length;i++)
+            {
+                db.collection(collectio[i]).get().then(function(res){
+                    collectio[i] = (res.size);
+                    alert(collectio[i]);
+                });
+            }
+          }
+          get(collectio).then(function(){
+            alert();
+          });
+        }
+        getdata().then(function(){
+          alert();
+        })
         google.charts.load('current', {'packages':['corechart']});
         google.charts.setOnLoadCallback(drawChart1);
         function drawChart1() {
@@ -75,38 +107,12 @@
           var chart = new google.visualization.PieChart(document.getElementById('distributionChart1'));
           chart.draw(data, options);
         }
-        
-
-        //second chart
-        google.charts.load('current', {'packages':['corechart']});
-        google.charts.setOnLoadCallback(drawChart2);
-        function drawChart2() {
-          var data = new google.visualization.DataTable();
-          data.addColumn('string', 'Topping');
-          data.addColumn('number', 'Slices');
-          data.addRows([
-            ['Clothes', 3],
-            ['Food', 1],
-            ['Money', 1],
-            ['Furniture', 1],
-            ['Electronics', 2],
-            ['Volunteer',5],
-            ['Blood', 2],
-            ['Vehicle',5],
-            ['Books',5]
-          ]);
-          var options = {'title':'Ratio of donations we received.'};
-
-          // Instantiate and draw our chart, passing in some options.
-          var chart = new google.visualization.PieChart(document.getElementById('distributionChart2'));
-          chart.draw(data, options);
-        }
-        
         //responisve chart options
         $(window).resize(function(){
           drawChart1();
-          drawChart2();
         });
+      });
+        
       </script>
 
 
