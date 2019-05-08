@@ -90,10 +90,5 @@ $(document).ready(function(){
         }
     });
 
-    $("nav").on("click",".logoutButton", function(){
-        firebase.auth().signOut();
-        document.cookie = `userid=${0};isLoggedIn=false;path=/`;
-        location.reload();
-    });
 
 });
