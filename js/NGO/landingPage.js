@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  
     function successMessage(message){
         new PNotify({
             title: 'Hello!',
@@ -19,6 +20,8 @@ $(document).ready(function(){
 
 
     $(".NGOsignUp").submit(function(e){
+      e.preventDefault();
+      $(".submitNGOData").text("Please wait...");
         let email = $("#NGOEmail").val();
         let password = $("#NGOPassword").val();
         let name = $("#NGOName").val();
@@ -26,27 +29,31 @@ $(document).ready(function(){
         let type = $("#NGOType").val();
         let phone = $("#NGOPhone").val();
         let pincode = $("#NGOPincode").val();
-        let typeOfuser = 2;
-        e.preventDefault();
         firebase.auth().createUserWithEmailAndPassword(email, password).then(function(){
             var user = firebase.auth().currentUser;
             var data = {
-              UID : user.uid,
-              Address : address,
+              OrganizationID : user.uid,
+              Name : name,
               Type : type,
-              Phone : phone,
-              Pincode: pincode,
-              Active : true,
-              typeOfuser : typeOfuser
+              Phonenumber : phone,
+              Address : address,
+              IsActive : true,
+              CreatedOn : user.metadata.creationTime,
+              ModifiedOn : user.metadata.creationTime,
+              Email : email,
+              Pincode: pincode
             };
             user.updateProfile({
-                displayName: name
+                displayName: name,
+                phoneNumber : phone
               }).then(function() {
-                db.collection("Organization").add(data).then(function(res){
+                db.collection("Organization").doc(user.uid).set(data).then(function(res){
                    successMessage("Account Created Successfully. Login Again to see dashboard");
                 });
               }).catch(function(error) {
                 failureMessage("Your details were not saved. Update it from your dashboard");
+              }).finally(function(){
+                $(".submitNGOData").text("Submit");
               });
             
         }).catch(function(error) {
@@ -64,21 +71,16 @@ $(document).ready(function(){
         }); 
 
       $(".loginText").on("click", function(){
-      var ui;
-      let uiConfig = {
-        signInSuccessUrl: '../NGO/dashboard.html',
-        signInOptions: [
-          firebase.auth.EmailAuthProvider.PROVIDER_ID
-        ]};
-      if(ui)
-      {
-        ui.reset();
-      }
-      else
-      {
-        var ui = new firebaseui.auth.AuthUI(firebase.auth());
-      }
-      ui.start('#firebaseui-auth', uiConfig);
-        
+        $("#loginOrganization").modal("show");
+        let email = $("#userEmail").val();
+        let password = $("#userPassword").val();
+        firebase.auth().signInWithEmailAndPassword(email, password).then(function(){
+          window.location.href = "/NGO/dashboard.html";
+        }).catch(function(error) {
+          // Handle Errors here.
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          // ...
+        });
       });
 });
