@@ -115,25 +115,64 @@
                 </div>
             </div>
         </section>
+
+        <div id="profileUpdate" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+          
+              <!-- Modal content-->
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title text-center" style="width:100%">Profile Update</h4>
+                </div>
+                <div class="modal-body">
+                  <h6 class="text-center">Please Fill in these datails before proceeding</h6>
+                  <form class="form-group formStyle">
+                    <div class="userName" style="margin-top:20px;">
+                        <label for="userName">Full Name</label>
+                        <input name="Name" type="text" id="userName" class="form-control" aria-describedby="quantityHelpBlock" required>
+                        <small class="form-text text-muted">
+                        Only in text format.
+                        </small>
+                    </div>
+                    <div class="userEmail" style="margin-top:20px;">
+                        <label for="userEmail">Email ID</label>
+                        <input name="Email" type="email" id="userEmail" class="form-control" aria-describedby="quantityHelpBlock" required>
+                        <small class="form-text text-muted">
+                        Your Email ID must be in text format, and must not contain spaces, or emoji.
+                        </small>
+                    </div>
+                    <div class="row">
+                        <div class="userPhoneNumber col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
+                        <label for="userPhoneNumber">Phone Number</label>
+                        <input name="Phone_Number" type="number" id="userPhoneNumber" class="form-control" aria-describedby="quantityHelpBlock" required>
+                        <small class="form-text text-muted">
+                            Only numbers allowed.
+                        </small>
+                        </div>
+                        <div  class="userPincode col-md-6 col-lg-6" style="margin-top:20px;padding-left: 0px;">
+                            <label for="userPincode">Pincode</label>
+                            <input name="Pincode" type="number" id="userPincode" class="form-control" aria-describedby="quantityHelpBlock" required>
+                            <small class="form-text text-muted">
+                                Only numbers allowed.
+                            </small>
+                            </div>
+                    </div>
+                    <div class="userAddress"  style="margin-top:20px;">
+                        <label for="userAddress">Your Address</label>
+                        <textarea name="Address" id="userAddress" class="form-control" aria-describedby="descriptionHelpBlock"></textarea>
+                        <small class="form-text text-muted">
+                            Your address can contain letters, numbers, spaces, special characters.
+                        </small>
+                    </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" id="saveUser" class="btn btn-primary" data-dismiss="modal">Submit</button>
+                </div>
+              </div>
+          
+            </div>
+          </div>
     </body>
-    <script>
-        $(document).ready(function(){
-            firebase.auth().onAuthStateChanged(function(user)
-            {
-                if(!user)
-                {
-                    window.location.href = "../403error.html";
-                }
-                else
-                {
-                    $("#user-name").text(user.displayName);
-                    $("#user-email").text(user.email);
-                }
-            });
-            $("#logout").on("click", function(){
-                firebase.auth().signOut();
-                location.href = "index.html";
-            });
-        });
-    </script>
+    <script src="/js/dashboard.js"></script>
 </html>
